@@ -1,0 +1,5483 @@
+,prefix,generated_middle,actual_middle,suffix,exact_match,bleu,chrf
+0,"import spacy
+
+from torchtext.data import Field 
+from torchtext.datasets import Multi30k
+
+from config import  from_, to
+
+spacy_lang_in = spacy.load(from_)
+spacy_lang_out = spacy.load(to)",def tokenize_lang_in(text):,def tokenize_lang_in(text):,"    return [tok.text for tok in spacy_lang_in.tokenizer(text)]
+
+def tokenize_lang_out(text):
+    return [tok.text for tok in spacy_lang_out.tokenizer(text)]
+
+lang_in = Field(tokenize=tokenize_lang_in, lower=True, init_token='<sos>', eos_token='<eos>')
+lang_out = Field(tokenize=tokenize_lang_out, lower=True, init_token='<sos>', eos_token='<eos>')
+
+train_data, valid_data, test_data = Multi30k.splits(
+    exts=(f'.{from_}', f'.{to}'), fields=(lang_in, lang_out), root='../text_data/.data'
+)
+
+lang_in.build_vocab(train_data, max_size=10000, min_freq=2)
+lang_out.build_vocab(train_data, max_size=10000, min_freq=2)",1,1.491668146240062e-154,1.0
+1,"import spacy
+
+from torchtext.data import Field 
+from torchtext.datasets import Multi30k
+
+from config import  from_, to
+
+spacy_lang_in = spacy.load(from_)
+spacy_lang_out = spacy.load(to)
+
+def tokenize_lang_in(text):
+    return [tok.text for tok in spacy_lang_in.tokenizer(text)]
+
+def tokenize_lang_out(text):",    return [tok.text for tok in spacy_lang_out.tokenizer(text)],    return [tok.text for tok in spacy_lang_out.tokenizer(text)],"
+lang_in = Field(tokenize=tokenize_lang_in, lower=True, init_token='<sos>', eos_token='<eos>')
+lang_out = Field(tokenize=tokenize_lang_out, lower=True, init_token='<sos>', eos_token='<eos>')
+
+train_data, valid_data, test_data = Multi30k.splits(
+    exts=(f'.{from_}', f'.{to}'), fields=(lang_in, lang_out), root='../text_data/.data'
+)
+
+lang_in.build_vocab(train_data, max_size=10000, min_freq=2)
+lang_out.build_vocab(train_data, max_size=10000, min_freq=2)
+",1,1.0,1.0
+2,import spacy,from torchtext.data import Field ,from torchtext.data import Field ,"from torchtext.datasets import Multi30k
+
+from config import  from_, to
+
+spacy_lang_in = spacy.load(from_)
+spacy_lang_out = spacy.load(to)
+
+def tokenize_lang_in(text):
+    return [tok.text for tok in spacy_lang_in.tokenizer(text)]
+
+def tokenize_lang_out(text):
+    return [tok.text for tok in spacy_lang_out.tokenizer(text)]
+
+lang_in = Field(tokenize=tokenize_lang_in, lower=True, init_token='<sos>', eos_token='<eos>')
+lang_out = Field(tokenize=tokenize_lang_out, lower=True, init_token='<sos>', eos_token='<eos>')
+
+train_data, valid_data, test_data = Multi30k.splits(
+    exts=(f'.{from_}', f'.{to}'), fields=(lang_in, lang_out), root='../text_data/.data'
+)
+
+lang_in.build_vocab(train_data, max_size=10000, min_freq=2)
+lang_out.build_vocab(train_data, max_size=10000, min_freq=2)",1,1.0,1.0
+3,"import spacy
+
+from torchtext.data import Field 
+from torchtext.datasets import Multi30k
+
+from config import  from_, to
+
+spacy_lang_in = spacy.load(from_)
+spacy_lang_out = spacy.load(to)
+
+def tokenize_lang_in(text):",    return [tok.text for tok in spacy_lang_in.tokenizer(text)],    return [tok.text for tok in spacy_lang_in.tokenizer(text)],"
+def tokenize_lang_out(text):
+    return [tok.text for tok in spacy_lang_out.tokenizer(text)]
+
+lang_in = Field(tokenize=tokenize_lang_in, lower=True, init_token='<sos>', eos_token='<eos>')
+lang_out = Field(tokenize=tokenize_lang_out, lower=True, init_token='<sos>', eos_token='<eos>')
+
+train_data, valid_data, test_data = Multi30k.splits(
+    exts=(f'.{from_}', f'.{to}'), fields=(lang_in, lang_out), root='../text_data/.data'
+)
+
+lang_in.build_vocab(train_data, max_size=10000, min_freq=2)
+lang_out.build_vocab(train_data, max_size=10000, min_freq=2)
+",1,1.0,1.0
+4,"import spacy
+
+from torchtext.data import Field 
+from torchtext.datasets import Multi30k
+
+from config import  from_, to
+
+spacy_lang_in = spacy.load(from_)
+spacy_lang_out = spacy.load(to)
+
+def tokenize_lang_in(text):
+    return [tok.text for tok in spacy_lang_in.tokenizer(text)]",def tokenize_lang_out(text):,def tokenize_lang_out(text):,"    return [tok.text for tok in spacy_lang_out.tokenizer(text)]
+
+lang_in = Field(tokenize=tokenize_lang_in, lower=True, init_token='<sos>', eos_token='<eos>')
+lang_out = Field(tokenize=tokenize_lang_out, lower=True, init_token='<sos>', eos_token='<eos>')
+
+train_data, valid_data, test_data = Multi30k.splits(
+    exts=(f'.{from_}', f'.{to}'), fields=(lang_in, lang_out), root='../text_data/.data'
+)
+
+lang_in.build_vocab(train_data, max_size=10000, min_freq=2)
+lang_out.build_vocab(train_data, max_size=10000, min_freq=2)",1,1.491668146240062e-154,1.0
+5,"import spacy
+
+from torchtext.data import Field 
+from torchtext.datasets import Multi30k
+
+from config import  from_, to
+
+spacy_lang_in = spacy.load(from_)
+spacy_lang_out = spacy.load(to)
+
+def tokenize_lang_in(text):
+    return [tok.text for tok in spacy_lang_in.tokenizer(text)]
+",def tokenize_lang_out(text):,def tokenize_lang_out(text):,"    return [tok.text for tok in spacy_lang_out.tokenizer(text)]
+
+lang_in = Field(tokenize=tokenize_lang_in, lower=True, init_token='<sos>', eos_token='<eos>')
+lang_out = Field(tokenize=tokenize_lang_out, lower=True, init_token='<sos>', eos_token='<eos>')
+
+train_data, valid_data, test_data = Multi30k.splits(
+    exts=(f'.{from_}', f'.{to}'), fields=(lang_in, lang_out), root='../text_data/.data'
+)
+
+lang_in.build_vocab(train_data, max_size=10000, min_freq=2)
+lang_out.build_vocab(train_data, max_size=10000, min_freq=2)
+",1,1.491668146240062e-154,1.0
+6,"import spacy
+
+from torchtext.data import Field 
+from torchtext.datasets import Multi30k
+
+from config import  from_, to
+
+spacy_lang_in = spacy.load(from_)
+spacy_lang_out = spacy.load(to)
+
+def tokenize_lang_in(text):",    return [tok.text for tok in spacy_lang_in.tokenizer(text)],    return [tok.text for tok in spacy_lang_in.tokenizer(text)],"
+def tokenize_lang_out(text):
+    return [tok.text for tok in spacy_lang_out.tokenizer(text)]
+
+lang_in = Field(tokenize=tokenize_lang_in, lower=True, init_token='<sos>', eos_token='<eos>')
+lang_out = Field(tokenize=tokenize_lang_out, lower=True, init_token='<sos>', eos_token='<eos>')
+
+train_data, valid_data, test_data = Multi30k.splits(
+    exts=(f'.{from_}', f'.{to}'), fields=(lang_in, lang_out), root='../text_data/.data'
+)
+
+lang_in.build_vocab(train_data, max_size=10000, min_freq=2)
+lang_out.build_vocab(train_data, max_size=10000, min_freq=2)
+",1,1.0,1.0
+7,"import spacy
+
+from torchtext.data import Field ",from torchtext.datasets import Multi30k,from torchtext.datasets import Multi30k,"
+from config import  from_, to
+
+spacy_lang_in = spacy.load(from_)
+spacy_lang_out = spacy.load(to)
+
+def tokenize_lang_in(text):
+    return [tok.text for tok in spacy_lang_in.tokenizer(text)]
+
+def tokenize_lang_out(text):
+    return [tok.text for tok in spacy_lang_out.tokenizer(text)]
+
+lang_in = Field(tokenize=tokenize_lang_in, lower=True, init_token='<sos>', eos_token='<eos>')
+lang_out = Field(tokenize=tokenize_lang_out, lower=True, init_token='<sos>', eos_token='<eos>')
+
+train_data, valid_data, test_data = Multi30k.splits(
+    exts=(f'.{from_}', f'.{to}'), fields=(lang_in, lang_out), root='../text_data/.data'
+)
+
+lang_in.build_vocab(train_data, max_size=10000, min_freq=2)
+lang_out.build_vocab(train_data, max_size=10000, min_freq=2)
+",1,1.0,1.0
+8,import spacy,from torchtext.data import Field ,from torchtext.data import Field ,"from torchtext.datasets import Multi30k
+
+from config import  from_, to
+
+spacy_lang_in = spacy.load(from_)
+spacy_lang_out = spacy.load(to)
+
+def tokenize_lang_in(text):
+    return [tok.text for tok in spacy_lang_in.tokenizer(text)]
+
+def tokenize_lang_out(text):
+    return [tok.text for tok in spacy_lang_out.tokenizer(text)]
+
+lang_in = Field(tokenize=tokenize_lang_in, lower=True, init_token='<sos>', eos_token='<eos>')
+lang_out = Field(tokenize=tokenize_lang_out, lower=True, init_token='<sos>', eos_token='<eos>')
+
+train_data, valid_data, test_data = Multi30k.splits(
+    exts=(f'.{from_}', f'.{to}'), fields=(lang_in, lang_out), root='../text_data/.data'
+)
+
+lang_in.build_vocab(train_data, max_size=10000, min_freq=2)
+lang_out.build_vocab(train_data, max_size=10000, min_freq=2)",1,1.0,1.0
+9,"import spacy
+
+from torchtext.data import Field 
+from torchtext.datasets import Multi30k
+
+from config import  from_, to
+
+spacy_lang_in = spacy.load(from_)
+spacy_lang_out = spacy.load(to)
+
+def tokenize_lang_in(text):
+    return [tok.text for tok in spacy_lang_in.tokenizer(text)]
+
+def tokenize_lang_out(text):
+    return [tok.text for tok in spacy_lang_out.tokenizer(text)]
+
+lang_in = Field(tokenize=tokenize_lang_in, lower=True, init_token='<sos>', eos_token='<eos>')
+lang_out = Field(tokenize=tokenize_lang_out, lower=True, init_token='<sos>', eos_token='<eos>')
+
+train_data, valid_data, test_data = Multi30k.splits(","    exts=(f'.{from_}', f'.{to}'), fields=(lang_in, lang_out), root='../text_data/.data'","    exts=(f'.{from_}', f'.{to}'), fields=(lang_in, lang_out), root='../text_data/.data'",")
+
+lang_in.build_vocab(train_data, max_size=10000, min_freq=2)
+lang_out.build_vocab(train_data, max_size=10000, min_freq=2)
+",1,1.0,1.0
+10,"import torch
+import spacy
+from torchtext.data.metrics import bleu_score
+
+
+def translate_sentence(model, sentence, german, english, device, max_length=50):
+    # print(sentence)
+
+    # sys.exit()
+
+    # Load german tokenizer
+    spacy_ger = spacy.load(""de"")
+
+    # Create tokens using spacy and everything in lower case (which is what our vocab is)
+    if type(sentence) == str:
+        tokens = [token.text.lower() for token in spacy_ger(sentence)]
+    else:",        tokens = [token.lower() for token in sentence],        tokens = [token.lower() for token in sentence],"
+    # print(tokens)
+
+    # sys.exit()
+    # Add <SOS> and <EOS> in beginning and end respectively
+    tokens.insert(0, german.init_token)
+    tokens.append(german.eos_token)
+
+    # Go through each german token and convert to an index
+    text_to_indices = [german.vocab.stoi[token] for token in tokens]
+
+    # Convert to Tensor
+    sentence_tensor = torch.LongTensor(text_to_indices).unsqueeze(1).to(device)
+
+    # Build encoder hidden, cell state
+    with torch.no_grad():
+        hidden, cell = model.encoder(sentence_tensor)
+
+    outputs = [english.vocab.stoi[""<sos>""]]
+
+    for _ in range(max_length):
+        previous_word = torch.LongTensor([outputs[-1]]).to(device)
+
+        with torch.no_grad():
+            output, hidden, cell = model.decoder(previous_word, hidden, cell)
+            best_guess = output.argmax(1).item()
+
+        outputs.append(best_guess)
+
+        # Model predicts it's the end of the sentence
+        if output.argmax(1).item() == english.vocab.stoi[""<eos>""]:
+            break
+
+    translated_sentence = [english.vocab.itos[idx] for idx in outputs]
+
+    # remove start token
+    return translated_sentence[1:]
+
+
+def bleu(data, model, german, english, device):
+    targets = []
+    outputs = []
+
+    for example in data:
+        src = vars(example)[""src""]
+        trg = vars(example)[""trg""]
+
+        prediction = translate_sentence(model, src, german, english, device)
+        prediction = prediction[:-1]  # remove <eos> token
+
+        targets.append([trg])
+        outputs.append(prediction)
+
+    return bleu_score(outputs, targets)
+
+
+def save_checkpoint(state, filename=""my_checkpoint.pth.tar""):
+    print(""=> Saving checkpoint"")
+    torch.save(state, filename)
+
+
+def load_checkpoint(checkpoint, model, optimizer):
+    print(""=> Loading checkpoint"")
+    model.load_state_dict(checkpoint[""state_dict""])
+    optimizer.load_state_dict(checkpoint[""optimizer""])",1,1.0,1.0
+11,"import torch
+import spacy
+from torchtext.data.metrics import bleu_score
+
+
+def translate_sentence(model, sentence, german, english, device, max_length=50):
+    # print(sentence)
+
+    # sys.exit()
+
+    # Load german tokenizer
+    spacy_ger = spacy.load(""de"")
+
+    # Create tokens using spacy and everything in lower case (which is what our vocab is)
+    if type(sentence) == str:",        tokens = [token.text.lower() for token in spacy_ger(sentence)],        tokens = [token.text.lower() for token in spacy_ger(sentence)],"    else:
+        tokens = [token.lower() for token in sentence]
+
+    # print(tokens)
+
+    # sys.exit()
+    # Add <SOS> and <EOS> in beginning and end respectively
+    tokens.insert(0, german.init_token)
+    tokens.append(german.eos_token)
+
+    # Go through each german token and convert to an index
+    text_to_indices = [german.vocab.stoi[token] for token in tokens]
+
+    # Convert to Tensor
+    sentence_tensor = torch.LongTensor(text_to_indices).unsqueeze(1).to(device)
+
+    # Build encoder hidden, cell state
+    with torch.no_grad():
+        hidden, cell = model.encoder(sentence_tensor)
+
+    outputs = [english.vocab.stoi[""<sos>""]]
+
+    for _ in range(max_length):
+        previous_word = torch.LongTensor([outputs[-1]]).to(device)
+
+        with torch.no_grad():
+            output, hidden, cell = model.decoder(previous_word, hidden, cell)
+            best_guess = output.argmax(1).item()
+
+        outputs.append(best_guess)
+
+        # Model predicts it's the end of the sentence
+        if output.argmax(1).item() == english.vocab.stoi[""<eos>""]:
+            break
+
+    translated_sentence = [english.vocab.itos[idx] for idx in outputs]
+
+    # remove start token
+    return translated_sentence[1:]
+
+
+def bleu(data, model, german, english, device):
+    targets = []
+    outputs = []
+
+    for example in data:
+        src = vars(example)[""src""]
+        trg = vars(example)[""trg""]
+
+        prediction = translate_sentence(model, src, german, english, device)
+        prediction = prediction[:-1]  # remove <eos> token
+
+        targets.append([trg])
+        outputs.append(prediction)
+
+    return bleu_score(outputs, targets)
+
+
+def save_checkpoint(state, filename=""my_checkpoint.pth.tar""):
+    print(""=> Saving checkpoint"")
+    torch.save(state, filename)
+
+
+def load_checkpoint(checkpoint, model, optimizer):
+    print(""=> Loading checkpoint"")
+    model.load_state_dict(checkpoint[""state_dict""])
+    optimizer.load_state_dict(checkpoint[""optimizer""])",1,1.0,1.0
+12,"import torch
+import spacy
+from torchtext.data.metrics import bleu_score
+
+
+def translate_sentence(model, sentence, german, english, device, max_length=50):
+    # print(sentence)
+
+    # sys.exit()
+
+    # Load german tokenizer
+    spacy_ger = spacy.load(""de"")
+
+    # Create tokens using spacy and everything in lower case (which is what our vocab is)
+    if type(sentence) == str:
+        tokens = [token.text.lower() for token in spacy_ger(sentence)]
+    else:
+        tokens = [token.lower() for token in sentence]
+
+    # print(tokens)
+
+    # sys.exit()
+    # Add <SOS> and <EOS> in beginning and end respectively
+    tokens.insert(0, german.init_token)
+    tokens.append(german.eos_token)
+
+    # Go through each german token and convert to an index
+    text_to_indices = [german.vocab.stoi[token] for token in tokens]
+
+    # Convert to Tensor
+    sentence_tensor = torch.LongTensor(text_to_indices).unsqueeze(1).to(device)
+
+    # Build encoder hidden, cell state
+    with torch.no_grad():
+        hidden, cell = model.encoder(sentence_tensor)
+
+    outputs = [english.vocab.stoi[""<sos>""]]
+
+    for _ in range(max_length):
+        previous_word = torch.LongTensor([outputs[-1]]).to(device)
+
+        with torch.no_grad():
+            output, hidden, cell = model.decoder(previous_word, hidden, cell)
+            best_guess = output.argmax(1).item()
+
+        outputs.append(best_guess)
+
+        # Model predicts it's the end of the sentence
+        if output.argmax(1).item() == english.vocab.stoi[""<eos>""]:
+            break
+
+    translated_sentence = [english.vocab.itos[idx] for idx in outputs]
+
+    # remove start token
+    return translated_sentence[1:]
+
+
+def bleu(data, model, german, english, device):
+    targets = []
+    outputs = []
+
+    for example in data:
+        src = vars(example)[""src""]
+        trg = vars(example)[""trg""]
+
+        prediction = translate_sentence(model, src, german, english, device)
+        prediction = prediction[:-1]  # remove <eos> token
+
+        targets.append([trg])
+        outputs.append(prediction)
+
+    return bleu_score(outputs, targets)",,,"def save_checkpoint(state, filename=""my_checkpoint.pth.tar""):
+    print(""=> Saving checkpoint"")
+    torch.save(state, filename)
+
+
+def load_checkpoint(checkpoint, model, optimizer):
+    print(""=> Loading checkpoint"")
+    model.load_state_dict(checkpoint[""state_dict""])
+    optimizer.load_state_dict(checkpoint[""optimizer""])",1,0.0,1.0000000000000001e-16
+13,"import torch
+import spacy
+from torchtext.data.metrics import bleu_score
+
+
+def translate_sentence(model, sentence, german, english, device, max_length=50):
+    # print(sentence)
+
+    # sys.exit()
+
+    # Load german tokenizer
+    spacy_ger = spacy.load(""de"")
+
+    # Create tokens using spacy and everything in lower case (which is what our vocab is)
+    if type(sentence) == str:
+        tokens = [token.text.lower() for token in spacy_ger(sentence)]
+    else:
+        tokens = [token.lower() for token in sentence]
+
+    # print(tokens)
+
+    # sys.exit()
+    # Add <SOS> and <EOS> in beginning and end respectively
+    tokens.insert(0, german.init_token)
+    tokens.append(german.eos_token)
+
+    # Go through each german token and convert to an index
+    text_to_indices = [german.vocab.stoi[token] for token in tokens]
+
+    # Convert to Tensor",    sentence_tensor = torch.LongTensor(text_to_indices).unsqueeze(1).to(device),    sentence_tensor = torch.LongTensor(text_to_indices).unsqueeze(1).to(device),"
+    # Build encoder hidden, cell state
+    with torch.no_grad():
+        hidden, cell = model.encoder(sentence_tensor)
+
+    outputs = [english.vocab.stoi[""<sos>""]]
+
+    for _ in range(max_length):
+        previous_word = torch.LongTensor([outputs[-1]]).to(device)
+
+        with torch.no_grad():
+            output, hidden, cell = model.decoder(previous_word, hidden, cell)
+            best_guess = output.argmax(1).item()
+
+        outputs.append(best_guess)
+
+        # Model predicts it's the end of the sentence
+        if output.argmax(1).item() == english.vocab.stoi[""<eos>""]:
+            break
+
+    translated_sentence = [english.vocab.itos[idx] for idx in outputs]
+
+    # remove start token
+    return translated_sentence[1:]
+
+
+def bleu(data, model, german, english, device):
+    targets = []
+    outputs = []
+
+    for example in data:
+        src = vars(example)[""src""]
+        trg = vars(example)[""trg""]
+
+        prediction = translate_sentence(model, src, german, english, device)
+        prediction = prediction[:-1]  # remove <eos> token
+
+        targets.append([trg])
+        outputs.append(prediction)
+
+    return bleu_score(outputs, targets)
+
+
+def save_checkpoint(state, filename=""my_checkpoint.pth.tar""):
+    print(""=> Saving checkpoint"")
+    torch.save(state, filename)
+
+
+def load_checkpoint(checkpoint, model, optimizer):
+    print(""=> Loading checkpoint"")
+    model.load_state_dict(checkpoint[""state_dict""])
+    optimizer.load_state_dict(checkpoint[""optimizer""])",1,1.2213386697554703e-77,1.0
+14,"import torch
+import spacy
+from torchtext.data.metrics import bleu_score
+
+
+def translate_sentence(model, sentence, german, english, device, max_length=50):
+    # print(sentence)
+
+    # sys.exit()
+
+    # Load german tokenizer
+    spacy_ger = spacy.load(""de"")
+
+    # Create tokens using spacy and everything in lower case (which is what our vocab is)
+    if type(sentence) == str:
+        tokens = [token.text.lower() for token in spacy_ger(sentence)]
+    else:
+        tokens = [token.lower() for token in sentence]
+
+    # print(tokens)
+
+    # sys.exit()
+    # Add <SOS> and <EOS> in beginning and end respectively
+    tokens.insert(0, german.init_token)
+    tokens.append(german.eos_token)
+
+    # Go through each german token and convert to an index
+    text_to_indices = [german.vocab.stoi[token] for token in tokens]
+
+    # Convert to Tensor
+    sentence_tensor = torch.LongTensor(text_to_indices).unsqueeze(1).to(device)
+
+    # Build encoder hidden, cell state
+    with torch.no_grad():
+        hidden, cell = model.encoder(sentence_tensor)
+
+    outputs = [english.vocab.stoi[""<sos>""]]
+
+    for _ in range(max_length):
+        previous_word = torch.LongTensor([outputs[-1]]).to(device)
+
+        with torch.no_grad():
+            output, hidden, cell = model.decoder(previous_word, hidden, cell)
+            best_guess = output.argmax(1).item()
+
+        outputs.append(best_guess)
+
+        # Model predicts it's the end of the sentence
+        if output.argmax(1).item() == english.vocab.stoi[""<eos>""]:
+            break
+
+    translated_sentence = [english.vocab.itos[idx] for idx in outputs]
+
+    # remove start token
+    return translated_sentence[1:]
+
+
+def bleu(data, model, german, english, device):
+    targets = []
+    outputs = []
+
+    for example in data:
+        src = vars(example)[""src""]
+        trg = vars(example)[""trg""]
+
+        prediction = translate_sentence(model, src, german, english, device)
+        prediction = prediction[:-1]  # remove <eos> token
+
+        targets.append([trg])
+        outputs.append(prediction)
+
+    return bleu_score(outputs, targets)
+","def save_checkpoint(state, filename=""my_checkpoint.pth.tar""):","def save_checkpoint(state, filename=""my_checkpoint.pth.tar""):","    print(""=> Saving checkpoint"")
+    torch.save(state, filename)
+
+
+def load_checkpoint(checkpoint, model, optimizer):
+    print(""=> Loading checkpoint"")
+    model.load_state_dict(checkpoint[""state_dict""])
+    optimizer.load_state_dict(checkpoint[""optimizer""])",1,1.2213386697554703e-77,1.0
+15,"import torch
+import spacy
+from torchtext.data.metrics import bleu_score
+
+
+def translate_sentence(model, sentence, german, english, device, max_length=50):
+    # print(sentence)
+
+    # sys.exit()
+
+    # Load german tokenizer
+    spacy_ger = spacy.load(""de"")
+
+    # Create tokens using spacy and everything in lower case (which is what our vocab is)
+    if type(sentence) == str:
+        tokens = [token.text.lower() for token in spacy_ger(sentence)]
+    else:
+        tokens = [token.lower() for token in sentence]
+
+    # print(tokens)
+
+    # sys.exit()
+    # Add <SOS> and <EOS> in beginning and end respectively
+    tokens.insert(0, german.init_token)
+    tokens.append(german.eos_token)
+
+    # Go through each german token and convert to an index
+    text_to_indices = [german.vocab.stoi[token] for token in tokens]
+
+    # Convert to Tensor
+    sentence_tensor = torch.LongTensor(text_to_indices).unsqueeze(1).to(device)
+
+    # Build encoder hidden, cell state
+    with torch.no_grad():
+        hidden, cell = model.encoder(sentence_tensor)
+
+    outputs = [english.vocab.stoi[""<sos>""]]
+
+    for _ in range(max_length):
+        previous_word = torch.LongTensor([outputs[-1]]).to(device)
+
+        with torch.no_grad():
+            output, hidden, cell = model.decoder(previous_word, hidden, cell)
+            best_guess = output.argmax(1).item()
+",        outputs.append(best_guess),        outputs.append(best_guess),"
+        # Model predicts it's the end of the sentence
+        if output.argmax(1).item() == english.vocab.stoi[""<eos>""]:
+            break
+
+    translated_sentence = [english.vocab.itos[idx] for idx in outputs]
+
+    # remove start token
+    return translated_sentence[1:]
+
+
+def bleu(data, model, german, english, device):
+    targets = []
+    outputs = []
+
+    for example in data:
+        src = vars(example)[""src""]
+        trg = vars(example)[""trg""]
+
+        prediction = translate_sentence(model, src, german, english, device)
+        prediction = prediction[:-1]  # remove <eos> token
+
+        targets.append([trg])
+        outputs.append(prediction)
+
+    return bleu_score(outputs, targets)
+
+
+def save_checkpoint(state, filename=""my_checkpoint.pth.tar""):
+    print(""=> Saving checkpoint"")
+    torch.save(state, filename)
+
+
+def load_checkpoint(checkpoint, model, optimizer):
+    print(""=> Loading checkpoint"")
+    model.load_state_dict(checkpoint[""state_dict""])
+    optimizer.load_state_dict(checkpoint[""optimizer""])",1,1.821831989445342e-231,1.0
+16,"import torch
+import spacy
+from torchtext.data.metrics import bleu_score
+
+
+def translate_sentence(model, sentence, german, english, device, max_length=50):
+    # print(sentence)
+
+    # sys.exit()
+
+    # Load german tokenizer
+    spacy_ger = spacy.load(""de"")
+
+    # Create tokens using spacy and everything in lower case (which is what our vocab is)
+    if type(sentence) == str:
+        tokens = [token.text.lower() for token in spacy_ger(sentence)]
+    else:
+        tokens = [token.lower() for token in sentence]
+
+    # print(tokens)
+
+    # sys.exit()
+    # Add <SOS> and <EOS> in beginning and end respectively
+    tokens.insert(0, german.init_token)
+    tokens.append(german.eos_token)
+
+    # Go through each german token and convert to an index
+    text_to_indices = [german.vocab.stoi[token] for token in tokens]
+
+    # Convert to Tensor
+    sentence_tensor = torch.LongTensor(text_to_indices).unsqueeze(1).to(device)
+
+    # Build encoder hidden, cell state
+    with torch.no_grad():
+        hidden, cell = model.encoder(sentence_tensor)
+
+    outputs = [english.vocab.stoi[""<sos>""]]
+",    for _ in range(max_length):,    for _ in range(max_length):,"        previous_word = torch.LongTensor([outputs[-1]]).to(device)
+
+        with torch.no_grad():
+            output, hidden, cell = model.decoder(previous_word, hidden, cell)
+            best_guess = output.argmax(1).item()
+
+        outputs.append(best_guess)
+
+        # Model predicts it's the end of the sentence
+        if output.argmax(1).item() == english.vocab.stoi[""<eos>""]:
+            break
+
+    translated_sentence = [english.vocab.itos[idx] for idx in outputs]
+
+    # remove start token
+    return translated_sentence[1:]
+
+
+def bleu(data, model, german, english, device):
+    targets = []
+    outputs = []
+
+    for example in data:
+        src = vars(example)[""src""]
+        trg = vars(example)[""trg""]
+
+        prediction = translate_sentence(model, src, german, english, device)
+        prediction = prediction[:-1]  # remove <eos> token
+
+        targets.append([trg])
+        outputs.append(prediction)
+
+    return bleu_score(outputs, targets)
+
+
+def save_checkpoint(state, filename=""my_checkpoint.pth.tar""):
+    print(""=> Saving checkpoint"")
+    torch.save(state, filename)
+
+
+def load_checkpoint(checkpoint, model, optimizer):
+    print(""=> Loading checkpoint"")
+    model.load_state_dict(checkpoint[""state_dict""])
+    optimizer.load_state_dict(checkpoint[""optimizer""])",1,1.0,1.0
+17,"import torch
+import spacy
+from torchtext.data.metrics import bleu_score
+
+
+def translate_sentence(model, sentence, german, english, device, max_length=50):
+    # print(sentence)
+
+    # sys.exit()
+
+    # Load german tokenizer
+    spacy_ger = spacy.load(""de"")
+
+    # Create tokens using spacy and everything in lower case (which is what our vocab is)
+    if type(sentence) == str:
+        tokens = [token.text.lower() for token in spacy_ger(sentence)]
+    else:
+        tokens = [token.lower() for token in sentence]
+
+    # print(tokens)
+
+    # sys.exit()
+    # Add <SOS> and <EOS> in beginning and end respectively
+    tokens.insert(0, german.init_token)
+    tokens.append(german.eos_token)
+
+    # Go through each german token and convert to an index
+    text_to_indices = [german.vocab.stoi[token] for token in tokens]
+
+    # Convert to Tensor
+    sentence_tensor = torch.LongTensor(text_to_indices).unsqueeze(1).to(device)
+
+    # Build encoder hidden, cell state
+    with torch.no_grad():
+        hidden, cell = model.encoder(sentence_tensor)
+
+    outputs = [english.vocab.stoi[""<sos>""]]
+
+    for _ in range(max_length):
+        previous_word = torch.LongTensor([outputs[-1]]).to(device)
+
+        with torch.no_grad():
+            output, hidden, cell = model.decoder(previous_word, hidden, cell)
+            best_guess = output.argmax(1).item()
+
+        outputs.append(best_guess)
+
+        # Model predicts it's the end of the sentence
+        if output.argmax(1).item() == english.vocab.stoi[""<eos>""]:
+            break
+
+    translated_sentence = [english.vocab.itos[idx] for idx in outputs]
+
+    # remove start token
+    return translated_sentence[1:]",,,"def bleu(data, model, german, english, device):
+    targets = []
+    outputs = []
+
+    for example in data:
+        src = vars(example)[""src""]
+        trg = vars(example)[""trg""]
+
+        prediction = translate_sentence(model, src, german, english, device)
+        prediction = prediction[:-1]  # remove <eos> token
+
+        targets.append([trg])
+        outputs.append(prediction)
+
+    return bleu_score(outputs, targets)
+
+
+def save_checkpoint(state, filename=""my_checkpoint.pth.tar""):
+    print(""=> Saving checkpoint"")
+    torch.save(state, filename)
+
+
+def load_checkpoint(checkpoint, model, optimizer):
+    print(""=> Loading checkpoint"")
+    model.load_state_dict(checkpoint[""state_dict""])
+    optimizer.load_state_dict(checkpoint[""optimizer""])",1,0.0,1.0000000000000001e-16
+18,"import torch
+import spacy
+from torchtext.data.metrics import bleu_score
+
+
+def translate_sentence(model, sentence, german, english, device, max_length=50):
+    # print(sentence)
+
+    # sys.exit()
+
+    # Load german tokenizer
+    spacy_ger = spacy.load(""de"")
+
+    # Create tokens using spacy and everything in lower case (which is what our vocab is)
+    if type(sentence) == str:
+        tokens = [token.text.lower() for token in spacy_ger(sentence)]
+    else:",        tokens = [token.lower() for token in sentence],        tokens = [token.lower() for token in sentence],"
+    # print(tokens)
+
+    # sys.exit()
+    # Add <SOS> and <EOS> in beginning and end respectively
+    tokens.insert(0, german.init_token)
+    tokens.append(german.eos_token)
+
+    # Go through each german token and convert to an index
+    text_to_indices = [german.vocab.stoi[token] for token in tokens]
+
+    # Convert to Tensor
+    sentence_tensor = torch.LongTensor(text_to_indices).unsqueeze(1).to(device)
+
+    # Build encoder hidden, cell state
+    with torch.no_grad():
+        hidden, cell = model.encoder(sentence_tensor)
+
+    outputs = [english.vocab.stoi[""<sos>""]]
+
+    for _ in range(max_length):
+        previous_word = torch.LongTensor([outputs[-1]]).to(device)
+
+        with torch.no_grad():
+            output, hidden, cell = model.decoder(previous_word, hidden, cell)
+            best_guess = output.argmax(1).item()
+
+        outputs.append(best_guess)
+
+        # Model predicts it's the end of the sentence
+        if output.argmax(1).item() == english.vocab.stoi[""<eos>""]:
+            break
+
+    translated_sentence = [english.vocab.itos[idx] for idx in outputs]
+
+    # remove start token
+    return translated_sentence[1:]
+
+
+def bleu(data, model, german, english, device):
+    targets = []
+    outputs = []
+
+    for example in data:
+        src = vars(example)[""src""]
+        trg = vars(example)[""trg""]
+
+        prediction = translate_sentence(model, src, german, english, device)
+        prediction = prediction[:-1]  # remove <eos> token
+
+        targets.append([trg])
+        outputs.append(prediction)
+
+    return bleu_score(outputs, targets)
+
+
+def save_checkpoint(state, filename=""my_checkpoint.pth.tar""):
+    print(""=> Saving checkpoint"")
+    torch.save(state, filename)
+
+
+def load_checkpoint(checkpoint, model, optimizer):
+    print(""=> Loading checkpoint"")
+    model.load_state_dict(checkpoint[""state_dict""])
+    optimizer.load_state_dict(checkpoint[""optimizer""])",1,1.0,1.0
+19,"import torch
+import spacy
+from torchtext.data.metrics import bleu_score
+","def translate_sentence(model, sentence, german, english, device, max_length=50):","def translate_sentence(model, sentence, german, english, device, max_length=50):","    # print(sentence)
+
+    # sys.exit()
+
+    # Load german tokenizer
+    spacy_ger = spacy.load(""de"")
+
+    # Create tokens using spacy and everything in lower case (which is what our vocab is)
+    if type(sentence) == str:
+        tokens = [token.text.lower() for token in spacy_ger(sentence)]
+    else:
+        tokens = [token.lower() for token in sentence]
+
+    # print(tokens)
+
+    # sys.exit()
+    # Add <SOS> and <EOS> in beginning and end respectively
+    tokens.insert(0, german.init_token)
+    tokens.append(german.eos_token)
+
+    # Go through each german token and convert to an index
+    text_to_indices = [german.vocab.stoi[token] for token in tokens]
+
+    # Convert to Tensor
+    sentence_tensor = torch.LongTensor(text_to_indices).unsqueeze(1).to(device)
+
+    # Build encoder hidden, cell state
+    with torch.no_grad():
+        hidden, cell = model.encoder(sentence_tensor)
+
+    outputs = [english.vocab.stoi[""<sos>""]]
+
+    for _ in range(max_length):
+        previous_word = torch.LongTensor([outputs[-1]]).to(device)
+
+        with torch.no_grad():
+            output, hidden, cell = model.decoder(previous_word, hidden, cell)
+            best_guess = output.argmax(1).item()
+
+        outputs.append(best_guess)
+
+        # Model predicts it's the end of the sentence
+        if output.argmax(1).item() == english.vocab.stoi[""<eos>""]:
+            break
+
+    translated_sentence = [english.vocab.itos[idx] for idx in outputs]
+
+    # remove start token
+    return translated_sentence[1:]
+
+
+def bleu(data, model, german, english, device):
+    targets = []
+    outputs = []
+
+    for example in data:
+        src = vars(example)[""src""]
+        trg = vars(example)[""trg""]
+
+        prediction = translate_sentence(model, src, german, english, device)
+        prediction = prediction[:-1]  # remove <eos> token
+
+        targets.append([trg])
+        outputs.append(prediction)
+
+    return bleu_score(outputs, targets)
+
+
+def save_checkpoint(state, filename=""my_checkpoint.pth.tar""):
+    print(""=> Saving checkpoint"")
+    torch.save(state, filename)
+
+
+def load_checkpoint(checkpoint, model, optimizer):
+    print(""=> Loading checkpoint"")
+    model.load_state_dict(checkpoint[""state_dict""])
+    optimizer.load_state_dict(checkpoint[""optimizer""])",1,1.0,1.0
+20,"import torch
+
+import torch.optim as optim
+import torch.nn as nn
+from torch.utils.tensorboard import SummaryWriter
+from torchtext.data import BucketIterator
+
+from func import translate_sentence, bleu, save_checkpoint, load_checkpoint
+from data_loading import lang_in, lang_out, train_data, valid_data, test_data
+from Net import Encoder, Decoder, EncDec, device
+
+# Training hyperparameters
+num_epochs = 100
+learning_rate = 0.001
+batch_size = 64
+
+# Model hyperparameters
+load_model = False
+input_size_encoder = len(lang_in.vocab)
+input_size_decoder = len(lang_out.vocab)
+output_size = len(lang_out.vocab)
+encoder_embedding_size = 300
+decoder_embedding_size = 300
+hidden_size = 1024  # Needs to be the same for both RNN's
+num_layers = 2
+enc_dropout = 0.5
+dec_dropout = 0.5
+
+# Tensorboard to get nice loss plot
+writer = SummaryWriter(f""runs/loss_plot"")
+step = 0
+
+
+train_iterator, valid_iterator, test_iterator = BucketIterator.splits(
+    (train_data, valid_data, test_data),
+    batch_size=batch_size,
+    device=device,
+    sort_within_batch=True,
+    sort_key=lambda x: len(x.src),
+    repeat=False
+)
+
+encoder_net = Encoder(
+    input_size_encoder,
+    encoder_embedding_size,
+    hidden_size,
+    num_layers,
+    dec_dropout,
+    output_size
+).to(device)
+
+decoder_net = Decoder(
+    input_size_decoder,
+    decoder_embedding_size,
+    hidden_size,
+    output_size,
+    dec_dropout).to(device)
+
+model = EncDec(encoder_net, decoder_net).to(device)
+optimizer = optim.Adam(model.parameters, lr=learning_rate)
+
+pad_idx = lang_out.vocab.stoi['<pad>']
+criterion = nn.CrossEntropyLoss(ignore_index=pad_idx)
+
+if load_model:
+    load_checkpoint(torch.load(""model.pth""), model, optimizer)
+
+sentence = ""ein boot mit mehreren mÃ¤nnern darauf wird von einem groÃŸen pferdegespann ans ufer gezogen.""",for epoch in range(num_epochs):,for epoch in range(num_epochs):,"    print(f""[Epoch {epoch} / {num_epochs}]"")
+
+    checkpoint = {""state_dict"": model.state_dict(), ""optimizer"": optimizer.state_dict()}
+    save_checkpoint(checkpoint)
+
+    model.eval()
+
+    translated_sentence = translate_sentence(
+        model, sentence, lang_in, lang_out, device, max_length=50
+    )
+
+    print(f""Translated example sentence: \n {translated_sentence}"")
+
+    model.train()
+
+    for batch_idx, batch in enumerate(train_iterator):
+        inp_data = batch.src.to(device)
+        target = batch.trg.to(device)
+
+        # Forward prop
+        output = model(inp_data, target)
+
+        # Output is of shape (trg_len, batch_size, output_dim) but Cross Entropy Loss
+        # doesn't take input in that form. For example if we have MNIST we want to have
+        # output to be: (N, 10) and targets just (N).
+        output = output[1:].reshape(-1, output.shape[2])
+        target = target[1:].reshape(-1)
+
+        optimizer.zero_grad()
+        loss = criterion(output, target)
+
+        # Back prop
+        loss.backward()
+
+        # Clip to avoid exploding gradient issues, makes sure grads are
+        # within a healthy range
+        torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=1)
+
+        # Gradient descent step
+        optimizer.step()
+
+        # Plot to tensorboard
+        writer.add_scalar(""Training loss"", loss, global_step=step)
+        step += 1
+
+
+score = bleu(test_data[1:100], model, lang_in, lang_out, device)
+print(f""Bleu score {score*100:.2f}"")",1,1.0,1.0
+21,"import torch
+
+import torch.optim as optim
+import torch.nn as nn
+from torch.utils.tensorboard import SummaryWriter
+from torchtext.data import BucketIterator
+
+from func import translate_sentence, bleu, save_checkpoint, load_checkpoint
+from data_loading import lang_in, lang_out, train_data, valid_data, test_data
+from Net import Encoder, Decoder, EncDec, device
+
+# Training hyperparameters
+num_epochs = 100
+learning_rate = 0.001
+batch_size = 64
+
+# Model hyperparameters
+load_model = False
+input_size_encoder = len(lang_in.vocab)
+input_size_decoder = len(lang_out.vocab)
+output_size = len(lang_out.vocab)
+encoder_embedding_size = 300
+decoder_embedding_size = 300
+hidden_size = 1024  # Needs to be the same for both RNN's
+num_layers = 2
+enc_dropout = 0.5
+dec_dropout = 0.5
+
+# Tensorboard to get nice loss plot","writer = SummaryWriter(f""runs/loss_plot"")","writer = SummaryWriter(f""runs/loss_plot"")","step = 0
+
+
+train_iterator, valid_iterator, test_iterator = BucketIterator.splits(
+    (train_data, valid_data, test_data),
+    batch_size=batch_size,
+    device=device,
+    sort_within_batch=True,
+    sort_key=lambda x: len(x.src),
+    repeat=False
+)
+
+encoder_net = Encoder(
+    input_size_encoder,
+    encoder_embedding_size,
+    hidden_size,
+    num_layers,
+    dec_dropout,
+    output_size
+).to(device)
+
+decoder_net = Decoder(
+    input_size_decoder,
+    decoder_embedding_size,
+    hidden_size,
+    output_size,
+    dec_dropout).to(device)
+
+model = EncDec(encoder_net, decoder_net).to(device)
+optimizer = optim.Adam(model.parameters, lr=learning_rate)
+
+pad_idx = lang_out.vocab.stoi['<pad>']
+criterion = nn.CrossEntropyLoss(ignore_index=pad_idx)
+
+if load_model:
+    load_checkpoint(torch.load(""model.pth""), model, optimizer)
+
+sentence = ""ein boot mit mehreren mÃ¤nnern darauf wird von einem groÃŸen pferdegespann ans ufer gezogen.""
+
+for epoch in range(num_epochs):
+    print(f""[Epoch {epoch} / {num_epochs}]"")
+
+    checkpoint = {""state_dict"": model.state_dict(), ""optimizer"": optimizer.state_dict()}
+    save_checkpoint(checkpoint)
+
+    model.eval()
+
+    translated_sentence = translate_sentence(
+        model, sentence, lang_in, lang_out, device, max_length=50
+    )
+
+    print(f""Translated example sentence: \n {translated_sentence}"")
+
+    model.train()
+
+    for batch_idx, batch in enumerate(train_iterator):
+        inp_data = batch.src.to(device)
+        target = batch.trg.to(device)
+
+        # Forward prop
+        output = model(inp_data, target)
+
+        # Output is of shape (trg_len, batch_size, output_dim) but Cross Entropy Loss
+        # doesn't take input in that form. For example if we have MNIST we want to have
+        # output to be: (N, 10) and targets just (N).
+        output = output[1:].reshape(-1, output.shape[2])
+        target = target[1:].reshape(-1)
+
+        optimizer.zero_grad()
+        loss = criterion(output, target)
+
+        # Back prop
+        loss.backward()
+
+        # Clip to avoid exploding gradient issues, makes sure grads are
+        # within a healthy range
+        torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=1)
+
+        # Gradient descent step
+        optimizer.step()
+
+        # Plot to tensorboard
+        writer.add_scalar(""Training loss"", loss, global_step=step)
+        step += 1
+
+
+score = bleu(test_data[1:100], model, lang_in, lang_out, device)
+print(f""Bleu score {score*100:.2f}"")",1,1.2213386697554703e-77,1.0
+22,"import torch
+
+import torch.optim as optim",import torch.nn as nn,import torch.nn as nn,"from torch.utils.tensorboard import SummaryWriter
+from torchtext.data import BucketIterator
+
+from func import translate_sentence, bleu, save_checkpoint, load_checkpoint
+from data_loading import lang_in, lang_out, train_data, valid_data, test_data
+from Net import Encoder, Decoder, EncDec, device
+
+# Training hyperparameters
+num_epochs = 100
+learning_rate = 0.001
+batch_size = 64
+
+# Model hyperparameters
+load_model = False
+input_size_encoder = len(lang_in.vocab)
+input_size_decoder = len(lang_out.vocab)
+output_size = len(lang_out.vocab)
+encoder_embedding_size = 300
+decoder_embedding_size = 300
+hidden_size = 1024  # Needs to be the same for both RNN's
+num_layers = 2
+enc_dropout = 0.5
+dec_dropout = 0.5
+
+# Tensorboard to get nice loss plot
+writer = SummaryWriter(f""runs/loss_plot"")
+step = 0
+
+
+train_iterator, valid_iterator, test_iterator = BucketIterator.splits(
+    (train_data, valid_data, test_data),
+    batch_size=batch_size,
+    device=device,
+    sort_within_batch=True,
+    sort_key=lambda x: len(x.src),
+    repeat=False
+)
+
+encoder_net = Encoder(
+    input_size_encoder,
+    encoder_embedding_size,
+    hidden_size,
+    num_layers,
+    dec_dropout,
+    output_size
+).to(device)
+
+decoder_net = Decoder(
+    input_size_decoder,
+    decoder_embedding_size,
+    hidden_size,
+    output_size,
+    dec_dropout).to(device)
+
+model = EncDec(encoder_net, decoder_net).to(device)
+optimizer = optim.Adam(model.parameters, lr=learning_rate)
+
+pad_idx = lang_out.vocab.stoi['<pad>']
+criterion = nn.CrossEntropyLoss(ignore_index=pad_idx)
+
+if load_model:
+    load_checkpoint(torch.load(""model.pth""), model, optimizer)
+
+sentence = ""ein boot mit mehreren mÃ¤nnern darauf wird von einem groÃŸen pferdegespann ans ufer gezogen.""
+
+for epoch in range(num_epochs):
+    print(f""[Epoch {epoch} / {num_epochs}]"")
+
+    checkpoint = {""state_dict"": model.state_dict(), ""optimizer"": optimizer.state_dict()}
+    save_checkpoint(checkpoint)
+
+    model.eval()
+
+    translated_sentence = translate_sentence(
+        model, sentence, lang_in, lang_out, device, max_length=50
+    )
+
+    print(f""Translated example sentence: \n {translated_sentence}"")
+
+    model.train()
+
+    for batch_idx, batch in enumerate(train_iterator):
+        inp_data = batch.src.to(device)
+        target = batch.trg.to(device)
+
+        # Forward prop
+        output = model(inp_data, target)
+
+        # Output is of shape (trg_len, batch_size, output_dim) but Cross Entropy Loss
+        # doesn't take input in that form. For example if we have MNIST we want to have
+        # output to be: (N, 10) and targets just (N).
+        output = output[1:].reshape(-1, output.shape[2])
+        target = target[1:].reshape(-1)
+
+        optimizer.zero_grad()
+        loss = criterion(output, target)
+
+        # Back prop
+        loss.backward()
+
+        # Clip to avoid exploding gradient issues, makes sure grads are
+        # within a healthy range
+        torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=1)
+
+        # Gradient descent step
+        optimizer.step()
+
+        # Plot to tensorboard
+        writer.add_scalar(""Training loss"", loss, global_step=step)
+        step += 1
+
+
+score = bleu(test_data[1:100], model, lang_in, lang_out, device)
+print(f""Bleu score {score*100:.2f}"")",1,1.0,1.0
+23,"import torch
+
+import torch.optim as optim
+import torch.nn as nn
+from torch.utils.tensorboard import SummaryWriter
+from torchtext.data import BucketIterator
+
+from func import translate_sentence, bleu, save_checkpoint, load_checkpoint
+from data_loading import lang_in, lang_out, train_data, valid_data, test_data","from Net import Encoder, Decoder, EncDec, device","from Net import Encoder, Decoder, EncDec, device","
+# Training hyperparameters
+num_epochs = 100
+learning_rate = 0.001
+batch_size = 64
+
+# Model hyperparameters
+load_model = False
+input_size_encoder = len(lang_in.vocab)
+input_size_decoder = len(lang_out.vocab)
+output_size = len(lang_out.vocab)
+encoder_embedding_size = 300
+decoder_embedding_size = 300
+hidden_size = 1024  # Needs to be the same for both RNN's
+num_layers = 2
+enc_dropout = 0.5
+dec_dropout = 0.5
+
+# Tensorboard to get nice loss plot
+writer = SummaryWriter(f""runs/loss_plot"")
+step = 0
+
+
+train_iterator, valid_iterator, test_iterator = BucketIterator.splits(
+    (train_data, valid_data, test_data),
+    batch_size=batch_size,
+    device=device,
+    sort_within_batch=True,
+    sort_key=lambda x: len(x.src),
+    repeat=False
+)
+
+encoder_net = Encoder(
+    input_size_encoder,
+    encoder_embedding_size,
+    hidden_size,
+    num_layers,
+    dec_dropout,
+    output_size
+).to(device)
+
+decoder_net = Decoder(
+    input_size_decoder,
+    decoder_embedding_size,
+    hidden_size,
+    output_size,
+    dec_dropout).to(device)
+
+model = EncDec(encoder_net, decoder_net).to(device)
+optimizer = optim.Adam(model.parameters, lr=learning_rate)
+
+pad_idx = lang_out.vocab.stoi['<pad>']
+criterion = nn.CrossEntropyLoss(ignore_index=pad_idx)
+
+if load_model:
+    load_checkpoint(torch.load(""model.pth""), model, optimizer)
+
+sentence = ""ein boot mit mehreren mÃ¤nnern darauf wird von einem groÃŸen pferdegespann ans ufer gezogen.""
+
+for epoch in range(num_epochs):
+    print(f""[Epoch {epoch} / {num_epochs}]"")
+
+    checkpoint = {""state_dict"": model.state_dict(), ""optimizer"": optimizer.state_dict()}
+    save_checkpoint(checkpoint)
+
+    model.eval()
+
+    translated_sentence = translate_sentence(
+        model, sentence, lang_in, lang_out, device, max_length=50
+    )
+
+    print(f""Translated example sentence: \n {translated_sentence}"")
+
+    model.train()
+
+    for batch_idx, batch in enumerate(train_iterator):
+        inp_data = batch.src.to(device)
+        target = batch.trg.to(device)
+
+        # Forward prop
+        output = model(inp_data, target)
+
+        # Output is of shape (trg_len, batch_size, output_dim) but Cross Entropy Loss
+        # doesn't take input in that form. For example if we have MNIST we want to have
+        # output to be: (N, 10) and targets just (N).
+        output = output[1:].reshape(-1, output.shape[2])
+        target = target[1:].reshape(-1)
+
+        optimizer.zero_grad()
+        loss = criterion(output, target)
+
+        # Back prop
+        loss.backward()
+
+        # Clip to avoid exploding gradient issues, makes sure grads are
+        # within a healthy range
+        torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=1)
+
+        # Gradient descent step
+        optimizer.step()
+
+        # Plot to tensorboard
+        writer.add_scalar(""Training loss"", loss, global_step=step)
+        step += 1
+
+
+score = bleu(test_data[1:100], model, lang_in, lang_out, device)
+print(f""Bleu score {score*100:.2f}"")",1,1.0,1.0
+24,"import torch
+
+import torch.optim as optim
+import torch.nn as nn
+from torch.utils.tensorboard import SummaryWriter
+from torchtext.data import BucketIterator
+
+from func import translate_sentence, bleu, save_checkpoint, load_checkpoint
+from data_loading import lang_in, lang_out, train_data, valid_data, test_data
+from Net import Encoder, Decoder, EncDec, device
+
+# Training hyperparameters
+num_epochs = 100
+learning_rate = 0.001
+batch_size = 64
+
+# Model hyperparameters
+load_model = False
+input_size_encoder = len(lang_in.vocab)
+input_size_decoder = len(lang_out.vocab)
+output_size = len(lang_out.vocab)
+encoder_embedding_size = 300
+decoder_embedding_size = 300
+hidden_size = 1024  # Needs to be the same for both RNN's
+num_layers = 2
+enc_dropout = 0.5
+dec_dropout = 0.5
+
+# Tensorboard to get nice loss plot
+writer = SummaryWriter(f""runs/loss_plot"")
+step = 0
+
+
+train_iterator, valid_iterator, test_iterator = BucketIterator.splits(
+    (train_data, valid_data, test_data),
+    batch_size=batch_size,
+    device=device,
+    sort_within_batch=True,
+    sort_key=lambda x: len(x.src),
+    repeat=False
+)
+
+encoder_net = Encoder(
+    input_size_encoder,
+    encoder_embedding_size,
+    hidden_size,
+    num_layers,
+    dec_dropout,
+    output_size
+).to(device)
+
+decoder_net = Decoder(
+    input_size_decoder,
+    decoder_embedding_size,
+    hidden_size,
+    output_size,
+    dec_dropout).to(device)
+
+model = EncDec(encoder_net, decoder_net).to(device)
+optimizer = optim.Adam(model.parameters, lr=learning_rate)
+
+pad_idx = lang_out.vocab.stoi['<pad>']
+criterion = nn.CrossEntropyLoss(ignore_index=pad_idx)
+
+if load_model:
+    load_checkpoint(torch.load(""model.pth""), model, optimizer)
+
+sentence = ""ein boot mit mehreren mÃ¤nnern darauf wird von einem groÃŸen pferdegespann ans ufer gezogen.""
+
+for epoch in range(num_epochs):
+    print(f""[Epoch {epoch} / {num_epochs}]"")
+
+    checkpoint = {""state_dict"": model.state_dict(), ""optimizer"": optimizer.state_dict()}
+    save_checkpoint(checkpoint)
+
+    model.eval()
+
+    translated_sentence = translate_sentence(
+        model, sentence, lang_in, lang_out, device, max_length=50
+    )
+
+    print(f""Translated example sentence: \n {translated_sentence}"")
+
+    model.train()
+
+    for batch_idx, batch in enumerate(train_iterator):
+        inp_data = batch.src.to(device)
+        target = batch.trg.to(device)
+
+        # Forward prop
+        output = model(inp_data, target)
+
+        # Output is of shape (trg_len, batch_size, output_dim) but Cross Entropy Loss
+        # doesn't take input in that form. For example if we have MNIST we want to have
+        # output to be: (N, 10) and targets just (N).
+        output = output[1:].reshape(-1, output.shape[2])
+        target = target[1:].reshape(-1)
+
+        optimizer.zero_grad()
+        loss = criterion(output, target)
+
+        # Back prop
+        loss.backward()
+
+        # Clip to avoid exploding gradient issues, makes sure grads are",        # within a healthy range,        # within a healthy range,"        torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=1)
+
+        # Gradient descent step
+        optimizer.step()
+
+        # Plot to tensorboard
+        writer.add_scalar(""Training loss"", loss, global_step=step)
+        step += 1
+
+
+score = bleu(test_data[1:100], model, lang_in, lang_out, device)
+print(f""Bleu score {score*100:.2f}"")",1,1.0,1.0
+25,"import torch
+
+import torch.optim as optim
+import torch.nn as nn
+from torch.utils.tensorboard import SummaryWriter
+from torchtext.data import BucketIterator
+
+from func import translate_sentence, bleu, save_checkpoint, load_checkpoint
+from data_loading import lang_in, lang_out, train_data, valid_data, test_data
+from Net import Encoder, Decoder, EncDec, device
+
+# Training hyperparameters
+num_epochs = 100
+learning_rate = 0.001
+batch_size = 64
+
+# Model hyperparameters
+load_model = False
+input_size_encoder = len(lang_in.vocab)
+input_size_decoder = len(lang_out.vocab)
+output_size = len(lang_out.vocab)
+encoder_embedding_size = 300
+decoder_embedding_size = 300
+hidden_size = 1024  # Needs to be the same for both RNN's
+num_layers = 2
+enc_dropout = 0.5
+dec_dropout = 0.5
+
+# Tensorboard to get nice loss plot
+writer = SummaryWriter(f""runs/loss_plot"")
+step = 0
+
+
+train_iterator, valid_iterator, test_iterator = BucketIterator.splits(
+    (train_data, valid_data, test_data),
+    batch_size=batch_size,
+    device=device,
+    sort_within_batch=True,
+    sort_key=lambda x: len(x.src),
+    repeat=False
+)
+
+encoder_net = Encoder(
+    input_size_encoder,
+    encoder_embedding_size,
+    hidden_size,
+    num_layers,
+    dec_dropout,
+    output_size
+).to(device)
+
+decoder_net = Decoder(
+    input_size_decoder,
+    decoder_embedding_size,
+    hidden_size,
+    output_size,
+    dec_dropout).to(device)
+
+model = EncDec(encoder_net, decoder_net).to(device)
+optimizer = optim.Adam(model.parameters, lr=learning_rate)
+
+pad_idx = lang_out.vocab.stoi['<pad>']
+criterion = nn.CrossEntropyLoss(ignore_index=pad_idx)
+
+if load_model:
+    load_checkpoint(torch.load(""model.pth""), model, optimizer)
+
+sentence = ""ein boot mit mehreren mÃ¤nnern darauf wird von einem groÃŸen pferdegespann ans ufer gezogen.""
+
+for epoch in range(num_epochs):
+    print(f""[Epoch {epoch} / {num_epochs}]"")
+","    checkpoint = {""state_dict"": model.state_dict(), ""optimizer"": optimizer.state_dict()}","    checkpoint = {""state_dict"": model.state_dict(), ""optimizer"": optimizer.state_dict()}","    save_checkpoint(checkpoint)
+
+    model.eval()
+
+    translated_sentence = translate_sentence(
+        model, sentence, lang_in, lang_out, device, max_length=50
+    )
+
+    print(f""Translated example sentence: \n {translated_sentence}"")
+
+    model.train()
+
+    for batch_idx, batch in enumerate(train_iterator):
+        inp_data = batch.src.to(device)
+        target = batch.trg.to(device)
+
+        # Forward prop
+        output = model(inp_data, target)
+
+        # Output is of shape (trg_len, batch_size, output_dim) but Cross Entropy Loss
+        # doesn't take input in that form. For example if we have MNIST we want to have
+        # output to be: (N, 10) and targets just (N).
+        output = output[1:].reshape(-1, output.shape[2])
+        target = target[1:].reshape(-1)
+
+        optimizer.zero_grad()
+        loss = criterion(output, target)
+
+        # Back prop
+        loss.backward()
+
+        # Clip to avoid exploding gradient issues, makes sure grads are
+        # within a healthy range
+        torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=1)
+
+        # Gradient descent step
+        optimizer.step()
+
+        # Plot to tensorboard
+        writer.add_scalar(""Training loss"", loss, global_step=step)
+        step += 1
+
+
+score = bleu(test_data[1:100], model, lang_in, lang_out, device)
+print(f""Bleu score {score*100:.2f}"")",1,1.0,1.0
+26,"import torch
+
+import torch.optim as optim
+import torch.nn as nn
+from torch.utils.tensorboard import SummaryWriter
+from torchtext.data import BucketIterator
+
+from func import translate_sentence, bleu, save_checkpoint, load_checkpoint
+from data_loading import lang_in, lang_out, train_data, valid_data, test_data
+from Net import Encoder, Decoder, EncDec, device
+
+# Training hyperparameters
+num_epochs = 100
+learning_rate = 0.001
+batch_size = 64
+
+# Model hyperparameters
+load_model = False
+input_size_encoder = len(lang_in.vocab)
+input_size_decoder = len(lang_out.vocab)
+output_size = len(lang_out.vocab)
+encoder_embedding_size = 300
+decoder_embedding_size = 300
+hidden_size = 1024  # Needs to be the same for both RNN's
+num_layers = 2
+enc_dropout = 0.5
+dec_dropout = 0.5
+
+# Tensorboard to get nice loss plot
+writer = SummaryWriter(f""runs/loss_plot"")
+step = 0
+
+
+train_iterator, valid_iterator, test_iterator = BucketIterator.splits(
+    (train_data, valid_data, test_data),
+    batch_size=batch_size,
+    device=device,
+    sort_within_batch=True,
+    sort_key=lambda x: len(x.src),
+    repeat=False
+)
+
+encoder_net = Encoder(
+    input_size_encoder,
+    encoder_embedding_size,
+    hidden_size,
+    num_layers,
+    dec_dropout,
+    output_size
+).to(device)",decoder_net = Decoder(,decoder_net = Decoder(,"    input_size_decoder,
+    decoder_embedding_size,
+    hidden_size,
+    output_size,
+    dec_dropout).to(device)
+
+model = EncDec(encoder_net, decoder_net).to(device)
+optimizer = optim.Adam(model.parameters, lr=learning_rate)
+
+pad_idx = lang_out.vocab.stoi['<pad>']
+criterion = nn.CrossEntropyLoss(ignore_index=pad_idx)
+
+if load_model:
+    load_checkpoint(torch.load(""model.pth""), model, optimizer)
+
+sentence = ""ein boot mit mehreren mÃ¤nnern darauf wird von einem groÃŸen pferdegespann ans ufer gezogen.""
+
+for epoch in range(num_epochs):
+    print(f""[Epoch {epoch} / {num_epochs}]"")
+
+    checkpoint = {""state_dict"": model.state_dict(), ""optimizer"": optimizer.state_dict()}
+    save_checkpoint(checkpoint)
+
+    model.eval()
+
+    translated_sentence = translate_sentence(
+        model, sentence, lang_in, lang_out, device, max_length=50
+    )
+
+    print(f""Translated example sentence: \n {translated_sentence}"")
+
+    model.train()
+
+    for batch_idx, batch in enumerate(train_iterator):
+        inp_data = batch.src.to(device)
+        target = batch.trg.to(device)
+
+        # Forward prop
+        output = model(inp_data, target)
+
+        # Output is of shape (trg_len, batch_size, output_dim) but Cross Entropy Loss
+        # doesn't take input in that form. For example if we have MNIST we want to have
+        # output to be: (N, 10) and targets just (N).
+        output = output[1:].reshape(-1, output.shape[2])
+        target = target[1:].reshape(-1)
+
+        optimizer.zero_grad()
+        loss = criterion(output, target)
+
+        # Back prop
+        loss.backward()
+
+        # Clip to avoid exploding gradient issues, makes sure grads are
+        # within a healthy range
+        torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=1)
+
+        # Gradient descent step
+        optimizer.step()
+
+        # Plot to tensorboard
+        writer.add_scalar(""Training loss"", loss, global_step=step)
+        step += 1
+
+
+score = bleu(test_data[1:100], model, lang_in, lang_out, device)
+print(f""Bleu score {score*100:.2f}"")",1,1.2213386697554703e-77,1.0
+27,"import torch
+
+import torch.optim as optim
+import torch.nn as nn
+from torch.utils.tensorboard import SummaryWriter
+from torchtext.data import BucketIterator
+
+from func import translate_sentence, bleu, save_checkpoint, load_checkpoint
+from data_loading import lang_in, lang_out, train_data, valid_data, test_data
+from Net import Encoder, Decoder, EncDec, device
+
+# Training hyperparameters
+num_epochs = 100
+learning_rate = 0.001
+batch_size = 64
+
+# Model hyperparameters
+load_model = False
+input_size_encoder = len(lang_in.vocab)
+input_size_decoder = len(lang_out.vocab)
+output_size = len(lang_out.vocab)
+encoder_embedding_size = 300
+decoder_embedding_size = 300
+hidden_size = 1024  # Needs to be the same for both RNN's",num_layers = 2,num_layers = 2,"enc_dropout = 0.5
+dec_dropout = 0.5
+
+# Tensorboard to get nice loss plot
+writer = SummaryWriter(f""runs/loss_plot"")
+step = 0
+
+
+train_iterator, valid_iterator, test_iterator = BucketIterator.splits(
+    (train_data, valid_data, test_data),
+    batch_size=batch_size,
+    device=device,
+    sort_within_batch=True,
+    sort_key=lambda x: len(x.src),
+    repeat=False
+)
+
+encoder_net = Encoder(
+    input_size_encoder,
+    encoder_embedding_size,
+    hidden_size,
+    num_layers,
+    dec_dropout,
+    output_size
+).to(device)
+
+decoder_net = Decoder(
+    input_size_decoder,
+    decoder_embedding_size,
+    hidden_size,
+    output_size,
+    dec_dropout).to(device)
+
+model = EncDec(encoder_net, decoder_net).to(device)
+optimizer = optim.Adam(model.parameters, lr=learning_rate)
+
+pad_idx = lang_out.vocab.stoi['<pad>']
+criterion = nn.CrossEntropyLoss(ignore_index=pad_idx)
+
+if load_model:
+    load_checkpoint(torch.load(""model.pth""), model, optimizer)
+
+sentence = ""ein boot mit mehreren mÃ¤nnern darauf wird von einem groÃŸen pferdegespann ans ufer gezogen.""
+
+for epoch in range(num_epochs):
+    print(f""[Epoch {epoch} / {num_epochs}]"")
+
+    checkpoint = {""state_dict"": model.state_dict(), ""optimizer"": optimizer.state_dict()}
+    save_checkpoint(checkpoint)
+
+    model.eval()
+
+    translated_sentence = translate_sentence(
+        model, sentence, lang_in, lang_out, device, max_length=50
+    )
+
+    print(f""Translated example sentence: \n {translated_sentence}"")
+
+    model.train()
+
+    for batch_idx, batch in enumerate(train_iterator):
+        inp_data = batch.src.to(device)
+        target = batch.trg.to(device)
+
+        # Forward prop
+        output = model(inp_data, target)
+
+        # Output is of shape (trg_len, batch_size, output_dim) but Cross Entropy Loss
+        # doesn't take input in that form. For example if we have MNIST we want to have
+        # output to be: (N, 10) and targets just (N).
+        output = output[1:].reshape(-1, output.shape[2])
+        target = target[1:].reshape(-1)
+
+        optimizer.zero_grad()
+        loss = criterion(output, target)
+
+        # Back prop
+        loss.backward()
+
+        # Clip to avoid exploding gradient issues, makes sure grads are
+        # within a healthy range
+        torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=1)
+
+        # Gradient descent step
+        optimizer.step()
+
+        # Plot to tensorboard
+        writer.add_scalar(""Training loss"", loss, global_step=step)
+        step += 1
+
+
+score = bleu(test_data[1:100], model, lang_in, lang_out, device)
+print(f""Bleu score {score*100:.2f}"")",1,1.2213386697554703e-77,1.0
+28,"import torch
+
+import torch.optim as optim
+import torch.nn as nn
+from torch.utils.tensorboard import SummaryWriter
+from torchtext.data import BucketIterator
+
+from func import translate_sentence, bleu, save_checkpoint, load_checkpoint
+from data_loading import lang_in, lang_out, train_data, valid_data, test_data
+from Net import Encoder, Decoder, EncDec, device
+
+# Training hyperparameters
+num_epochs = 100
+learning_rate = 0.001
+batch_size = 64
+
+# Model hyperparameters
+load_model = False
+input_size_encoder = len(lang_in.vocab)
+input_size_decoder = len(lang_out.vocab)
+output_size = len(lang_out.vocab)
+encoder_embedding_size = 300
+decoder_embedding_size = 300
+hidden_size = 1024  # Needs to be the same for both RNN's
+num_layers = 2
+enc_dropout = 0.5
+dec_dropout = 0.5
+
+# Tensorboard to get nice loss plot
+writer = SummaryWriter(f""runs/loss_plot"")
+step = 0
+
+
+train_iterator, valid_iterator, test_iterator = BucketIterator.splits(
+    (train_data, valid_data, test_data),
+    batch_size=batch_size,
+    device=device,
+    sort_within_batch=True,
+    sort_key=lambda x: len(x.src),
+    repeat=False
+)
+
+encoder_net = Encoder(
+    input_size_encoder,
+    encoder_embedding_size,
+    hidden_size,
+    num_layers,
+    dec_dropout,
+    output_size
+).to(device)
+
+decoder_net = Decoder(
+    input_size_decoder,
+    decoder_embedding_size,
+    hidden_size,
+    output_size,
+    dec_dropout).to(device)
+
+model = EncDec(encoder_net, decoder_net).to(device)
+optimizer = optim.Adam(model.parameters, lr=learning_rate)
+
+pad_idx = lang_out.vocab.stoi['<pad>']
+criterion = nn.CrossEntropyLoss(ignore_index=pad_idx)
+
+if load_model:
+    load_checkpoint(torch.load(""model.pth""), model, optimizer)
+
+sentence = ""ein boot mit mehreren mÃ¤nnern darauf wird von einem groÃŸen pferdegespann ans ufer gezogen.""
+
+for epoch in range(num_epochs):
+    print(f""[Epoch {epoch} / {num_epochs}]"")
+
+    checkpoint = {""state_dict"": model.state_dict(), ""optimizer"": optimizer.state_dict()}
+    save_checkpoint(checkpoint)
+
+    model.eval()
+
+    translated_sentence = translate_sentence(
+        model, sentence, lang_in, lang_out, device, max_length=50
+    )
+
+    print(f""Translated example sentence: \n {translated_sentence}"")
+
+    model.train()
+
+    for batch_idx, batch in enumerate(train_iterator):
+        inp_data = batch.src.to(device)
+        target = batch.trg.to(device)
+
+        # Forward prop
+        output = model(inp_data, target)
+
+        # Output is of shape (trg_len, batch_size, output_dim) but Cross Entropy Loss
+        # doesn't take input in that form. For example if we have MNIST we want to have
+        # output to be: (N, 10) and targets just (N).","        output = output[1:].reshape(-1, output.shape[2])","        output = output[1:].reshape(-1, output.shape[2])","        target = target[1:].reshape(-1)
+
+        optimizer.zero_grad()
+        loss = criterion(output, target)
+
+        # Back prop
+        loss.backward()
+
+        # Clip to avoid exploding gradient issues, makes sure grads are
+        # within a healthy range
+        torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=1)
+
+        # Gradient descent step
+        optimizer.step()
+
+        # Plot to tensorboard
+        writer.add_scalar(""Training loss"", loss, global_step=step)
+        step += 1
+
+
+score = bleu(test_data[1:100], model, lang_in, lang_out, device)
+print(f""Bleu score {score*100:.2f}"")",1,1.0,1.0
+29,"import torch
+
+import torch.optim as optim
+import torch.nn as nn
+from torch.utils.tensorboard import SummaryWriter
+from torchtext.data import BucketIterator
+
+from func import translate_sentence, bleu, save_checkpoint, load_checkpoint
+from data_loading import lang_in, lang_out, train_data, valid_data, test_data
+from Net import Encoder, Decoder, EncDec, device
+
+# Training hyperparameters
+num_epochs = 100
+learning_rate = 0.001
+batch_size = 64
+
+# Model hyperparameters
+load_model = False
+input_size_encoder = len(lang_in.vocab)
+input_size_decoder = len(lang_out.vocab)
+output_size = len(lang_out.vocab)
+encoder_embedding_size = 300
+decoder_embedding_size = 300
+hidden_size = 1024  # Needs to be the same for both RNN's
+num_layers = 2
+enc_dropout = 0.5
+dec_dropout = 0.5
+
+# Tensorboard to get nice loss plot
+writer = SummaryWriter(f""runs/loss_plot"")
+step = 0
+
+
+train_iterator, valid_iterator, test_iterator = BucketIterator.splits(
+    (train_data, valid_data, test_data),
+    batch_size=batch_size,
+    device=device,
+    sort_within_batch=True,
+    sort_key=lambda x: len(x.src),
+    repeat=False
+)
+
+encoder_net = Encoder(
+    input_size_encoder,
+    encoder_embedding_size,
+    hidden_size,
+    num_layers,
+    dec_dropout,
+    output_size
+).to(device)
+
+decoder_net = Decoder(
+    input_size_decoder,
+    decoder_embedding_size,
+    hidden_size,
+    output_size,
+    dec_dropout).to(device)
+
+model = EncDec(encoder_net, decoder_net).to(device)
+optimizer = optim.Adam(model.parameters, lr=learning_rate)
+
+pad_idx = lang_out.vocab.stoi['<pad>']
+criterion = nn.CrossEntropyLoss(ignore_index=pad_idx)",if load_model:,if load_model:,"    load_checkpoint(torch.load(""model.pth""), model, optimizer)
+
+sentence = ""ein boot mit mehreren mÃ¤nnern darauf wird von einem groÃŸen pferdegespann ans ufer gezogen.""
+
+for epoch in range(num_epochs):
+    print(f""[Epoch {epoch} / {num_epochs}]"")
+
+    checkpoint = {""state_dict"": model.state_dict(), ""optimizer"": optimizer.state_dict()}
+    save_checkpoint(checkpoint)
+
+    model.eval()
+
+    translated_sentence = translate_sentence(
+        model, sentence, lang_in, lang_out, device, max_length=50
+    )
+
+    print(f""Translated example sentence: \n {translated_sentence}"")
+
+    model.train()
+
+    for batch_idx, batch in enumerate(train_iterator):
+        inp_data = batch.src.to(device)
+        target = batch.trg.to(device)
+
+        # Forward prop
+        output = model(inp_data, target)
+
+        # Output is of shape (trg_len, batch_size, output_dim) but Cross Entropy Loss
+        # doesn't take input in that form. For example if we have MNIST we want to have
+        # output to be: (N, 10) and targets just (N).
+        output = output[1:].reshape(-1, output.shape[2])
+        target = target[1:].reshape(-1)
+
+        optimizer.zero_grad()
+        loss = criterion(output, target)
+
+        # Back prop
+        loss.backward()
+
+        # Clip to avoid exploding gradient issues, makes sure grads are
+        # within a healthy range
+        torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=1)
+
+        # Gradient descent step
+        optimizer.step()
+
+        # Plot to tensorboard
+        writer.add_scalar(""Training loss"", loss, global_step=step)
+        step += 1
+
+
+score = bleu(test_data[1:100], model, lang_in, lang_out, device)
+print(f""Bleu score {score*100:.2f}"")",1,1.491668146240062e-154,1.0
+30,"import torch 
+import torch.nn as nn
+import torch.optim as optim
+from Net import RNN
+from config import device
+from load_dataset import test_loader, train_loader
+
+# Hyperparameters 
+input_size = 28
+sequence_length = 28 
+num_layers = 2
+hidden_size = 256 
+num_classes = 10
+learning_rate = 0.001
+batch_size = 64
+num_epochs = 2
+
+# initialize network
+model = RNN(input_size, hidden_size, num_layers, num_classes).to(device)
+
+# Loss and optimizer 
+criterion = nn.CrossEntropyLoss()
+optimizer = optim.Adam(model.parameters(), lr=learning_rate)
+
+# Train network 
+for epoch in range(num_epochs):
+    for batch_idx, (data, targets) in enumerate(train_loader):
+        # get data to cuda if possible
+        data = data.to(device).squeeze(1)
+        targets = targets.to(device)
+
+        # forward 
+        scores = model(data)
+        loss = criterion(scores, targets)
+
+        # backward 
+        optimizer.zero_grad()
+        loss.backward()
+
+        # gradient descent or adam step
+        optimizer.step()
+
+
+# check accuracy on training and test to see how good our model","def check_accuracy(loader, model):","def check_accuracy(loader, model):","    num_correct = 0
+    num_samples = 0
+
+    # Set model to eval
+    model.eval()
+
+    with torch.no_grad():
+        for x, y in loader:
+            x = x.to(device=device).squeeze(1)
+            y = y.to(device=device)
+
+            scores = model(x)
+            _, predictions = scores.max(1)
+            num_correct += (predictions == y).sum()
+            num_samples += predictions.size(0)
+
+    # Toggle model back to train
+    model.train()
+    return num_correct / num_samples
+
+
+print(f""Accuracy on training set: {check_accuracy(train_loader, model)*100:2f}"")
+print(f""Accuracy on test set: {check_accuracy(test_loader, model)*100:.2f}"")
+",1,1.2213386697554703e-77,1.0
+31,"import torch 
+import torch.nn as nn
+import torch.optim as optim",from Net import RNN,from Net import RNN,"from config import device
+from load_dataset import test_loader, train_loader
+
+# Hyperparameters 
+input_size = 28
+sequence_length = 28 
+num_layers = 2
+hidden_size = 256 
+num_classes = 10
+learning_rate = 0.001
+batch_size = 64
+num_epochs = 2
+
+# initialize network
+model = RNN(input_size, hidden_size, num_layers, num_classes).to(device)
+
+# Loss and optimizer 
+criterion = nn.CrossEntropyLoss()
+optimizer = optim.Adam(model.parameters(), lr=learning_rate)
+
+# Train network 
+for epoch in range(num_epochs):
+    for batch_idx, (data, targets) in enumerate(train_loader):
+        # get data to cuda if possible
+        data = data.to(device).squeeze(1)
+        targets = targets.to(device)
+
+        # forward 
+        scores = model(data)
+        loss = criterion(scores, targets)
+
+        # backward 
+        optimizer.zero_grad()
+        loss.backward()
+
+        # gradient descent or adam step
+        optimizer.step()
+
+
+# check accuracy on training and test to see how good our model
+        
+def check_accuracy(loader, model):
+    num_correct = 0
+    num_samples = 0
+
+    # Set model to eval
+    model.eval()
+
+    with torch.no_grad():
+        for x, y in loader:
+            x = x.to(device=device).squeeze(1)
+            y = y.to(device=device)
+
+            scores = model(x)
+            _, predictions = scores.max(1)
+            num_correct += (predictions == y).sum()
+            num_samples += predictions.size(0)
+
+    # Toggle model back to train
+    model.train()
+    return num_correct / num_samples
+
+
+print(f""Accuracy on training set: {check_accuracy(train_loader, model)*100:2f}"")
+print(f""Accuracy on test set: {check_accuracy(test_loader, model)*100:.2f}"")
+
+",1,1.0,1.0
+32,"import torch 
+import torch.nn as nn
+import torch.optim as optim
+from Net import RNN
+from config import device
+from load_dataset import test_loader, train_loader
+
+# Hyperparameters 
+input_size = 28
+sequence_length = 28 
+num_layers = 2
+hidden_size = 256 
+num_classes = 10
+learning_rate = 0.001
+batch_size = 64
+num_epochs = 2
+
+# initialize network
+model = RNN(input_size, hidden_size, num_layers, num_classes).to(device)
+
+# Loss and optimizer 
+criterion = nn.CrossEntropyLoss()
+optimizer = optim.Adam(model.parameters(), lr=learning_rate)
+
+# Train network 
+for epoch in range(num_epochs):
+    for batch_idx, (data, targets) in enumerate(train_loader):
+        # get data to cuda if possible
+        data = data.to(device).squeeze(1)
+        targets = targets.to(device)
+
+        # forward 
+        scores = model(data)
+        loss = criterion(scores, targets)
+
+        # backward 
+        optimizer.zero_grad()
+        loss.backward()
+
+        # gradient descent or adam step
+        optimizer.step()
+
+
+# check accuracy on training and test to see how good our model
+        
+def check_accuracy(loader, model):
+    num_correct = 0",    num_samples = 0,    num_samples = 0,"
+    # Set model to eval
+    model.eval()
+
+    with torch.no_grad():
+        for x, y in loader:
+            x = x.to(device=device).squeeze(1)
+            y = y.to(device=device)
+
+            scores = model(x)
+            _, predictions = scores.max(1)
+            num_correct += (predictions == y).sum()
+            num_samples += predictions.size(0)
+
+    # Toggle model back to train
+    model.train()
+    return num_correct / num_samples
+
+
+print(f""Accuracy on training set: {check_accuracy(train_loader, model)*100:2f}"")
+print(f""Accuracy on test set: {check_accuracy(test_loader, model)*100:.2f}"")
+
+",1,1.2213386697554703e-77,1.0
+33,"import torch 
+import torch.nn as nn
+import torch.optim as optim
+from Net import RNN
+from config import device
+from load_dataset import test_loader, train_loader
+
+# Hyperparameters 
+input_size = 28
+sequence_length = 28 
+num_layers = 2
+hidden_size = 256 
+num_classes = 10
+learning_rate = 0.001",batch_size = 64,batch_size = 64,"num_epochs = 2
+
+# initialize network
+model = RNN(input_size, hidden_size, num_layers, num_classes).to(device)
+
+# Loss and optimizer 
+criterion = nn.CrossEntropyLoss()
+optimizer = optim.Adam(model.parameters(), lr=learning_rate)
+
+# Train network 
+for epoch in range(num_epochs):
+    for batch_idx, (data, targets) in enumerate(train_loader):
+        # get data to cuda if possible
+        data = data.to(device).squeeze(1)
+        targets = targets.to(device)
+
+        # forward 
+        scores = model(data)
+        loss = criterion(scores, targets)
+
+        # backward 
+        optimizer.zero_grad()
+        loss.backward()
+
+        # gradient descent or adam step
+        optimizer.step()
+
+
+# check accuracy on training and test to see how good our model
+        
+def check_accuracy(loader, model):
+    num_correct = 0
+    num_samples = 0
+
+    # Set model to eval
+    model.eval()
+
+    with torch.no_grad():
+        for x, y in loader:
+            x = x.to(device=device).squeeze(1)
+            y = y.to(device=device)
+
+            scores = model(x)
+            _, predictions = scores.max(1)
+            num_correct += (predictions == y).sum()
+            num_samples += predictions.size(0)
+
+    # Toggle model back to train
+    model.train()
+    return num_correct / num_samples
+
+
+print(f""Accuracy on training set: {check_accuracy(train_loader, model)*100:2f}"")
+print(f""Accuracy on test set: {check_accuracy(test_loader, model)*100:.2f}"")
+
+",1,1.2213386697554703e-77,1.0
+34,"import torch 
+import torch.nn as nn
+import torch.optim as optim
+from Net import RNN
+from config import device
+from load_dataset import test_loader, train_loader
+
+# Hyperparameters 
+input_size = 28
+sequence_length = 28 
+num_layers = 2
+hidden_size = 256 
+num_classes = 10
+learning_rate = 0.001
+batch_size = 64
+num_epochs = 2
+
+# initialize network
+model = RNN(input_size, hidden_size, num_layers, num_classes).to(device)
+
+# Loss and optimizer 
+criterion = nn.CrossEntropyLoss()
+optimizer = optim.Adam(model.parameters(), lr=learning_rate)
+
+# Train network 
+for epoch in range(num_epochs):
+    for batch_idx, (data, targets) in enumerate(train_loader):
+        # get data to cuda if possible
+        data = data.to(device).squeeze(1)
+        targets = targets.to(device)
+
+        # forward ",        scores = model(data),        scores = model(data),"        loss = criterion(scores, targets)
+
+        # backward 
+        optimizer.zero_grad()
+        loss.backward()
+
+        # gradient descent or adam step
+        optimizer.step()
+
+
+# check accuracy on training and test to see how good our model
+        
+def check_accuracy(loader, model):
+    num_correct = 0
+    num_samples = 0
+
+    # Set model to eval
+    model.eval()
+
+    with torch.no_grad():
+        for x, y in loader:
+            x = x.to(device=device).squeeze(1)
+            y = y.to(device=device)
+
+            scores = model(x)
+            _, predictions = scores.max(1)
+            num_correct += (predictions == y).sum()
+            num_samples += predictions.size(0)
+
+    # Toggle model back to train
+    model.train()
+    return num_correct / num_samples
+
+
+print(f""Accuracy on training set: {check_accuracy(train_loader, model)*100:2f}"")
+print(f""Accuracy on test set: {check_accuracy(test_loader, model)*100:.2f}"")
+
+",1,1.2213386697554703e-77,1.0
+35,"import torch 
+import torch.nn as nn
+import torch.optim as optim
+from Net import RNN
+from config import device
+from load_dataset import test_loader, train_loader
+
+# Hyperparameters 
+input_size = 28
+sequence_length = 28 
+num_layers = 2
+hidden_size = 256 
+num_classes = 10
+learning_rate = 0.001
+batch_size = 64
+num_epochs = 2
+
+# initialize network
+model = RNN(input_size, hidden_size, num_layers, num_classes).to(device)
+
+# Loss and optimizer 
+criterion = nn.CrossEntropyLoss()
+optimizer = optim.Adam(model.parameters(), lr=learning_rate)
+
+# Train network 
+for epoch in range(num_epochs):
+    for batch_idx, (data, targets) in enumerate(train_loader):
+        # get data to cuda if possible
+        data = data.to(device).squeeze(1)
+        targets = targets.to(device)
+
+        # forward 
+        scores = model(data)
+        loss = criterion(scores, targets)
+
+        # backward 
+        optimizer.zero_grad()
+        loss.backward()
+
+        # gradient descent or adam step
+        optimizer.step()
+
+
+# check accuracy on training and test to see how good our model
+        
+def check_accuracy(loader, model):
+    num_correct = 0
+    num_samples = 0
+
+    # Set model to eval
+    model.eval()
+
+    with torch.no_grad():
+        for x, y in loader:",            x = x.to(device=device).squeeze(1),            x = x.to(device=device).squeeze(1),"            y = y.to(device=device)
+
+            scores = model(x)
+            _, predictions = scores.max(1)
+            num_correct += (predictions == y).sum()
+            num_samples += predictions.size(0)
+
+    # Toggle model back to train
+    model.train()
+    return num_correct / num_samples
+
+
+print(f""Accuracy on training set: {check_accuracy(train_loader, model)*100:2f}"")
+print(f""Accuracy on test set: {check_accuracy(test_loader, model)*100:.2f}"")
+
+",1,1.2213386697554703e-77,1.0
+36,"import torch 
+import torch.nn as nn
+import torch.optim as optim
+from Net import RNN
+from config import device
+from load_dataset import test_loader, train_loader
+
+# Hyperparameters 
+input_size = 28
+sequence_length = 28 
+num_layers = 2
+hidden_size = 256 
+num_classes = 10
+learning_rate = 0.001
+batch_size = 64
+num_epochs = 2
+
+# initialize network
+model = RNN(input_size, hidden_size, num_layers, num_classes).to(device)
+
+# Loss and optimizer 
+criterion = nn.CrossEntropyLoss()
+optimizer = optim.Adam(model.parameters(), lr=learning_rate)",# Train network ,# Train network ,"for epoch in range(num_epochs):
+    for batch_idx, (data, targets) in enumerate(train_loader):
+        # get data to cuda if possible
+        data = data.to(device).squeeze(1)
+        targets = targets.to(device)
+
+        # forward 
+        scores = model(data)
+        loss = criterion(scores, targets)
+
+        # backward 
+        optimizer.zero_grad()
+        loss.backward()
+
+        # gradient descent or adam step
+        optimizer.step()
+
+
+# check accuracy on training and test to see how good our model
+        
+def check_accuracy(loader, model):
+    num_correct = 0
+    num_samples = 0
+
+    # Set model to eval
+    model.eval()
+
+    with torch.no_grad():
+        for x, y in loader:
+            x = x.to(device=device).squeeze(1)
+            y = y.to(device=device)
+
+            scores = model(x)
+            _, predictions = scores.max(1)
+            num_correct += (predictions == y).sum()
+            num_samples += predictions.size(0)
+
+    # Toggle model back to train
+    model.train()
+    return num_correct / num_samples
+
+
+print(f""Accuracy on training set: {check_accuracy(train_loader, model)*100:2f}"")
+print(f""Accuracy on test set: {check_accuracy(test_loader, model)*100:.2f}"")
+",1,1.2213386697554703e-77,1.0
+37,"import torch 
+import torch.nn as nn
+import torch.optim as optim
+from Net import RNN
+from config import device
+from load_dataset import test_loader, train_loader
+
+# Hyperparameters 
+input_size = 28
+sequence_length = 28 
+num_layers = 2
+hidden_size = 256 
+num_classes = 10
+learning_rate = 0.001
+batch_size = 64
+num_epochs = 2
+
+# initialize network
+model = RNN(input_size, hidden_size, num_layers, num_classes).to(device)
+
+# Loss and optimizer 
+criterion = nn.CrossEntropyLoss()
+optimizer = optim.Adam(model.parameters(), lr=learning_rate)
+
+# Train network 
+for epoch in range(num_epochs):
+    for batch_idx, (data, targets) in enumerate(train_loader):
+        # get data to cuda if possible
+        data = data.to(device).squeeze(1)
+        targets = targets.to(device)",        # forward ,        # forward ,"        scores = model(data)
+        loss = criterion(scores, targets)
+
+        # backward 
+        optimizer.zero_grad()
+        loss.backward()
+
+        # gradient descent or adam step
+        optimizer.step()
+
+
+# check accuracy on training and test to see how good our model
+        
+def check_accuracy(loader, model):
+    num_correct = 0
+    num_samples = 0
+
+    # Set model to eval
+    model.eval()
+
+    with torch.no_grad():
+        for x, y in loader:
+            x = x.to(device=device).squeeze(1)
+            y = y.to(device=device)
+
+            scores = model(x)
+            _, predictions = scores.max(1)
+            num_correct += (predictions == y).sum()
+            num_samples += predictions.size(0)
+
+    # Toggle model back to train
+    model.train()
+    return num_correct / num_samples
+
+
+print(f""Accuracy on training set: {check_accuracy(train_loader, model)*100:2f}"")
+print(f""Accuracy on test set: {check_accuracy(test_loader, model)*100:.2f}"")
+",1,1.491668146240062e-154,1.0
+38,"import torch 
+import torch.nn as nn
+import torch.optim as optim
+from Net import RNN
+from config import device
+from load_dataset import test_loader, train_loader
+
+# Hyperparameters 
+input_size = 28
+sequence_length = 28 
+num_layers = 2
+hidden_size = 256 
+num_classes = 10
+learning_rate = 0.001
+batch_size = 64
+num_epochs = 2
+
+# initialize network
+model = RNN(input_size, hidden_size, num_layers, num_classes).to(device)
+
+# Loss and optimizer 
+criterion = nn.CrossEntropyLoss()
+optimizer = optim.Adam(model.parameters(), lr=learning_rate)
+
+# Train network 
+for epoch in range(num_epochs):
+    for batch_idx, (data, targets) in enumerate(train_loader):
+        # get data to cuda if possible
+        data = data.to(device).squeeze(1)
+        targets = targets.to(device)
+
+        # forward 
+        scores = model(data)
+        loss = criterion(scores, targets)
+
+        # backward 
+        optimizer.zero_grad()
+        loss.backward()
+
+        # gradient descent or adam step
+        optimizer.step()
+
+
+# check accuracy on training and test to see how good our model
+        
+def check_accuracy(loader, model):
+    num_correct = 0
+    num_samples = 0
+
+    # Set model to eval
+    model.eval()
+
+    with torch.no_grad():
+        for x, y in loader:
+            x = x.to(device=device).squeeze(1)
+            y = y.to(device=device)
+
+            scores = model(x)
+            _, predictions = scores.max(1)
+            num_correct += (predictions == y).sum()
+            num_samples += predictions.size(0)
+
+    # Toggle model back to train",    model.train(),    model.train(),"    return num_correct / num_samples
+
+
+print(f""Accuracy on training set: {check_accuracy(train_loader, model)*100:2f}"")
+print(f""Accuracy on test set: {check_accuracy(test_loader, model)*100:.2f}"")
+
+",1,1.821831989445342e-231,1.0
+39,"import torch 
+import torch.nn as nn
+import torch.optim as optim
+from Net import RNN",from config import device,from config import device,"from load_dataset import test_loader, train_loader
+
+# Hyperparameters 
+input_size = 28
+sequence_length = 28 
+num_layers = 2
+hidden_size = 256 
+num_classes = 10
+learning_rate = 0.001
+batch_size = 64
+num_epochs = 2
+
+# initialize network
+model = RNN(input_size, hidden_size, num_layers, num_classes).to(device)
+
+# Loss and optimizer 
+criterion = nn.CrossEntropyLoss()
+optimizer = optim.Adam(model.parameters(), lr=learning_rate)
+
+# Train network 
+for epoch in range(num_epochs):
+    for batch_idx, (data, targets) in enumerate(train_loader):
+        # get data to cuda if possible
+        data = data.to(device).squeeze(1)
+        targets = targets.to(device)
+
+        # forward 
+        scores = model(data)
+        loss = criterion(scores, targets)
+
+        # backward 
+        optimizer.zero_grad()
+        loss.backward()
+
+        # gradient descent or adam step
+        optimizer.step()
+
+
+# check accuracy on training and test to see how good our model
+        
+def check_accuracy(loader, model):
+    num_correct = 0
+    num_samples = 0
+
+    # Set model to eval
+    model.eval()
+
+    with torch.no_grad():
+        for x, y in loader:
+            x = x.to(device=device).squeeze(1)
+            y = y.to(device=device)
+
+            scores = model(x)
+            _, predictions = scores.max(1)
+            num_correct += (predictions == y).sum()
+            num_samples += predictions.size(0)
+
+    # Toggle model back to train
+    model.train()
+    return num_correct / num_samples
+
+
+print(f""Accuracy on training set: {check_accuracy(train_loader, model)*100:2f}"")
+print(f""Accuracy on test set: {check_accuracy(test_loader, model)*100:.2f}"")
+
+",1,1.0,1.0
+40,"import torch
+import random
+
+import torch.nn as nn 
+from data_loading import lang_in, lang_out",from config import system,from config import system,"
+if 'mac' in system.lower():
+    system = 'mps' 
+elif 'win' in system.lower():
+    system = 'cpu'
+else:
+    raise TypeError('Unknown system, type: ""Mac"" or ""Windows""')
+
+device = torch.device('cuda' if torch.cuda.is_available() else system)
+
+
+class Encoder(nn.Module):
+    def __init__(self, input_size, embedding_size, hidden_size, num_layers, p):
+        super(Encoder, self).__init__()
+        self.dropout = nn.Dropout(p)
+        self.hidden_size = hidden_size
+        self.num_layers = num_layers
+
+        self.embedding = nn.Embedding(input_size, embedding_size)
+        self.rnn = nn.LSTM(embedding_size, hidden_size, num_layers, dropout=p)
+
+    def forward(self, x):
+        embedding = self.dropout(self.embedding(x))
+        outputs, (hidden, cell) = self.rnn(embedding)
+
+        return hidden, cell
+    
+class Decoder(nn.Module):
+    def __init__(self, input_size, embedding_size, hidden_size, num_layers, p):
+        super(Decoder, self).__init__()
+        self.dropout = nn.Dropout(p)
+        self.hidden_size = hidden_size
+        self.num_layers = num_layers
+
+        self.embedding = nn.Embedding(input_size, embedding_size)
+        self.rnn = nn.LSTM(embedding_size, hidden_size, num_layers, dropout=p)
+        self.fc = nn.Linear(hidden_size, input_size)
+
+    def forward(self, x, hidden, cell):
+        x = x.unsqueeze(0)
+        embedding = self.dropout(self.embedding(x))
+        outputs, (hidden, cell) = self.rnn(embedding, (hidden, cell))
+        predictions = self.fc(outputs)
+        predictions = predictions.squeeze(0)
+
+        return predictions, hidden, cell
+
+class EncDec(nn.Module):
+    def __init__(self, encoder, decoder):
+        super(EncDec, self).__init__()
+        self.encoder = encoder
+        self.decoder = decoder
+
+    def forward(self, source, target, teacher_force_ratio=0.5):
+        batch_size = target.shape[1]
+        target_len = target.shape[0]
+        target_vocab_size = len(lang_out.vocab)
+
+        outputs = torch.zeros(target_len, batch_size, target_vocab_size).to(device)
+        hidden, cell = self.encoder(source)
+
+        x = target[0]
+
+        for t in range(1, target_len):
+            output, hidden, cell = self.decoder(x, hidden, cell)
+            outputs[t] = output
+            top1 = output.argmax(1)
+            x = target[t] if random.random() < teacher_force_ratio else top1
+        ",1,1.0,1.0
+41,"import torch
+import random
+
+import torch.nn as nn 
+from data_loading import lang_in, lang_out
+from config import system
+
+if 'mac' in system.lower():
+    system = 'mps' 
+elif 'win' in system.lower():
+    system = 'cpu'
+else:
+    raise TypeError('Unknown system, type: ""Mac"" or ""Windows""')
+
+device = torch.device('cuda' if torch.cuda.is_available() else system)
+
+
+class Encoder(nn.Module):
+    def __init__(self, input_size, embedding_size, hidden_size, num_layers, p):
+        super(Encoder, self).__init__()
+        self.dropout = nn.Dropout(p)
+        self.hidden_size = hidden_size
+        self.num_layers = num_layers
+
+        self.embedding = nn.Embedding(input_size, embedding_size)
+        self.rnn = nn.LSTM(embedding_size, hidden_size, num_layers, dropout=p)
+
+    def forward(self, x):
+        embedding = self.dropout(self.embedding(x))
+        outputs, (hidden, cell) = self.rnn(embedding)
+
+        return hidden, cell
+    
+class Decoder(nn.Module):
+    def __init__(self, input_size, embedding_size, hidden_size, num_layers, p):
+        super(Decoder, self).__init__()
+        self.dropout = nn.Dropout(p)
+        self.hidden_size = hidden_size
+        self.num_layers = num_layers","        self.embedding = nn.Embedding(input_size, embedding_size)","        self.embedding = nn.Embedding(input_size, embedding_size)","        self.rnn = nn.LSTM(embedding_size, hidden_size, num_layers, dropout=p)
+        self.fc = nn.Linear(hidden_size, input_size)
+
+    def forward(self, x, hidden, cell):
+        x = x.unsqueeze(0)
+        embedding = self.dropout(self.embedding(x))
+        outputs, (hidden, cell) = self.rnn(embedding, (hidden, cell))
+        predictions = self.fc(outputs)
+        predictions = predictions.squeeze(0)
+
+        return predictions, hidden, cell
+
+class EncDec(nn.Module):
+    def __init__(self, encoder, decoder):
+        super(EncDec, self).__init__()
+        self.encoder = encoder
+        self.decoder = decoder
+
+    def forward(self, source, target, teacher_force_ratio=0.5):
+        batch_size = target.shape[1]
+        target_len = target.shape[0]
+        target_vocab_size = len(lang_out.vocab)
+
+        outputs = torch.zeros(target_len, batch_size, target_vocab_size).to(device)
+        hidden, cell = self.encoder(source)
+
+        x = target[0]
+
+        for t in range(1, target_len):
+            output, hidden, cell = self.decoder(x, hidden, cell)
+            outputs[t] = output
+            top1 = output.argmax(1)
+            x = target[t] if random.random() < teacher_force_ratio else top1
+        ",1,1.0,1.0
+42,"import torch
+import random
+
+import torch.nn as nn 
+from data_loading import lang_in, lang_out
+from config import system
+
+if 'mac' in system.lower():
+    system = 'mps' 
+elif 'win' in system.lower():
+    system = 'cpu'
+else:
+    raise TypeError('Unknown system, type: ""Mac"" or ""Windows""')
+
+device = torch.device('cuda' if torch.cuda.is_available() else system)
+
+
+class Encoder(nn.Module):
+    def __init__(self, input_size, embedding_size, hidden_size, num_layers, p):
+        super(Encoder, self).__init__()
+        self.dropout = nn.Dropout(p)
+        self.hidden_size = hidden_size
+        self.num_layers = num_layers
+
+        self.embedding = nn.Embedding(input_size, embedding_size)
+        self.rnn = nn.LSTM(embedding_size, hidden_size, num_layers, dropout=p)
+
+    def forward(self, x):
+        embedding = self.dropout(self.embedding(x))
+        outputs, (hidden, cell) = self.rnn(embedding)
+
+        return hidden, cell
+    
+class Decoder(nn.Module):
+    def __init__(self, input_size, embedding_size, hidden_size, num_layers, p):
+        super(Decoder, self).__init__()
+        self.dropout = nn.Dropout(p)
+        self.hidden_size = hidden_size
+        self.num_layers = num_layers
+
+        self.embedding = nn.Embedding(input_size, embedding_size)
+        self.rnn = nn.LSTM(embedding_size, hidden_size, num_layers, dropout=p)
+        self.fc = nn.Linear(hidden_size, input_size)
+
+    def forward(self, x, hidden, cell):
+        x = x.unsqueeze(0)
+        embedding = self.dropout(self.embedding(x))
+        outputs, (hidden, cell) = self.rnn(embedding, (hidden, cell))
+        predictions = self.fc(outputs)
+        predictions = predictions.squeeze(0)
+
+        return predictions, hidden, cell
+
+class EncDec(nn.Module):
+    def __init__(self, encoder, decoder):
+        super(EncDec, self).__init__()
+        self.encoder = encoder
+        self.decoder = decoder
+
+    def forward(self, source, target, teacher_force_ratio=0.5):
+        batch_size = target.shape[1]
+        target_len = target.shape[0]
+        target_vocab_size = len(lang_out.vocab)
+","        outputs = torch.zeros(target_len, batch_size, target_vocab_size).to(device)","        outputs = torch.zeros(target_len, batch_size, target_vocab_size).to(device)","        hidden, cell = self.encoder(source)
+
+        x = target[0]
+
+        for t in range(1, target_len):
+            output, hidden, cell = self.decoder(x, hidden, cell)
+            outputs[t] = output
+            top1 = output.argmax(1)
+            x = target[t] if random.random() < teacher_force_ratio else top1
+        ",1,1.0,1.0
+43,"import torch
+import random
+
+import torch.nn as nn 
+from data_loading import lang_in, lang_out
+from config import system
+
+if 'mac' in system.lower():
+    system = 'mps' 
+elif 'win' in system.lower():
+    system = 'cpu'
+else:
+    raise TypeError('Unknown system, type: ""Mac"" or ""Windows""')
+
+device = torch.device('cuda' if torch.cuda.is_available() else system)
+
+
+class Encoder(nn.Module):
+    def __init__(self, input_size, embedding_size, hidden_size, num_layers, p):
+        super(Encoder, self).__init__()
+        self.dropout = nn.Dropout(p)
+        self.hidden_size = hidden_size
+        self.num_layers = num_layers
+
+        self.embedding = nn.Embedding(input_size, embedding_size)
+        self.rnn = nn.LSTM(embedding_size, hidden_size, num_layers, dropout=p)
+
+    def forward(self, x):
+        embedding = self.dropout(self.embedding(x))
+        outputs, (hidden, cell) = self.rnn(embedding)
+
+        return hidden, cell
+    
+class Decoder(nn.Module):
+    def __init__(self, input_size, embedding_size, hidden_size, num_layers, p):
+        super(Decoder, self).__init__()
+        self.dropout = nn.Dropout(p)
+        self.hidden_size = hidden_size
+        self.num_layers = num_layers
+
+        self.embedding = nn.Embedding(input_size, embedding_size)
+        self.rnn = nn.LSTM(embedding_size, hidden_size, num_layers, dropout=p)
+        self.fc = nn.Linear(hidden_size, input_size)
+
+    def forward(self, x, hidden, cell):
+        x = x.unsqueeze(0)
+        embedding = self.dropout(self.embedding(x))
+        outputs, (hidden, cell) = self.rnn(embedding, (hidden, cell))
+        predictions = self.fc(outputs)
+        predictions = predictions.squeeze(0)
+
+        return predictions, hidden, cell
+
+class EncDec(nn.Module):
+    def __init__(self, encoder, decoder):
+        super(EncDec, self).__init__()
+        self.encoder = encoder
+        self.decoder = decoder
+
+    def forward(self, source, target, teacher_force_ratio=0.5):
+        batch_size = target.shape[1]
+        target_len = target.shape[0]
+        target_vocab_size = len(lang_out.vocab)
+
+        outputs = torch.zeros(target_len, batch_size, target_vocab_size).to(device)
+        hidden, cell = self.encoder(source)
+
+        x = target[0]
+
+        for t in range(1, target_len):
+            output, hidden, cell = self.decoder(x, hidden, cell)
+            outputs[t] = output",            top1 = output.argmax(1),            top1 = output.argmax(1),"            x = target[t] if random.random() < teacher_force_ratio else top1
+        ",1,1.2213386697554703e-77,1.0
+44,"import torch
+import random
+
+import torch.nn as nn 
+from data_loading import lang_in, lang_out
+from config import system
+
+if 'mac' in system.lower():
+    system = 'mps' 
+elif 'win' in system.lower():
+    system = 'cpu'
+else:
+    raise TypeError('Unknown system, type: ""Mac"" or ""Windows""')
+
+device = torch.device('cuda' if torch.cuda.is_available() else system)
+
+
+class Encoder(nn.Module):
+    def __init__(self, input_size, embedding_size, hidden_size, num_layers, p):
+        super(Encoder, self).__init__()
+        self.dropout = nn.Dropout(p)
+        self.hidden_size = hidden_size
+        self.num_layers = num_layers
+
+        self.embedding = nn.Embedding(input_size, embedding_size)","        self.rnn = nn.LSTM(embedding_size, hidden_size, num_layers, dropout=p)","        self.rnn = nn.LSTM(embedding_size, hidden_size, num_layers, dropout=p)","
+    def forward(self, x):
+        embedding = self.dropout(self.embedding(x))
+        outputs, (hidden, cell) = self.rnn(embedding)
+
+        return hidden, cell
+    
+class Decoder(nn.Module):
+    def __init__(self, input_size, embedding_size, hidden_size, num_layers, p):
+        super(Decoder, self).__init__()
+        self.dropout = nn.Dropout(p)
+        self.hidden_size = hidden_size
+        self.num_layers = num_layers
+
+        self.embedding = nn.Embedding(input_size, embedding_size)
+        self.rnn = nn.LSTM(embedding_size, hidden_size, num_layers, dropout=p)
+        self.fc = nn.Linear(hidden_size, input_size)
+
+    def forward(self, x, hidden, cell):
+        x = x.unsqueeze(0)
+        embedding = self.dropout(self.embedding(x))
+        outputs, (hidden, cell) = self.rnn(embedding, (hidden, cell))
+        predictions = self.fc(outputs)
+        predictions = predictions.squeeze(0)
+
+        return predictions, hidden, cell
+
+class EncDec(nn.Module):
+    def __init__(self, encoder, decoder):
+        super(EncDec, self).__init__()
+        self.encoder = encoder
+        self.decoder = decoder
+
+    def forward(self, source, target, teacher_force_ratio=0.5):
+        batch_size = target.shape[1]
+        target_len = target.shape[0]
+        target_vocab_size = len(lang_out.vocab)
+
+        outputs = torch.zeros(target_len, batch_size, target_vocab_size).to(device)
+        hidden, cell = self.encoder(source)
+
+        x = target[0]
+
+        for t in range(1, target_len):
+            output, hidden, cell = self.decoder(x, hidden, cell)
+            outputs[t] = output
+            top1 = output.argmax(1)
+            x = target[t] if random.random() < teacher_force_ratio else top1
+        ",1,1.0,1.0
+45,"import torch
+import random
+
+import torch.nn as nn 
+from data_loading import lang_in, lang_out
+from config import system
+
+if 'mac' in system.lower():
+    system = 'mps' 
+elif 'win' in system.lower():
+    system = 'cpu'
+else:
+    raise TypeError('Unknown system, type: ""Mac"" or ""Windows""')
+
+device = torch.device('cuda' if torch.cuda.is_available() else system)
+
+
+class Encoder(nn.Module):
+    def __init__(self, input_size, embedding_size, hidden_size, num_layers, p):
+        super(Encoder, self).__init__()
+        self.dropout = nn.Dropout(p)
+        self.hidden_size = hidden_size
+        self.num_layers = num_layers
+
+        self.embedding = nn.Embedding(input_size, embedding_size)
+        self.rnn = nn.LSTM(embedding_size, hidden_size, num_layers, dropout=p)
+
+    def forward(self, x):
+        embedding = self.dropout(self.embedding(x))
+        outputs, (hidden, cell) = self.rnn(embedding)
+
+        return hidden, cell
+    
+class Decoder(nn.Module):
+    def __init__(self, input_size, embedding_size, hidden_size, num_layers, p):
+        super(Decoder, self).__init__()
+        self.dropout = nn.Dropout(p)
+        self.hidden_size = hidden_size
+        self.num_layers = num_layers
+
+        self.embedding = nn.Embedding(input_size, embedding_size)
+        self.rnn = nn.LSTM(embedding_size, hidden_size, num_layers, dropout=p)
+        self.fc = nn.Linear(hidden_size, input_size)
+","    def forward(self, x, hidden, cell):","    def forward(self, x, hidden, cell):","        x = x.unsqueeze(0)
+        embedding = self.dropout(self.embedding(x))
+        outputs, (hidden, cell) = self.rnn(embedding, (hidden, cell))
+        predictions = self.fc(outputs)
+        predictions = predictions.squeeze(0)
+
+        return predictions, hidden, cell
+
+class EncDec(nn.Module):
+    def __init__(self, encoder, decoder):
+        super(EncDec, self).__init__()
+        self.encoder = encoder
+        self.decoder = decoder
+
+    def forward(self, source, target, teacher_force_ratio=0.5):
+        batch_size = target.shape[1]
+        target_len = target.shape[0]
+        target_vocab_size = len(lang_out.vocab)
+
+        outputs = torch.zeros(target_len, batch_size, target_vocab_size).to(device)
+        hidden, cell = self.encoder(source)
+
+        x = target[0]
+
+        for t in range(1, target_len):
+            output, hidden, cell = self.decoder(x, hidden, cell)
+            outputs[t] = output
+            top1 = output.argmax(1)
+            x = target[t] if random.random() < teacher_force_ratio else top1
+        ",1,1.0,1.0
+46,"import torch
+import random
+
+import torch.nn as nn 
+from data_loading import lang_in, lang_out
+from config import system
+
+if 'mac' in system.lower():
+    system = 'mps' 
+elif 'win' in system.lower():
+    system = 'cpu'
+else:
+    raise TypeError('Unknown system, type: ""Mac"" or ""Windows""')
+
+device = torch.device('cuda' if torch.cuda.is_available() else system)
+
+
+class Encoder(nn.Module):
+    def __init__(self, input_size, embedding_size, hidden_size, num_layers, p):
+        super(Encoder, self).__init__()
+        self.dropout = nn.Dropout(p)
+        self.hidden_size = hidden_size",        self.num_layers = num_layers,        self.num_layers = num_layers,"
+        self.embedding = nn.Embedding(input_size, embedding_size)
+        self.rnn = nn.LSTM(embedding_size, hidden_size, num_layers, dropout=p)
+
+    def forward(self, x):
+        embedding = self.dropout(self.embedding(x))
+        outputs, (hidden, cell) = self.rnn(embedding)
+
+        return hidden, cell
+    
+class Decoder(nn.Module):
+    def __init__(self, input_size, embedding_size, hidden_size, num_layers, p):
+        super(Decoder, self).__init__()
+        self.dropout = nn.Dropout(p)
+        self.hidden_size = hidden_size
+        self.num_layers = num_layers
+
+        self.embedding = nn.Embedding(input_size, embedding_size)
+        self.rnn = nn.LSTM(embedding_size, hidden_size, num_layers, dropout=p)
+        self.fc = nn.Linear(hidden_size, input_size)
+
+    def forward(self, x, hidden, cell):
+        x = x.unsqueeze(0)
+        embedding = self.dropout(self.embedding(x))
+        outputs, (hidden, cell) = self.rnn(embedding, (hidden, cell))
+        predictions = self.fc(outputs)
+        predictions = predictions.squeeze(0)
+
+        return predictions, hidden, cell
+
+class EncDec(nn.Module):
+    def __init__(self, encoder, decoder):
+        super(EncDec, self).__init__()
+        self.encoder = encoder
+        self.decoder = decoder
+
+    def forward(self, source, target, teacher_force_ratio=0.5):
+        batch_size = target.shape[1]
+        target_len = target.shape[0]
+        target_vocab_size = len(lang_out.vocab)
+
+        outputs = torch.zeros(target_len, batch_size, target_vocab_size).to(device)
+        hidden, cell = self.encoder(source)
+
+        x = target[0]
+
+        for t in range(1, target_len):
+            output, hidden, cell = self.decoder(x, hidden, cell)
+            outputs[t] = output
+            top1 = output.argmax(1)
+            x = target[t] if random.random() < teacher_force_ratio else top1
+        ",1,1.2213386697554703e-77,1.0
+47,"import torch
+import random
+
+import torch.nn as nn 
+from data_loading import lang_in, lang_out
+from config import system
+
+if 'mac' in system.lower():
+    system = 'mps' 
+elif 'win' in system.lower():
+    system = 'cpu'
+else:
+    raise TypeError('Unknown system, type: ""Mac"" or ""Windows""')
+
+device = torch.device('cuda' if torch.cuda.is_available() else system)
+
+
+class Encoder(nn.Module):
+    def __init__(self, input_size, embedding_size, hidden_size, num_layers, p):
+        super(Encoder, self).__init__()
+        self.dropout = nn.Dropout(p)
+        self.hidden_size = hidden_size
+        self.num_layers = num_layers
+
+        self.embedding = nn.Embedding(input_size, embedding_size)
+        self.rnn = nn.LSTM(embedding_size, hidden_size, num_layers, dropout=p)
+
+    def forward(self, x):
+        embedding = self.dropout(self.embedding(x))
+        outputs, (hidden, cell) = self.rnn(embedding)
+
+        return hidden, cell
+    
+class Decoder(nn.Module):
+    def __init__(self, input_size, embedding_size, hidden_size, num_layers, p):
+        super(Decoder, self).__init__()
+        self.dropout = nn.Dropout(p)
+        self.hidden_size = hidden_size
+        self.num_layers = num_layers
+","        self.embedding = nn.Embedding(input_size, embedding_size)","        self.embedding = nn.Embedding(input_size, embedding_size)","        self.rnn = nn.LSTM(embedding_size, hidden_size, num_layers, dropout=p)
+        self.fc = nn.Linear(hidden_size, input_size)
+
+    def forward(self, x, hidden, cell):
+        x = x.unsqueeze(0)
+        embedding = self.dropout(self.embedding(x))
+        outputs, (hidden, cell) = self.rnn(embedding, (hidden, cell))
+        predictions = self.fc(outputs)
+        predictions = predictions.squeeze(0)
+
+        return predictions, hidden, cell
+
+class EncDec(nn.Module):
+    def __init__(self, encoder, decoder):
+        super(EncDec, self).__init__()
+        self.encoder = encoder
+        self.decoder = decoder
+
+    def forward(self, source, target, teacher_force_ratio=0.5):
+        batch_size = target.shape[1]
+        target_len = target.shape[0]
+        target_vocab_size = len(lang_out.vocab)
+
+        outputs = torch.zeros(target_len, batch_size, target_vocab_size).to(device)
+        hidden, cell = self.encoder(source)
+
+        x = target[0]
+
+        for t in range(1, target_len):
+            output, hidden, cell = self.decoder(x, hidden, cell)
+            outputs[t] = output
+            top1 = output.argmax(1)
+            x = target[t] if random.random() < teacher_force_ratio else top1
+        ",1,1.0,1.0
+48,"import torch
+import random
+
+import torch.nn as nn 
+from data_loading import lang_in, lang_out
+from config import system
+
+if 'mac' in system.lower():
+    system = 'mps' 
+elif 'win' in system.lower():
+    system = 'cpu'
+else:
+    raise TypeError('Unknown system, type: ""Mac"" or ""Windows""')
+
+device = torch.device('cuda' if torch.cuda.is_available() else system)
+
+
+class Encoder(nn.Module):
+    def __init__(self, input_size, embedding_size, hidden_size, num_layers, p):
+        super(Encoder, self).__init__()
+        self.dropout = nn.Dropout(p)
+        self.hidden_size = hidden_size
+        self.num_layers = num_layers
+
+        self.embedding = nn.Embedding(input_size, embedding_size)
+        self.rnn = nn.LSTM(embedding_size, hidden_size, num_layers, dropout=p)
+
+    def forward(self, x):
+        embedding = self.dropout(self.embedding(x))
+        outputs, (hidden, cell) = self.rnn(embedding)
+
+        return hidden, cell
+    
+class Decoder(nn.Module):
+    def __init__(self, input_size, embedding_size, hidden_size, num_layers, p):
+        super(Decoder, self).__init__()
+        self.dropout = nn.Dropout(p)
+        self.hidden_size = hidden_size
+        self.num_layers = num_layers
+
+        self.embedding = nn.Embedding(input_size, embedding_size)
+        self.rnn = nn.LSTM(embedding_size, hidden_size, num_layers, dropout=p)
+        self.fc = nn.Linear(hidden_size, input_size)
+
+    def forward(self, x, hidden, cell):
+        x = x.unsqueeze(0)
+        embedding = self.dropout(self.embedding(x))
+        outputs, (hidden, cell) = self.rnn(embedding, (hidden, cell))
+        predictions = self.fc(outputs)
+        predictions = predictions.squeeze(0)
+
+        return predictions, hidden, cell
+
+class EncDec(nn.Module):
+    def __init__(self, encoder, decoder):
+        super(EncDec, self).__init__()
+        self.encoder = encoder
+        self.decoder = decoder
+
+    def forward(self, source, target, teacher_force_ratio=0.5):",        batch_size = target.shape[1],        batch_size = target.shape[1],"        target_len = target.shape[0]
+        target_vocab_size = len(lang_out.vocab)
+
+        outputs = torch.zeros(target_len, batch_size, target_vocab_size).to(device)
+        hidden, cell = self.encoder(source)
+
+        x = target[0]
+
+        for t in range(1, target_len):
+            output, hidden, cell = self.decoder(x, hidden, cell)
+            outputs[t] = output
+            top1 = output.argmax(1)
+            x = target[t] if random.random() < teacher_force_ratio else top1
+        ",1,1.2213386697554703e-77,1.0
+49,"import torch
+import random
+
+import torch.nn as nn 
+from data_loading import lang_in, lang_out
+from config import system
+
+if 'mac' in system.lower():
+    system = 'mps' 
+elif 'win' in system.lower():
+    system = 'cpu'
+else:
+    raise TypeError('Unknown system, type: ""Mac"" or ""Windows""')
+
+device = torch.device('cuda' if torch.cuda.is_available() else system)
+
+
+class Encoder(nn.Module):
+    def __init__(self, input_size, embedding_size, hidden_size, num_layers, p):
+        super(Encoder, self).__init__()
+        self.dropout = nn.Dropout(p)
+        self.hidden_size = hidden_size
+        self.num_layers = num_layers
+
+        self.embedding = nn.Embedding(input_size, embedding_size)
+        self.rnn = nn.LSTM(embedding_size, hidden_size, num_layers, dropout=p)
+
+    def forward(self, x):
+        embedding = self.dropout(self.embedding(x))
+        outputs, (hidden, cell) = self.rnn(embedding)
+
+        return hidden, cell
+    
+class Decoder(nn.Module):
+    def __init__(self, input_size, embedding_size, hidden_size, num_layers, p):
+        super(Decoder, self).__init__()
+        self.dropout = nn.Dropout(p)
+        self.hidden_size = hidden_size
+        self.num_layers = num_layers
+
+        self.embedding = nn.Embedding(input_size, embedding_size)
+        self.rnn = nn.LSTM(embedding_size, hidden_size, num_layers, dropout=p)
+        self.fc = nn.Linear(hidden_size, input_size)
+
+    def forward(self, x, hidden, cell):
+        x = x.unsqueeze(0)
+        embedding = self.dropout(self.embedding(x))
+        outputs, (hidden, cell) = self.rnn(embedding, (hidden, cell))
+        predictions = self.fc(outputs)
+        predictions = predictions.squeeze(0)
+
+        return predictions, hidden, cell
+
+class EncDec(nn.Module):
+    def __init__(self, encoder, decoder):
+        super(EncDec, self).__init__()
+        self.encoder = encoder",        self.decoder = decoder,        self.decoder = decoder,"
+    def forward(self, source, target, teacher_force_ratio=0.5):
+        batch_size = target.shape[1]
+        target_len = target.shape[0]
+        target_vocab_size = len(lang_out.vocab)
+
+        outputs = torch.zeros(target_len, batch_size, target_vocab_size).to(device)
+        hidden, cell = self.encoder(source)
+
+        x = target[0]
+
+        for t in range(1, target_len):
+            output, hidden, cell = self.decoder(x, hidden, cell)
+            outputs[t] = output
+            top1 = output.argmax(1)
+            x = target[t] if random.random() < teacher_force_ratio else top1
+        ",1,1.2213386697554703e-77,1.0
+50,"import torch 
+import random
+import string
+import torch.nn as nn 
+from config import device, file, first_run
+
+from torch.utils.tensorboard import SummaryWriter
+
+
+class RNN(nn.Module):
+    def __init__(self, input_size, hidden_size, num_layers, out_size):
+        super(RNN, self).__init__()
+        self.hidden_size = hidden_size
+        self.num_layers = num_layers
+
+        self.embed = nn.Embedding(input_size, hidden_size)
+        self.lstm = nn.LSTM(hidden_size, hidden_size, num_layers, batch_first=True)
+        self.fc = nn.Linear(hidden_size, out_size)
+
+    def forward(self, x, hidden, cell):
+        out = self.embed(x)
+        out, (hidden, cell) = self.lstm(out.unsqueeze(1), (hidden, cell))
+        out = self.fc(out.reshape(out.shape[1], -1))
+        return out, (hidden, cell)
+    
+    def init_hidden(self, batch_size):
+        hidden = torch.zeros(self.num_layers, batch_size, self.hidden_size).to(device)
+        cell = torch.zeros(self.num_layers, batch_size, self.hidden_size).to(device)
+        return hidden, cell
+    
+class Generator:
+    def __init__(self, 
+                chunk_len = 250,
+                num_epochs = 5000,
+                batch_size = 1,
+                print_every = 50,
+                hidden_size = 256,
+                num_layers = 2,
+                lr = 0.003):
+        
+        self.chunk_len = chunk_len
+        self.num_epochs = num_epochs
+        self.batch_size = batch_size
+        self.print_every = print_every
+        self.hidden_size = hidden_size
+        self.num_layers = num_layers
+        self.lr = lr
+        self.all_characters = string.printable
+        self.n_characters = len(self.all_characters)
+
+
+    def char_tensor(self, string):
+        tensor = torch.zeros(len(string)).long()
+        for c in range(len(string)):
+            tensor[c] = self.all_characters.index(string[c])
+
+        return tensor
+    
+    def get_random_batch(self):
+        start_idx = random.randint(0, len(file) - self.chunk_len)
+        end_idx = start_idx + self.chunk_len + 1
+        text_str = file[start_idx: end_idx]
+        text_input = torch.zeros(self.batch_size, self.chunk_len)
+        text_target = torch.zeros(self.batch_size, self.chunk_len)
+
+        for i in range(self.batch_size):
+            text_input[i, :] = self.char_tensor(text_str[:-1])
+            text_target[i, :] = self.char_tensor(text_str[1:])
+
+        return text_input.long(), text_target.long()
+    
+    def generate(self, initial_str = 'A', predict_len = 200, temperature = 0.85):
+
+        initial_str = initial_str.lower()
+
+        hidden, cell = self.rnn.init_hidden(batch_size=self.batch_size)
+        initial_input = self.char_tensor(initial_str)
+        predicted = initial_str
+
+        for p in range(len(initial_str)-1):
+            _, (hidden, cell) = self.rnn(
+                initial_input[p].view(1).to(device), hidden, cell
+            )
+
+        last_char = initial_input[-1]
+
+        for p in range(predict_len):
+            output, (hidden, cell) = self.rnn(
+                last_char.view(1).to(device), hidden, cell
+            )
+            output_dist = output.data.view(-1).div(temperature).exp()
+            top_char = torch.multinomial(output_dist, 1)[0]
+            predicted_char = self.all_characters[top_char]
+            predicted += predicted_char
+            last_char = self.char_tensor(predicted_char)
+
+        return predicted
+    
+    
+    def train(self):
+        if first_run:
+            self.rnn = RNN(
+                self.n_characters, ","                self.hidden_size, ","                self.hidden_size, ","                self.num_layers,
+                self.n_characters
+            ).to(device)
+
+            optimizer = torch.optim.Adam(self.rnn.parameters(), lr=self.lr)
+            criterion = nn.CrossEntropyLoss()
+            writer = SummaryWriter(f""runs/names0"")  # for tensorboard
+
+            print(""=> Starting training"")
+
+            for epoch in range(1, self.num_epochs + 1):
+                inp, target = self.get_random_batch()
+                hidden, cell = self.rnn.init_hidden(batch_size=self.batch_size)
+
+                self.rnn.zero_grad()
+                loss = 0
+                inp = inp.to(device)
+                target = target.to(device)
+
+                for c in range(self.chunk_len):
+                    output, (hidden, cell) = self.rnn(inp[:, c], hidden, cell)
+                    loss += criterion(output, target[:, c])
+
+                loss.backward()
+                optimizer.step()
+                loss = loss.item() / self.chunk_len
+
+                if epoch % self.print_every == 0:
+                    print(f""Loss: {loss}, Epoch: {epoch}"")
+                    print(self.generate())
+
+                writer.add_scalar(""Training loss"", loss, global_step=epoch)
+
+            # save the model as a state dictionary in pth format
+            torch.save({
+                'model_state_dict': self.rnn.state_dict(),
+                'optimizer_state_dict': optimizer.state_dict(),
+            },  'model_weights/model.pth')
+
+        elif not first_run:
+            # define the structure and the parameters
+            self.rnn = RNN(self.n_characters, 
+                            self.hidden_size, 
+                            self.num_layers,
+                            self.n_characters)
+            
+            # define the optimizer
+            optimizer = torch.optim.Adam(self.rnn.parameters(), lr=self.lr)
+
+            # load the checkpoint data
+            checkpoint = torch.load('model_weights/model.pth')
+            # load the checkpoint into the model structure
+            self.rnn.load_state_dict(checkpoint['model_state_dict'])
+            # load the checkpoint to the optimizer structure
+            optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
+            # pass model to the device
+            self.rnn.to(device)
+
+        else: 
+            raise TypeError(f""Input value must be boolean instead of {first_run} in config.py"")",1,1.821831989445342e-231,1.0
+51,"import torch 
+import random
+import string
+import torch.nn as nn 
+from config import device, file, first_run
+
+from torch.utils.tensorboard import SummaryWriter
+
+
+class RNN(nn.Module):
+    def __init__(self, input_size, hidden_size, num_layers, out_size):
+        super(RNN, self).__init__()
+        self.hidden_size = hidden_size
+        self.num_layers = num_layers
+
+        self.embed = nn.Embedding(input_size, hidden_size)
+        self.lstm = nn.LSTM(hidden_size, hidden_size, num_layers, batch_first=True)
+        self.fc = nn.Linear(hidden_size, out_size)
+
+    def forward(self, x, hidden, cell):
+        out = self.embed(x)
+        out, (hidden, cell) = self.lstm(out.unsqueeze(1), (hidden, cell))
+        out = self.fc(out.reshape(out.shape[1], -1))
+        return out, (hidden, cell)
+    
+    def init_hidden(self, batch_size):
+        hidden = torch.zeros(self.num_layers, batch_size, self.hidden_size).to(device)
+        cell = torch.zeros(self.num_layers, batch_size, self.hidden_size).to(device)","        return hidden, cell","        return hidden, cell","    
+class Generator:
+    def __init__(self, 
+                chunk_len = 250,
+                num_epochs = 5000,
+                batch_size = 1,
+                print_every = 50,
+                hidden_size = 256,
+                num_layers = 2,
+                lr = 0.003):
+        
+        self.chunk_len = chunk_len
+        self.num_epochs = num_epochs
+        self.batch_size = batch_size
+        self.print_every = print_every
+        self.hidden_size = hidden_size
+        self.num_layers = num_layers
+        self.lr = lr
+        self.all_characters = string.printable
+        self.n_characters = len(self.all_characters)
+
+
+    def char_tensor(self, string):
+        tensor = torch.zeros(len(string)).long()
+        for c in range(len(string)):
+            tensor[c] = self.all_characters.index(string[c])
+
+        return tensor
+    
+    def get_random_batch(self):
+        start_idx = random.randint(0, len(file) - self.chunk_len)
+        end_idx = start_idx + self.chunk_len + 1
+        text_str = file[start_idx: end_idx]
+        text_input = torch.zeros(self.batch_size, self.chunk_len)
+        text_target = torch.zeros(self.batch_size, self.chunk_len)
+
+        for i in range(self.batch_size):
+            text_input[i, :] = self.char_tensor(text_str[:-1])
+            text_target[i, :] = self.char_tensor(text_str[1:])
+
+        return text_input.long(), text_target.long()
+    
+    def generate(self, initial_str = 'A', predict_len = 200, temperature = 0.85):
+
+        initial_str = initial_str.lower()
+
+        hidden, cell = self.rnn.init_hidden(batch_size=self.batch_size)
+        initial_input = self.char_tensor(initial_str)
+        predicted = initial_str
+
+        for p in range(len(initial_str)-1):
+            _, (hidden, cell) = self.rnn(
+                initial_input[p].view(1).to(device), hidden, cell
+            )
+
+        last_char = initial_input[-1]
+
+        for p in range(predict_len):
+            output, (hidden, cell) = self.rnn(
+                last_char.view(1).to(device), hidden, cell
+            )
+            output_dist = output.data.view(-1).div(temperature).exp()
+            top_char = torch.multinomial(output_dist, 1)[0]
+            predicted_char = self.all_characters[top_char]
+            predicted += predicted_char
+            last_char = self.char_tensor(predicted_char)
+
+        return predicted
+    
+    
+    def train(self):
+        if first_run:
+            self.rnn = RNN(
+                self.n_characters, 
+                self.hidden_size, 
+                self.num_layers,
+                self.n_characters
+            ).to(device)
+
+            optimizer = torch.optim.Adam(self.rnn.parameters(), lr=self.lr)
+            criterion = nn.CrossEntropyLoss()
+            writer = SummaryWriter(f""runs/names0"")  # for tensorboard
+
+            print(""=> Starting training"")
+
+            for epoch in range(1, self.num_epochs + 1):
+                inp, target = self.get_random_batch()
+                hidden, cell = self.rnn.init_hidden(batch_size=self.batch_size)
+
+                self.rnn.zero_grad()
+                loss = 0
+                inp = inp.to(device)
+                target = target.to(device)
+
+                for c in range(self.chunk_len):
+                    output, (hidden, cell) = self.rnn(inp[:, c], hidden, cell)
+                    loss += criterion(output, target[:, c])
+
+                loss.backward()
+                optimizer.step()
+                loss = loss.item() / self.chunk_len
+
+                if epoch % self.print_every == 0:
+                    print(f""Loss: {loss}, Epoch: {epoch}"")
+                    print(self.generate())
+
+                writer.add_scalar(""Training loss"", loss, global_step=epoch)
+
+            # save the model as a state dictionary in pth format
+            torch.save({
+                'model_state_dict': self.rnn.state_dict(),
+                'optimizer_state_dict': optimizer.state_dict(),
+            },  'model_weights/model.pth')
+
+        elif not first_run:
+            # define the structure and the parameters
+            self.rnn = RNN(self.n_characters, 
+                            self.hidden_size, 
+                            self.num_layers,
+                            self.n_characters)
+            
+            # define the optimizer
+            optimizer = torch.optim.Adam(self.rnn.parameters(), lr=self.lr)
+
+            # load the checkpoint data
+            checkpoint = torch.load('model_weights/model.pth')
+            # load the checkpoint into the model structure
+            self.rnn.load_state_dict(checkpoint['model_state_dict'])
+            # load the checkpoint to the optimizer structure
+            optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
+            # pass model to the device
+            self.rnn.to(device)
+
+        else: 
+            raise TypeError(f""Input value must be boolean instead of {first_run} in config.py"")",1,1.2213386697554703e-77,1.0
+52,"import torch 
+import random
+import string
+import torch.nn as nn 
+from config import device, file, first_run
+
+from torch.utils.tensorboard import SummaryWriter
+
+
+class RNN(nn.Module):
+    def __init__(self, input_size, hidden_size, num_layers, out_size):
+        super(RNN, self).__init__()
+        self.hidden_size = hidden_size
+        self.num_layers = num_layers
+
+        self.embed = nn.Embedding(input_size, hidden_size)
+        self.lstm = nn.LSTM(hidden_size, hidden_size, num_layers, batch_first=True)
+        self.fc = nn.Linear(hidden_size, out_size)
+
+    def forward(self, x, hidden, cell):
+        out = self.embed(x)
+        out, (hidden, cell) = self.lstm(out.unsqueeze(1), (hidden, cell))
+        out = self.fc(out.reshape(out.shape[1], -1))
+        return out, (hidden, cell)
+    
+    def init_hidden(self, batch_size):
+        hidden = torch.zeros(self.num_layers, batch_size, self.hidden_size).to(device)
+        cell = torch.zeros(self.num_layers, batch_size, self.hidden_size).to(device)
+        return hidden, cell
+    
+class Generator:
+    def __init__(self, 
+                chunk_len = 250,
+                num_epochs = 5000,
+                batch_size = 1,
+                print_every = 50,
+                hidden_size = 256,
+                num_layers = 2,
+                lr = 0.003):
+        
+        self.chunk_len = chunk_len
+        self.num_epochs = num_epochs
+        self.batch_size = batch_size
+        self.print_every = print_every
+        self.hidden_size = hidden_size
+        self.num_layers = num_layers
+        self.lr = lr
+        self.all_characters = string.printable
+        self.n_characters = len(self.all_characters)
+
+
+    def char_tensor(self, string):
+        tensor = torch.zeros(len(string)).long()
+        for c in range(len(string)):
+            tensor[c] = self.all_characters.index(string[c])
+
+        return tensor
+    
+    def get_random_batch(self):
+        start_idx = random.randint(0, len(file) - self.chunk_len)
+        end_idx = start_idx + self.chunk_len + 1
+        text_str = file[start_idx: end_idx]
+        text_input = torch.zeros(self.batch_size, self.chunk_len)
+        text_target = torch.zeros(self.batch_size, self.chunk_len)
+
+        for i in range(self.batch_size):
+            text_input[i, :] = self.char_tensor(text_str[:-1])
+            text_target[i, :] = self.char_tensor(text_str[1:])
+
+        return text_input.long(), text_target.long()
+    
+    def generate(self, initial_str = 'A', predict_len = 200, temperature = 0.85):
+
+        initial_str = initial_str.lower()
+
+        hidden, cell = self.rnn.init_hidden(batch_size=self.batch_size)
+        initial_input = self.char_tensor(initial_str)
+        predicted = initial_str
+
+        for p in range(len(initial_str)-1):
+            _, (hidden, cell) = self.rnn(
+                initial_input[p].view(1).to(device), hidden, cell
+            )
+
+        last_char = initial_input[-1]
+
+        for p in range(predict_len):
+            output, (hidden, cell) = self.rnn(
+                last_char.view(1).to(device), hidden, cell
+            )
+            output_dist = output.data.view(-1).div(temperature).exp()
+            top_char = torch.multinomial(output_dist, 1)[0]
+            predicted_char = self.all_characters[top_char]
+            predicted += predicted_char
+            last_char = self.char_tensor(predicted_char)
+
+        return predicted
+    
+    
+    def train(self):
+        if first_run:
+            self.rnn = RNN(
+                self.n_characters, 
+                self.hidden_size, 
+                self.num_layers,
+                self.n_characters
+            ).to(device)
+
+            optimizer = torch.optim.Adam(self.rnn.parameters(), lr=self.lr)
+            criterion = nn.CrossEntropyLoss()
+            writer = SummaryWriter(f""runs/names0"")  # for tensorboard
+
+            print(""=> Starting training"")
+
+            for epoch in range(1, self.num_epochs + 1):
+                inp, target = self.get_random_batch()
+                hidden, cell = self.rnn.init_hidden(batch_size=self.batch_size)
+",                self.rnn.zero_grad(),                self.rnn.zero_grad(),"                loss = 0
+                inp = inp.to(device)
+                target = target.to(device)
+
+                for c in range(self.chunk_len):
+                    output, (hidden, cell) = self.rnn(inp[:, c], hidden, cell)
+                    loss += criterion(output, target[:, c])
+
+                loss.backward()
+                optimizer.step()
+                loss = loss.item() / self.chunk_len
+
+                if epoch % self.print_every == 0:
+                    print(f""Loss: {loss}, Epoch: {epoch}"")
+                    print(self.generate())
+
+                writer.add_scalar(""Training loss"", loss, global_step=epoch)
+
+            # save the model as a state dictionary in pth format
+            torch.save({
+                'model_state_dict': self.rnn.state_dict(),
+                'optimizer_state_dict': optimizer.state_dict(),
+            },  'model_weights/model.pth')
+
+        elif not first_run:
+            # define the structure and the parameters
+            self.rnn = RNN(self.n_characters, 
+                            self.hidden_size, 
+                            self.num_layers,
+                            self.n_characters)
+            
+            # define the optimizer
+            optimizer = torch.optim.Adam(self.rnn.parameters(), lr=self.lr)
+
+            # load the checkpoint data
+            checkpoint = torch.load('model_weights/model.pth')
+            # load the checkpoint into the model structure
+            self.rnn.load_state_dict(checkpoint['model_state_dict'])
+            # load the checkpoint to the optimizer structure
+            optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
+            # pass model to the device
+            self.rnn.to(device)
+
+        else: 
+            raise TypeError(f""Input value must be boolean instead of {first_run} in config.py"")",1,1.821831989445342e-231,1.0
+53,"import torch 
+import random
+import string
+import torch.nn as nn 
+from config import device, file, first_run
+
+from torch.utils.tensorboard import SummaryWriter
+
+
+class RNN(nn.Module):
+    def __init__(self, input_size, hidden_size, num_layers, out_size):
+        super(RNN, self).__init__()
+        self.hidden_size = hidden_size
+        self.num_layers = num_layers
+
+        self.embed = nn.Embedding(input_size, hidden_size)
+        self.lstm = nn.LSTM(hidden_size, hidden_size, num_layers, batch_first=True)
+        self.fc = nn.Linear(hidden_size, out_size)
+
+    def forward(self, x, hidden, cell):
+        out = self.embed(x)
+        out, (hidden, cell) = self.lstm(out.unsqueeze(1), (hidden, cell))
+        out = self.fc(out.reshape(out.shape[1], -1))
+        return out, (hidden, cell)
+    
+    def init_hidden(self, batch_size):
+        hidden = torch.zeros(self.num_layers, batch_size, self.hidden_size).to(device)
+        cell = torch.zeros(self.num_layers, batch_size, self.hidden_size).to(device)
+        return hidden, cell
+    
+class Generator:
+    def __init__(self, 
+                chunk_len = 250,
+                num_epochs = 5000,
+                batch_size = 1,
+                print_every = 50,
+                hidden_size = 256,
+                num_layers = 2,
+                lr = 0.003):
+        
+        self.chunk_len = chunk_len
+        self.num_epochs = num_epochs
+        self.batch_size = batch_size
+        self.print_every = print_every
+        self.hidden_size = hidden_size
+        self.num_layers = num_layers
+        self.lr = lr
+        self.all_characters = string.printable
+        self.n_characters = len(self.all_characters)
+
+
+    def char_tensor(self, string):
+        tensor = torch.zeros(len(string)).long()
+        for c in range(len(string)):
+            tensor[c] = self.all_characters.index(string[c])
+
+        return tensor
+    
+    def get_random_batch(self):
+        start_idx = random.randint(0, len(file) - self.chunk_len)
+        end_idx = start_idx + self.chunk_len + 1
+        text_str = file[start_idx: end_idx]
+        text_input = torch.zeros(self.batch_size, self.chunk_len)
+        text_target = torch.zeros(self.batch_size, self.chunk_len)
+
+        for i in range(self.batch_size):
+            text_input[i, :] = self.char_tensor(text_str[:-1])
+            text_target[i, :] = self.char_tensor(text_str[1:])
+
+        return text_input.long(), text_target.long()
+    
+    def generate(self, initial_str = 'A', predict_len = 200, temperature = 0.85):
+
+        initial_str = initial_str.lower()
+
+        hidden, cell = self.rnn.init_hidden(batch_size=self.batch_size)
+        initial_input = self.char_tensor(initial_str)
+        predicted = initial_str
+
+        for p in range(len(initial_str)-1):
+            _, (hidden, cell) = self.rnn(
+                initial_input[p].view(1).to(device), hidden, cell
+            )
+
+        last_char = initial_input[-1]
+
+        for p in range(predict_len):
+            output, (hidden, cell) = self.rnn(
+                last_char.view(1).to(device), hidden, cell
+            )
+            output_dist = output.data.view(-1).div(temperature).exp()
+            top_char = torch.multinomial(output_dist, 1)[0]",            predicted_char = self.all_characters[top_char],            predicted_char = self.all_characters[top_char],"            predicted += predicted_char
+            last_char = self.char_tensor(predicted_char)
+
+        return predicted
+    
+    
+    def train(self):
+        if first_run:
+            self.rnn = RNN(
+                self.n_characters, 
+                self.hidden_size, 
+                self.num_layers,
+                self.n_characters
+            ).to(device)
+
+            optimizer = torch.optim.Adam(self.rnn.parameters(), lr=self.lr)
+            criterion = nn.CrossEntropyLoss()
+            writer = SummaryWriter(f""runs/names0"")  # for tensorboard
+
+            print(""=> Starting training"")
+
+            for epoch in range(1, self.num_epochs + 1):
+                inp, target = self.get_random_batch()
+                hidden, cell = self.rnn.init_hidden(batch_size=self.batch_size)
+
+                self.rnn.zero_grad()
+                loss = 0
+                inp = inp.to(device)
+                target = target.to(device)
+
+                for c in range(self.chunk_len):
+                    output, (hidden, cell) = self.rnn(inp[:, c], hidden, cell)
+                    loss += criterion(output, target[:, c])
+
+                loss.backward()
+                optimizer.step()
+                loss = loss.item() / self.chunk_len
+
+                if epoch % self.print_every == 0:
+                    print(f""Loss: {loss}, Epoch: {epoch}"")
+                    print(self.generate())
+
+                writer.add_scalar(""Training loss"", loss, global_step=epoch)
+
+            # save the model as a state dictionary in pth format
+            torch.save({
+                'model_state_dict': self.rnn.state_dict(),
+                'optimizer_state_dict': optimizer.state_dict(),
+            },  'model_weights/model.pth')
+
+        elif not first_run:
+            # define the structure and the parameters
+            self.rnn = RNN(self.n_characters, 
+                            self.hidden_size, 
+                            self.num_layers,
+                            self.n_characters)
+            
+            # define the optimizer
+            optimizer = torch.optim.Adam(self.rnn.parameters(), lr=self.lr)
+
+            # load the checkpoint data
+            checkpoint = torch.load('model_weights/model.pth')
+            # load the checkpoint into the model structure
+            self.rnn.load_state_dict(checkpoint['model_state_dict'])
+            # load the checkpoint to the optimizer structure
+            optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
+            # pass model to the device
+            self.rnn.to(device)
+
+        else: 
+            raise TypeError(f""Input value must be boolean instead of {first_run} in config.py"")",1,1.2213386697554703e-77,1.0
+54,"import torch 
+import random
+import string
+import torch.nn as nn 
+from config import device, file, first_run
+
+from torch.utils.tensorboard import SummaryWriter
+
+
+class RNN(nn.Module):
+    def __init__(self, input_size, hidden_size, num_layers, out_size):
+        super(RNN, self).__init__()
+        self.hidden_size = hidden_size
+        self.num_layers = num_layers
+
+        self.embed = nn.Embedding(input_size, hidden_size)
+        self.lstm = nn.LSTM(hidden_size, hidden_size, num_layers, batch_first=True)
+        self.fc = nn.Linear(hidden_size, out_size)
+
+    def forward(self, x, hidden, cell):
+        out = self.embed(x)
+        out, (hidden, cell) = self.lstm(out.unsqueeze(1), (hidden, cell))
+        out = self.fc(out.reshape(out.shape[1], -1))
+        return out, (hidden, cell)
+    
+    def init_hidden(self, batch_size):
+        hidden = torch.zeros(self.num_layers, batch_size, self.hidden_size).to(device)
+        cell = torch.zeros(self.num_layers, batch_size, self.hidden_size).to(device)
+        return hidden, cell
+    
+class Generator:
+    def __init__(self, 
+                chunk_len = 250,
+                num_epochs = 5000,
+                batch_size = 1,
+                print_every = 50,
+                hidden_size = 256,
+                num_layers = 2,
+                lr = 0.003):
+        
+        self.chunk_len = chunk_len
+        self.num_epochs = num_epochs
+        self.batch_size = batch_size
+        self.print_every = print_every
+        self.hidden_size = hidden_size
+        self.num_layers = num_layers
+        self.lr = lr
+        self.all_characters = string.printable
+        self.n_characters = len(self.all_characters)
+
+
+    def char_tensor(self, string):
+        tensor = torch.zeros(len(string)).long()
+        for c in range(len(string)):
+            tensor[c] = self.all_characters.index(string[c])
+
+        return tensor
+    
+    def get_random_batch(self):
+        start_idx = random.randint(0, len(file) - self.chunk_len)
+        end_idx = start_idx + self.chunk_len + 1
+        text_str = file[start_idx: end_idx]
+        text_input = torch.zeros(self.batch_size, self.chunk_len)
+        text_target = torch.zeros(self.batch_size, self.chunk_len)",        for i in range(self.batch_size):,        for i in range(self.batch_size):,"            text_input[i, :] = self.char_tensor(text_str[:-1])
+            text_target[i, :] = self.char_tensor(text_str[1:])
+
+        return text_input.long(), text_target.long()
+    
+    def generate(self, initial_str = 'A', predict_len = 200, temperature = 0.85):
+
+        initial_str = initial_str.lower()
+
+        hidden, cell = self.rnn.init_hidden(batch_size=self.batch_size)
+        initial_input = self.char_tensor(initial_str)
+        predicted = initial_str
+
+        for p in range(len(initial_str)-1):
+            _, (hidden, cell) = self.rnn(
+                initial_input[p].view(1).to(device), hidden, cell
+            )
+
+        last_char = initial_input[-1]
+
+        for p in range(predict_len):
+            output, (hidden, cell) = self.rnn(
+                last_char.view(1).to(device), hidden, cell
+            )
+            output_dist = output.data.view(-1).div(temperature).exp()
+            top_char = torch.multinomial(output_dist, 1)[0]
+            predicted_char = self.all_characters[top_char]
+            predicted += predicted_char
+            last_char = self.char_tensor(predicted_char)
+
+        return predicted
+    
+    
+    def train(self):
+        if first_run:
+            self.rnn = RNN(
+                self.n_characters, 
+                self.hidden_size, 
+                self.num_layers,
+                self.n_characters
+            ).to(device)
+
+            optimizer = torch.optim.Adam(self.rnn.parameters(), lr=self.lr)
+            criterion = nn.CrossEntropyLoss()
+            writer = SummaryWriter(f""runs/names0"")  # for tensorboard
+
+            print(""=> Starting training"")
+
+            for epoch in range(1, self.num_epochs + 1):
+                inp, target = self.get_random_batch()
+                hidden, cell = self.rnn.init_hidden(batch_size=self.batch_size)
+
+                self.rnn.zero_grad()
+                loss = 0
+                inp = inp.to(device)
+                target = target.to(device)
+
+                for c in range(self.chunk_len):
+                    output, (hidden, cell) = self.rnn(inp[:, c], hidden, cell)
+                    loss += criterion(output, target[:, c])
+
+                loss.backward()
+                optimizer.step()
+                loss = loss.item() / self.chunk_len
+
+                if epoch % self.print_every == 0:
+                    print(f""Loss: {loss}, Epoch: {epoch}"")
+                    print(self.generate())
+
+                writer.add_scalar(""Training loss"", loss, global_step=epoch)
+
+            # save the model as a state dictionary in pth format
+            torch.save({
+                'model_state_dict': self.rnn.state_dict(),
+                'optimizer_state_dict': optimizer.state_dict(),
+            },  'model_weights/model.pth')
+
+        elif not first_run:
+            # define the structure and the parameters
+            self.rnn = RNN(self.n_characters, 
+                            self.hidden_size, 
+                            self.num_layers,
+                            self.n_characters)
+            
+            # define the optimizer
+            optimizer = torch.optim.Adam(self.rnn.parameters(), lr=self.lr)
+
+            # load the checkpoint data
+            checkpoint = torch.load('model_weights/model.pth')
+            # load the checkpoint into the model structure
+            self.rnn.load_state_dict(checkpoint['model_state_dict'])
+            # load the checkpoint to the optimizer structure
+            optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
+            # pass model to the device
+            self.rnn.to(device)
+
+        else: 
+            raise TypeError(f""Input value must be boolean instead of {first_run} in config.py"")",1,1.0,1.0
+55,"import torch 
+import random
+import string
+import torch.nn as nn 
+from config import device, file, first_run
+
+from torch.utils.tensorboard import SummaryWriter
+
+
+class RNN(nn.Module):
+    def __init__(self, input_size, hidden_size, num_layers, out_size):
+        super(RNN, self).__init__()
+        self.hidden_size = hidden_size
+        self.num_layers = num_layers
+
+        self.embed = nn.Embedding(input_size, hidden_size)
+        self.lstm = nn.LSTM(hidden_size, hidden_size, num_layers, batch_first=True)
+        self.fc = nn.Linear(hidden_size, out_size)
+
+    def forward(self, x, hidden, cell):
+        out = self.embed(x)
+        out, (hidden, cell) = self.lstm(out.unsqueeze(1), (hidden, cell))
+        out = self.fc(out.reshape(out.shape[1], -1))
+        return out, (hidden, cell)
+    
+    def init_hidden(self, batch_size):
+        hidden = torch.zeros(self.num_layers, batch_size, self.hidden_size).to(device)
+        cell = torch.zeros(self.num_layers, batch_size, self.hidden_size).to(device)
+        return hidden, cell
+    
+class Generator:
+    def __init__(self, 
+                chunk_len = 250,
+                num_epochs = 5000,
+                batch_size = 1,
+                print_every = 50,
+                hidden_size = 256,
+                num_layers = 2,
+                lr = 0.003):
+        
+        self.chunk_len = chunk_len
+        self.num_epochs = num_epochs
+        self.batch_size = batch_size
+        self.print_every = print_every
+        self.hidden_size = hidden_size
+        self.num_layers = num_layers
+        self.lr = lr
+        self.all_characters = string.printable
+        self.n_characters = len(self.all_characters)
+
+
+    def char_tensor(self, string):
+        tensor = torch.zeros(len(string)).long()
+        for c in range(len(string)):
+            tensor[c] = self.all_characters.index(string[c])
+
+        return tensor
+    
+    def get_random_batch(self):
+        start_idx = random.randint(0, len(file) - self.chunk_len)
+        end_idx = start_idx + self.chunk_len + 1
+        text_str = file[start_idx: end_idx]
+        text_input = torch.zeros(self.batch_size, self.chunk_len)
+        text_target = torch.zeros(self.batch_size, self.chunk_len)
+
+        for i in range(self.batch_size):
+            text_input[i, :] = self.char_tensor(text_str[:-1])","            text_target[i, :] = self.char_tensor(text_str[1:])","            text_target[i, :] = self.char_tensor(text_str[1:])","
+        return text_input.long(), text_target.long()
+    
+    def generate(self, initial_str = 'A', predict_len = 200, temperature = 0.85):
+
+        initial_str = initial_str.lower()
+
+        hidden, cell = self.rnn.init_hidden(batch_size=self.batch_size)
+        initial_input = self.char_tensor(initial_str)
+        predicted = initial_str
+
+        for p in range(len(initial_str)-1):
+            _, (hidden, cell) = self.rnn(
+                initial_input[p].view(1).to(device), hidden, cell
+            )
+
+        last_char = initial_input[-1]
+
+        for p in range(predict_len):
+            output, (hidden, cell) = self.rnn(
+                last_char.view(1).to(device), hidden, cell
+            )
+            output_dist = output.data.view(-1).div(temperature).exp()
+            top_char = torch.multinomial(output_dist, 1)[0]
+            predicted_char = self.all_characters[top_char]
+            predicted += predicted_char
+            last_char = self.char_tensor(predicted_char)
+
+        return predicted
+    
+    
+    def train(self):
+        if first_run:
+            self.rnn = RNN(
+                self.n_characters, 
+                self.hidden_size, 
+                self.num_layers,
+                self.n_characters
+            ).to(device)
+
+            optimizer = torch.optim.Adam(self.rnn.parameters(), lr=self.lr)
+            criterion = nn.CrossEntropyLoss()
+            writer = SummaryWriter(f""runs/names0"")  # for tensorboard
+
+            print(""=> Starting training"")
+
+            for epoch in range(1, self.num_epochs + 1):
+                inp, target = self.get_random_batch()
+                hidden, cell = self.rnn.init_hidden(batch_size=self.batch_size)
+
+                self.rnn.zero_grad()
+                loss = 0
+                inp = inp.to(device)
+                target = target.to(device)
+
+                for c in range(self.chunk_len):
+                    output, (hidden, cell) = self.rnn(inp[:, c], hidden, cell)
+                    loss += criterion(output, target[:, c])
+
+                loss.backward()
+                optimizer.step()
+                loss = loss.item() / self.chunk_len
+
+                if epoch % self.print_every == 0:
+                    print(f""Loss: {loss}, Epoch: {epoch}"")
+                    print(self.generate())
+
+                writer.add_scalar(""Training loss"", loss, global_step=epoch)
+
+            # save the model as a state dictionary in pth format
+            torch.save({
+                'model_state_dict': self.rnn.state_dict(),
+                'optimizer_state_dict': optimizer.state_dict(),
+            },  'model_weights/model.pth')
+
+        elif not first_run:
+            # define the structure and the parameters
+            self.rnn = RNN(self.n_characters, 
+                            self.hidden_size, 
+                            self.num_layers,
+                            self.n_characters)
+            
+            # define the optimizer
+            optimizer = torch.optim.Adam(self.rnn.parameters(), lr=self.lr)
+
+            # load the checkpoint data
+            checkpoint = torch.load('model_weights/model.pth')
+            # load the checkpoint into the model structure
+            self.rnn.load_state_dict(checkpoint['model_state_dict'])
+            # load the checkpoint to the optimizer structure
+            optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
+            # pass model to the device
+            self.rnn.to(device)
+
+        else: 
+            raise TypeError(f""Input value must be boolean instead of {first_run} in config.py"")",1,1.0,1.0
+56,"import torch 
+import random
+import string
+import torch.nn as nn 
+from config import device, file, first_run
+
+from torch.utils.tensorboard import SummaryWriter
+
+
+class RNN(nn.Module):
+    def __init__(self, input_size, hidden_size, num_layers, out_size):
+        super(RNN, self).__init__()
+        self.hidden_size = hidden_size
+        self.num_layers = num_layers
+
+        self.embed = nn.Embedding(input_size, hidden_size)
+        self.lstm = nn.LSTM(hidden_size, hidden_size, num_layers, batch_first=True)
+        self.fc = nn.Linear(hidden_size, out_size)
+
+    def forward(self, x, hidden, cell):
+        out = self.embed(x)
+        out, (hidden, cell) = self.lstm(out.unsqueeze(1), (hidden, cell))
+        out = self.fc(out.reshape(out.shape[1], -1))
+        return out, (hidden, cell)
+    
+    def init_hidden(self, batch_size):
+        hidden = torch.zeros(self.num_layers, batch_size, self.hidden_size).to(device)
+        cell = torch.zeros(self.num_layers, batch_size, self.hidden_size).to(device)
+        return hidden, cell
+    
+class Generator:
+    def __init__(self, 
+                chunk_len = 250,
+                num_epochs = 5000,
+                batch_size = 1,
+                print_every = 50,
+                hidden_size = 256,
+                num_layers = 2,
+                lr = 0.003):
+        
+        self.chunk_len = chunk_len
+        self.num_epochs = num_epochs
+        self.batch_size = batch_size
+        self.print_every = print_every
+        self.hidden_size = hidden_size
+        self.num_layers = num_layers
+        self.lr = lr
+        self.all_characters = string.printable
+        self.n_characters = len(self.all_characters)
+
+
+    def char_tensor(self, string):
+        tensor = torch.zeros(len(string)).long()
+        for c in range(len(string)):
+            tensor[c] = self.all_characters.index(string[c])
+
+        return tensor
+    
+    def get_random_batch(self):
+        start_idx = random.randint(0, len(file) - self.chunk_len)
+        end_idx = start_idx + self.chunk_len + 1
+        text_str = file[start_idx: end_idx]","        text_input = torch.zeros(self.batch_size, self.chunk_len)","        text_input = torch.zeros(self.batch_size, self.chunk_len)","        text_target = torch.zeros(self.batch_size, self.chunk_len)
+
+        for i in range(self.batch_size):
+            text_input[i, :] = self.char_tensor(text_str[:-1])
+            text_target[i, :] = self.char_tensor(text_str[1:])
+
+        return text_input.long(), text_target.long()
+    
+    def generate(self, initial_str = 'A', predict_len = 200, temperature = 0.85):
+
+        initial_str = initial_str.lower()
+
+        hidden, cell = self.rnn.init_hidden(batch_size=self.batch_size)
+        initial_input = self.char_tensor(initial_str)
+        predicted = initial_str
+
+        for p in range(len(initial_str)-1):
+            _, (hidden, cell) = self.rnn(
+                initial_input[p].view(1).to(device), hidden, cell
+            )
+
+        last_char = initial_input[-1]
+
+        for p in range(predict_len):
+            output, (hidden, cell) = self.rnn(
+                last_char.view(1).to(device), hidden, cell
+            )
+            output_dist = output.data.view(-1).div(temperature).exp()
+            top_char = torch.multinomial(output_dist, 1)[0]
+            predicted_char = self.all_characters[top_char]
+            predicted += predicted_char
+            last_char = self.char_tensor(predicted_char)
+
+        return predicted
+    
+    
+    def train(self):
+        if first_run:
+            self.rnn = RNN(
+                self.n_characters, 
+                self.hidden_size, 
+                self.num_layers,
+                self.n_characters
+            ).to(device)
+
+            optimizer = torch.optim.Adam(self.rnn.parameters(), lr=self.lr)
+            criterion = nn.CrossEntropyLoss()
+            writer = SummaryWriter(f""runs/names0"")  # for tensorboard
+
+            print(""=> Starting training"")
+
+            for epoch in range(1, self.num_epochs + 1):
+                inp, target = self.get_random_batch()
+                hidden, cell = self.rnn.init_hidden(batch_size=self.batch_size)
+
+                self.rnn.zero_grad()
+                loss = 0
+                inp = inp.to(device)
+                target = target.to(device)
+
+                for c in range(self.chunk_len):
+                    output, (hidden, cell) = self.rnn(inp[:, c], hidden, cell)
+                    loss += criterion(output, target[:, c])
+
+                loss.backward()
+                optimizer.step()
+                loss = loss.item() / self.chunk_len
+
+                if epoch % self.print_every == 0:
+                    print(f""Loss: {loss}, Epoch: {epoch}"")
+                    print(self.generate())
+
+                writer.add_scalar(""Training loss"", loss, global_step=epoch)
+
+            # save the model as a state dictionary in pth format
+            torch.save({
+                'model_state_dict': self.rnn.state_dict(),
+                'optimizer_state_dict': optimizer.state_dict(),
+            },  'model_weights/model.pth')
+
+        elif not first_run:
+            # define the structure and the parameters
+            self.rnn = RNN(self.n_characters, 
+                            self.hidden_size, 
+                            self.num_layers,
+                            self.n_characters)
+            
+            # define the optimizer
+            optimizer = torch.optim.Adam(self.rnn.parameters(), lr=self.lr)
+
+            # load the checkpoint data
+            checkpoint = torch.load('model_weights/model.pth')
+            # load the checkpoint into the model structure
+            self.rnn.load_state_dict(checkpoint['model_state_dict'])
+            # load the checkpoint to the optimizer structure
+            optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
+            # pass model to the device
+            self.rnn.to(device)
+
+        else: 
+            raise TypeError(f""Input value must be boolean instead of {first_run} in config.py"")",1,1.0,1.0
+57,"import torch 
+import random
+import string
+import torch.nn as nn 
+from config import device, file, first_run
+
+from torch.utils.tensorboard import SummaryWriter
+
+
+class RNN(nn.Module):
+    def __init__(self, input_size, hidden_size, num_layers, out_size):
+        super(RNN, self).__init__()
+        self.hidden_size = hidden_size
+        self.num_layers = num_layers
+
+        self.embed = nn.Embedding(input_size, hidden_size)
+        self.lstm = nn.LSTM(hidden_size, hidden_size, num_layers, batch_first=True)
+        self.fc = nn.Linear(hidden_size, out_size)
+
+    def forward(self, x, hidden, cell):
+        out = self.embed(x)
+        out, (hidden, cell) = self.lstm(out.unsqueeze(1), (hidden, cell))
+        out = self.fc(out.reshape(out.shape[1], -1))
+        return out, (hidden, cell)
+    
+    def init_hidden(self, batch_size):
+        hidden = torch.zeros(self.num_layers, batch_size, self.hidden_size).to(device)
+        cell = torch.zeros(self.num_layers, batch_size, self.hidden_size).to(device)
+        return hidden, cell
+    
+class Generator:
+    def __init__(self, 
+                chunk_len = 250,
+                num_epochs = 5000,
+                batch_size = 1,
+                print_every = 50,
+                hidden_size = 256,
+                num_layers = 2,
+                lr = 0.003):
+        
+        self.chunk_len = chunk_len
+        self.num_epochs = num_epochs
+        self.batch_size = batch_size
+        self.print_every = print_every
+        self.hidden_size = hidden_size
+        self.num_layers = num_layers
+        self.lr = lr
+        self.all_characters = string.printable
+        self.n_characters = len(self.all_characters)
+
+
+    def char_tensor(self, string):
+        tensor = torch.zeros(len(string)).long()
+        for c in range(len(string)):
+            tensor[c] = self.all_characters.index(string[c])
+
+        return tensor
+    
+    def get_random_batch(self):
+        start_idx = random.randint(0, len(file) - self.chunk_len)
+        end_idx = start_idx + self.chunk_len + 1
+        text_str = file[start_idx: end_idx]
+        text_input = torch.zeros(self.batch_size, self.chunk_len)
+        text_target = torch.zeros(self.batch_size, self.chunk_len)
+
+        for i in range(self.batch_size):
+            text_input[i, :] = self.char_tensor(text_str[:-1])
+            text_target[i, :] = self.char_tensor(text_str[1:])
+
+        return text_input.long(), text_target.long()
+    
+    def generate(self, initial_str = 'A', predict_len = 200, temperature = 0.85):
+
+        initial_str = initial_str.lower()
+
+        hidden, cell = self.rnn.init_hidden(batch_size=self.batch_size)
+        initial_input = self.char_tensor(initial_str)
+        predicted = initial_str
+
+        for p in range(len(initial_str)-1):
+            _, (hidden, cell) = self.rnn(
+                initial_input[p].view(1).to(device), hidden, cell
+            )
+
+        last_char = initial_input[-1]
+
+        for p in range(predict_len):
+            output, (hidden, cell) = self.rnn(
+                last_char.view(1).to(device), hidden, cell
+            )
+            output_dist = output.data.view(-1).div(temperature).exp()
+            top_char = torch.multinomial(output_dist, 1)[0]
+            predicted_char = self.all_characters[top_char]
+            predicted += predicted_char
+            last_char = self.char_tensor(predicted_char)
+
+        return predicted
+    
+    
+    def train(self):
+        if first_run:
+            self.rnn = RNN(
+                self.n_characters, 
+                self.hidden_size, 
+                self.num_layers,
+                self.n_characters
+            ).to(device)
+
+            optimizer = torch.optim.Adam(self.rnn.parameters(), lr=self.lr)
+            criterion = nn.CrossEntropyLoss()
+            writer = SummaryWriter(f""runs/names0"")  # for tensorboard
+
+            print(""=> Starting training"")
+","            for epoch in range(1, self.num_epochs + 1):","            for epoch in range(1, self.num_epochs + 1):","                inp, target = self.get_random_batch()
+                hidden, cell = self.rnn.init_hidden(batch_size=self.batch_size)
+
+                self.rnn.zero_grad()
+                loss = 0
+                inp = inp.to(device)
+                target = target.to(device)
+
+                for c in range(self.chunk_len):
+                    output, (hidden, cell) = self.rnn(inp[:, c], hidden, cell)
+                    loss += criterion(output, target[:, c])
+
+                loss.backward()
+                optimizer.step()
+                loss = loss.item() / self.chunk_len
+
+                if epoch % self.print_every == 0:
+                    print(f""Loss: {loss}, Epoch: {epoch}"")
+                    print(self.generate())
+
+                writer.add_scalar(""Training loss"", loss, global_step=epoch)
+
+            # save the model as a state dictionary in pth format
+            torch.save({
+                'model_state_dict': self.rnn.state_dict(),
+                'optimizer_state_dict': optimizer.state_dict(),
+            },  'model_weights/model.pth')
+
+        elif not first_run:
+            # define the structure and the parameters
+            self.rnn = RNN(self.n_characters, 
+                            self.hidden_size, 
+                            self.num_layers,
+                            self.n_characters)
+            
+            # define the optimizer
+            optimizer = torch.optim.Adam(self.rnn.parameters(), lr=self.lr)
+
+            # load the checkpoint data
+            checkpoint = torch.load('model_weights/model.pth')
+            # load the checkpoint into the model structure
+            self.rnn.load_state_dict(checkpoint['model_state_dict'])
+            # load the checkpoint to the optimizer structure
+            optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
+            # pass model to the device
+            self.rnn.to(device)
+
+        else: 
+            raise TypeError(f""Input value must be boolean instead of {first_run} in config.py"")",1,1.0,1.0
+58,"import torch 
+import random
+import string
+import torch.nn as nn 
+from config import device, file, first_run
+
+from torch.utils.tensorboard import SummaryWriter
+
+
+class RNN(nn.Module):
+    def __init__(self, input_size, hidden_size, num_layers, out_size):
+        super(RNN, self).__init__()
+        self.hidden_size = hidden_size
+        self.num_layers = num_layers
+
+        self.embed = nn.Embedding(input_size, hidden_size)
+        self.lstm = nn.LSTM(hidden_size, hidden_size, num_layers, batch_first=True)
+        self.fc = nn.Linear(hidden_size, out_size)
+
+    def forward(self, x, hidden, cell):
+        out = self.embed(x)
+        out, (hidden, cell) = self.lstm(out.unsqueeze(1), (hidden, cell))
+        out = self.fc(out.reshape(out.shape[1], -1))
+        return out, (hidden, cell)
+    
+    def init_hidden(self, batch_size):
+        hidden = torch.zeros(self.num_layers, batch_size, self.hidden_size).to(device)
+        cell = torch.zeros(self.num_layers, batch_size, self.hidden_size).to(device)
+        return hidden, cell
+    
+class Generator:
+    def __init__(self, 
+                chunk_len = 250,
+                num_epochs = 5000,
+                batch_size = 1,
+                print_every = 50,
+                hidden_size = 256,
+                num_layers = 2,
+                lr = 0.003):
+        
+        self.chunk_len = chunk_len
+        self.num_epochs = num_epochs
+        self.batch_size = batch_size
+        self.print_every = print_every
+        self.hidden_size = hidden_size
+        self.num_layers = num_layers
+        self.lr = lr
+        self.all_characters = string.printable
+        self.n_characters = len(self.all_characters)
+
+
+    def char_tensor(self, string):
+        tensor = torch.zeros(len(string)).long()
+        for c in range(len(string)):
+            tensor[c] = self.all_characters.index(string[c])
+
+        return tensor
+    
+    def get_random_batch(self):
+        start_idx = random.randint(0, len(file) - self.chunk_len)
+        end_idx = start_idx + self.chunk_len + 1
+        text_str = file[start_idx: end_idx]
+        text_input = torch.zeros(self.batch_size, self.chunk_len)
+        text_target = torch.zeros(self.batch_size, self.chunk_len)
+
+        for i in range(self.batch_size):
+            text_input[i, :] = self.char_tensor(text_str[:-1])
+            text_target[i, :] = self.char_tensor(text_str[1:])
+
+        return text_input.long(), text_target.long()
+    
+    def generate(self, initial_str = 'A', predict_len = 200, temperature = 0.85):
+
+        initial_str = initial_str.lower()
+
+        hidden, cell = self.rnn.init_hidden(batch_size=self.batch_size)
+        initial_input = self.char_tensor(initial_str)
+        predicted = initial_str
+
+        for p in range(len(initial_str)-1):
+            _, (hidden, cell) = self.rnn(
+                initial_input[p].view(1).to(device), hidden, cell
+            )
+
+        last_char = initial_input[-1]
+
+        for p in range(predict_len):
+            output, (hidden, cell) = self.rnn(
+                last_char.view(1).to(device), hidden, cell
+            )
+            output_dist = output.data.view(-1).div(temperature).exp()
+            top_char = torch.multinomial(output_dist, 1)[0]
+            predicted_char = self.all_characters[top_char]
+            predicted += predicted_char
+            last_char = self.char_tensor(predicted_char)
+
+        return predicted
+    
+    
+    def train(self):
+        if first_run:
+            self.rnn = RNN(
+                self.n_characters, 
+                self.hidden_size, 
+                self.num_layers,
+                self.n_characters
+            ).to(device)
+
+            optimizer = torch.optim.Adam(self.rnn.parameters(), lr=self.lr)
+            criterion = nn.CrossEntropyLoss()
+            writer = SummaryWriter(f""runs/names0"")  # for tensorboard
+
+            print(""=> Starting training"")
+
+            for epoch in range(1, self.num_epochs + 1):
+                inp, target = self.get_random_batch()
+                hidden, cell = self.rnn.init_hidden(batch_size=self.batch_size)
+
+                self.rnn.zero_grad()
+                loss = 0
+                inp = inp.to(device)
+                target = target.to(device)
+
+                for c in range(self.chunk_len):
+                    output, (hidden, cell) = self.rnn(inp[:, c], hidden, cell)
+                    loss += criterion(output, target[:, c])
+
+                loss.backward()
+                optimizer.step()
+                loss = loss.item() / self.chunk_len",                if epoch % self.print_every == 0:,                if epoch % self.print_every == 0:,"                    print(f""Loss: {loss}, Epoch: {epoch}"")
+                    print(self.generate())
+
+                writer.add_scalar(""Training loss"", loss, global_step=epoch)
+
+            # save the model as a state dictionary in pth format
+            torch.save({
+                'model_state_dict': self.rnn.state_dict(),
+                'optimizer_state_dict': optimizer.state_dict(),
+            },  'model_weights/model.pth')
+
+        elif not first_run:
+            # define the structure and the parameters
+            self.rnn = RNN(self.n_characters, 
+                            self.hidden_size, 
+                            self.num_layers,
+                            self.n_characters)
+            
+            # define the optimizer
+            optimizer = torch.optim.Adam(self.rnn.parameters(), lr=self.lr)
+
+            # load the checkpoint data
+            checkpoint = torch.load('model_weights/model.pth')
+            # load the checkpoint into the model structure
+            self.rnn.load_state_dict(checkpoint['model_state_dict'])
+            # load the checkpoint to the optimizer structure
+            optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
+            # pass model to the device
+            self.rnn.to(device)
+
+        else: 
+            raise TypeError(f""Input value must be boolean instead of {first_run} in config.py"")",1,1.0,1.0
+59,"import torch 
+import random
+import string
+import torch.nn as nn 
+from config import device, file, first_run
+
+from torch.utils.tensorboard import SummaryWriter
+
+
+class RNN(nn.Module):
+    def __init__(self, input_size, hidden_size, num_layers, out_size):
+        super(RNN, self).__init__()
+        self.hidden_size = hidden_size
+        self.num_layers = num_layers
+
+        self.embed = nn.Embedding(input_size, hidden_size)
+        self.lstm = nn.LSTM(hidden_size, hidden_size, num_layers, batch_first=True)
+        self.fc = nn.Linear(hidden_size, out_size)
+
+    def forward(self, x, hidden, cell):
+        out = self.embed(x)
+        out, (hidden, cell) = self.lstm(out.unsqueeze(1), (hidden, cell))
+        out = self.fc(out.reshape(out.shape[1], -1))
+        return out, (hidden, cell)
+    
+    def init_hidden(self, batch_size):
+        hidden = torch.zeros(self.num_layers, batch_size, self.hidden_size).to(device)
+        cell = torch.zeros(self.num_layers, batch_size, self.hidden_size).to(device)
+        return hidden, cell
+    
+class Generator:
+    def __init__(self, 
+                chunk_len = 250,
+                num_epochs = 5000,
+                batch_size = 1,
+                print_every = 50,
+                hidden_size = 256,
+                num_layers = 2,
+                lr = 0.003):
+        
+        self.chunk_len = chunk_len
+        self.num_epochs = num_epochs
+        self.batch_size = batch_size
+        self.print_every = print_every
+        self.hidden_size = hidden_size
+        self.num_layers = num_layers
+        self.lr = lr
+        self.all_characters = string.printable
+        self.n_characters = len(self.all_characters)
+
+
+    def char_tensor(self, string):
+        tensor = torch.zeros(len(string)).long()
+        for c in range(len(string)):
+            tensor[c] = self.all_characters.index(string[c])
+
+        return tensor
+    
+    def get_random_batch(self):
+        start_idx = random.randint(0, len(file) - self.chunk_len)
+        end_idx = start_idx + self.chunk_len + 1
+        text_str = file[start_idx: end_idx]
+        text_input = torch.zeros(self.batch_size, self.chunk_len)
+        text_target = torch.zeros(self.batch_size, self.chunk_len)
+
+        for i in range(self.batch_size):
+            text_input[i, :] = self.char_tensor(text_str[:-1])
+            text_target[i, :] = self.char_tensor(text_str[1:])
+
+        return text_input.long(), text_target.long()
+    
+    def generate(self, initial_str = 'A', predict_len = 200, temperature = 0.85):
+",        initial_str = initial_str.lower(),        initial_str = initial_str.lower(),"
+        hidden, cell = self.rnn.init_hidden(batch_size=self.batch_size)
+        initial_input = self.char_tensor(initial_str)
+        predicted = initial_str
+
+        for p in range(len(initial_str)-1):
+            _, (hidden, cell) = self.rnn(
+                initial_input[p].view(1).to(device), hidden, cell
+            )
+
+        last_char = initial_input[-1]
+
+        for p in range(predict_len):
+            output, (hidden, cell) = self.rnn(
+                last_char.view(1).to(device), hidden, cell
+            )
+            output_dist = output.data.view(-1).div(temperature).exp()
+            top_char = torch.multinomial(output_dist, 1)[0]
+            predicted_char = self.all_characters[top_char]
+            predicted += predicted_char
+            last_char = self.char_tensor(predicted_char)
+
+        return predicted
+    
+    
+    def train(self):
+        if first_run:
+            self.rnn = RNN(
+                self.n_characters, 
+                self.hidden_size, 
+                self.num_layers,
+                self.n_characters
+            ).to(device)
+
+            optimizer = torch.optim.Adam(self.rnn.parameters(), lr=self.lr)
+            criterion = nn.CrossEntropyLoss()
+            writer = SummaryWriter(f""runs/names0"")  # for tensorboard
+
+            print(""=> Starting training"")
+
+            for epoch in range(1, self.num_epochs + 1):
+                inp, target = self.get_random_batch()
+                hidden, cell = self.rnn.init_hidden(batch_size=self.batch_size)
+
+                self.rnn.zero_grad()
+                loss = 0
+                inp = inp.to(device)
+                target = target.to(device)
+
+                for c in range(self.chunk_len):
+                    output, (hidden, cell) = self.rnn(inp[:, c], hidden, cell)
+                    loss += criterion(output, target[:, c])
+
+                loss.backward()
+                optimizer.step()
+                loss = loss.item() / self.chunk_len
+
+                if epoch % self.print_every == 0:
+                    print(f""Loss: {loss}, Epoch: {epoch}"")
+                    print(self.generate())
+
+                writer.add_scalar(""Training loss"", loss, global_step=epoch)
+
+            # save the model as a state dictionary in pth format
+            torch.save({
+                'model_state_dict': self.rnn.state_dict(),
+                'optimizer_state_dict': optimizer.state_dict(),
+            },  'model_weights/model.pth')
+
+        elif not first_run:
+            # define the structure and the parameters
+            self.rnn = RNN(self.n_characters, 
+                            self.hidden_size, 
+                            self.num_layers,
+                            self.n_characters)
+            
+            # define the optimizer
+            optimizer = torch.optim.Adam(self.rnn.parameters(), lr=self.lr)
+
+            # load the checkpoint data
+            checkpoint = torch.load('model_weights/model.pth')
+            # load the checkpoint into the model structure
+            self.rnn.load_state_dict(checkpoint['model_state_dict'])
+            # load the checkpoint to the optimizer structure
+            optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
+            # pass model to the device
+            self.rnn.to(device)
+
+        else: 
+            raise TypeError(f""Input value must be boolean instead of {first_run} in config.py"")",1,1.2213386697554703e-77,1.0
+60,"import torch 
+import sys 
+import os
+
+import torch.nn as nn 
+from config import device
+# Hyperparameters 
+sequence_length = 28 
+
+# create RNN
+class RNN(nn.Module):
+    def __init__(self, input_size, hidden_size, num_layers, num_classes):
+        super(RNN, self).__init__()
+        self.hidden_size = hidden_size
+        self.num_layers = num_layers","        self.rnn = nn.RNN(input_size, hidden_size, num_layers, batch_first=True)","        self.rnn = nn.RNN(input_size, hidden_size, num_layers, batch_first=True)","        self.fc = nn.Linear(hidden_size*sequence_length, num_classes)
+
+    def forward(self, x):
+        h0 = torch.zeros(self.num_layers, x.size(0), self.hidden_size).to(device)
+
+        # forward prop 
+        out, _ = self.rnn(x, h0)
+        out = out.reshape(out.shape[0], -1)
+        out = self.fc(out)
+        
+        return out
+",1,1.0,1.0
+61,"import torch 
+import sys 
+import os
+
+import torch.nn as nn 
+from config import device
+# Hyperparameters 
+sequence_length = 28 
+
+# create RNN
+class RNN(nn.Module):
+    def __init__(self, input_size, hidden_size, num_layers, num_classes):
+        super(RNN, self).__init__()
+        self.hidden_size = hidden_size
+        self.num_layers = num_layers","        self.rnn = nn.RNN(input_size, hidden_size, num_layers, batch_first=True)","        self.rnn = nn.RNN(input_size, hidden_size, num_layers, batch_first=True)","        self.fc = nn.Linear(hidden_size*sequence_length, num_classes)
+
+    def forward(self, x):
+        h0 = torch.zeros(self.num_layers, x.size(0), self.hidden_size).to(device)
+
+        # forward prop 
+        out, _ = self.rnn(x, h0)
+        out = out.reshape(out.shape[0], -1)
+        out = self.fc(out)
+        
+        return out
+",1,1.0,1.0
+62,"import torch 
+import sys ",import os,import os,"
+import torch.nn as nn 
+from config import device
+# Hyperparameters 
+sequence_length = 28 
+
+# create RNN
+class RNN(nn.Module):
+    def __init__(self, input_size, hidden_size, num_layers, num_classes):
+        super(RNN, self).__init__()
+        self.hidden_size = hidden_size
+        self.num_layers = num_layers
+        self.rnn = nn.RNN(input_size, hidden_size, num_layers, batch_first=True)
+        self.fc = nn.Linear(hidden_size*sequence_length, num_classes)
+
+    def forward(self, x):
+        h0 = torch.zeros(self.num_layers, x.size(0), self.hidden_size).to(device)
+
+        # forward prop 
+        out, _ = self.rnn(x, h0)
+        out = out.reshape(out.shape[0], -1)
+        out = self.fc(out)
+        
+        return out
+",1,1.491668146240062e-154,1.0
+63,"import torch 
+import sys 
+import os
+
+import torch.nn as nn 
+from config import device
+# Hyperparameters 
+sequence_length = 28 
+",# create RNN,# create RNN,"class RNN(nn.Module):
+    def __init__(self, input_size, hidden_size, num_layers, num_classes):
+        super(RNN, self).__init__()
+        self.hidden_size = hidden_size
+        self.num_layers = num_layers
+        self.rnn = nn.RNN(input_size, hidden_size, num_layers, batch_first=True)
+        self.fc = nn.Linear(hidden_size*sequence_length, num_classes)
+
+    def forward(self, x):
+        h0 = torch.zeros(self.num_layers, x.size(0), self.hidden_size).to(device)
+
+        # forward prop 
+        out, _ = self.rnn(x, h0)
+        out = out.reshape(out.shape[0], -1)
+        out = self.fc(out)
+        
+        return out
+",1,1.2213386697554703e-77,1.0
+64,"import torch 
+import sys 
+import os
+
+import torch.nn as nn 
+from config import device
+# Hyperparameters 
+sequence_length = 28 
+
+# create RNN
+class RNN(nn.Module):
+    def __init__(self, input_size, hidden_size, num_layers, num_classes):
+        super(RNN, self).__init__()
+        self.hidden_size = hidden_size
+        self.num_layers = num_layers
+        self.rnn = nn.RNN(input_size, hidden_size, num_layers, batch_first=True)
+        self.fc = nn.Linear(hidden_size*sequence_length, num_classes)
+
+    def forward(self, x):
+        h0 = torch.zeros(self.num_layers, x.size(0), self.hidden_size).to(device)
+
+        # forward prop 
+        out, _ = self.rnn(x, h0)
+        out = out.reshape(out.shape[0], -1)",        out = self.fc(out),        out = self.fc(out),,1,1.2213386697554703e-77,1.0
+65,"import torch 
+import sys 
+import os
+
+import torch.nn as nn 
+from config import device
+# Hyperparameters 
+sequence_length = 28 
+
+# create RNN
+class RNN(nn.Module):
+    def __init__(self, input_size, hidden_size, num_layers, num_classes):
+        super(RNN, self).__init__()
+        self.hidden_size = hidden_size",        self.num_layers = num_layers,        self.num_layers = num_layers,"        self.rnn = nn.RNN(input_size, hidden_size, num_layers, batch_first=True)
+        self.fc = nn.Linear(hidden_size*sequence_length, num_classes)
+
+    def forward(self, x):
+        h0 = torch.zeros(self.num_layers, x.size(0), self.hidden_size).to(device)
+
+        # forward prop 
+        out, _ = self.rnn(x, h0)
+        out = out.reshape(out.shape[0], -1)
+        out = self.fc(out)
+        
+        return out
+",1,1.2213386697554703e-77,1.0
+66,"import torch 
+import sys 
+import os
+
+import torch.nn as nn 
+from config import device
+# Hyperparameters 
+sequence_length = 28 
+
+# create RNN
+class RNN(nn.Module):
+    def __init__(self, input_size, hidden_size, num_layers, num_classes):
+        super(RNN, self).__init__()
+        self.hidden_size = hidden_size
+        self.num_layers = num_layers
+        self.rnn = nn.RNN(input_size, hidden_size, num_layers, batch_first=True)","        self.fc = nn.Linear(hidden_size*sequence_length, num_classes)","        self.fc = nn.Linear(hidden_size*sequence_length, num_classes)","
+    def forward(self, x):
+        h0 = torch.zeros(self.num_layers, x.size(0), self.hidden_size).to(device)
+
+        # forward prop 
+        out, _ = self.rnn(x, h0)
+        out = out.reshape(out.shape[0], -1)
+        out = self.fc(out)
+        
+        return out
+",1,1.0,1.0
+67,"import torch 
+import sys 
+import os
+
+import torch.nn as nn 
+from config import device
+# Hyperparameters 
+sequence_length = 28 
+
+# create RNN
+class RNN(nn.Module):
+    def __init__(self, input_size, hidden_size, num_layers, num_classes):
+        super(RNN, self).__init__()
+        self.hidden_size = hidden_size
+        self.num_layers = num_layers
+        self.rnn = nn.RNN(input_size, hidden_size, num_layers, batch_first=True)
+        self.fc = nn.Linear(hidden_size*sequence_length, num_classes)
+
+    def forward(self, x):
+        h0 = torch.zeros(self.num_layers, x.size(0), self.hidden_size).to(device)",        # forward prop ,        # forward prop ,"        out, _ = self.rnn(x, h0)
+        out = out.reshape(out.shape[0], -1)
+        out = self.fc(out)
+        
+        return out",1,1.2213386697554703e-77,1.0
+68,"import torch 
+import sys ",import os,import os,"
+import torch.nn as nn 
+from config import device
+# Hyperparameters 
+sequence_length = 28 
+
+# create RNN
+class RNN(nn.Module):
+    def __init__(self, input_size, hidden_size, num_layers, num_classes):
+        super(RNN, self).__init__()
+        self.hidden_size = hidden_size
+        self.num_layers = num_layers
+        self.rnn = nn.RNN(input_size, hidden_size, num_layers, batch_first=True)
+        self.fc = nn.Linear(hidden_size*sequence_length, num_classes)
+
+    def forward(self, x):
+        h0 = torch.zeros(self.num_layers, x.size(0), self.hidden_size).to(device)
+
+        # forward prop 
+        out, _ = self.rnn(x, h0)
+        out = out.reshape(out.shape[0], -1)
+        out = self.fc(out)
+        
+        return out
+",1,1.491668146240062e-154,1.0
+69,"import torch 
+import sys 
+import os
+
+import torch.nn as nn 
+from config import device
+# Hyperparameters 
+sequence_length = 28 
+
+# create RNN
+class RNN(nn.Module):
+    def __init__(self, input_size, hidden_size, num_layers, num_classes):
+        super(RNN, self).__init__()
+        self.hidden_size = hidden_size
+        self.num_layers = num_layers
+        self.rnn = nn.RNN(input_size, hidden_size, num_layers, batch_first=True)
+        self.fc = nn.Linear(hidden_size*sequence_length, num_classes)
+
+    def forward(self, x):
+        h0 = torch.zeros(self.num_layers, x.size(0), self.hidden_size).to(device)
+
+        # forward prop 
+        out, _ = self.rnn(x, h0)
+        out = out.reshape(out.shape[0], -1)",        out = self.fc(out),        out = self.fc(out),"        
+        return out
+",1,1.2213386697554703e-77,1.0
