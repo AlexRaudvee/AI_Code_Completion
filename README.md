@@ -26,7 +26,7 @@ To assess the model's performance, we use the following evaluation metrics:
 
 1. **Exact Match**
     - **Definition**: Measures if the predicted middle part exactly matches the ground truth middle part.
-    - **Formula**:$\text{Exact Match} = \frac{\text{Number of Exact Matches}}{\text{Total Number of Examples}}$
+    - **Formula**:$$\text{Exact Match} = \frac{\text{Number of Exact Matches}}{\text{Total Number of Examples}}$$
  
 2. **BLEU Score**
     - **Definition**: BLEU (Bilingual Evaluation Understudy) score measures the similarity between predicted and ground truth code, focusing on matching n-grams.
