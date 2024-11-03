@@ -1,3 +1,4 @@
+# imports
 import os
 import json 
 
@@ -8,11 +9,15 @@ def load_examples_from_json(file_path):
     """
     Loads examples from a JSON file and returns them as a list of dictionaries.
     
-    Parameters:
-    - file_path (str): Path to the JSON file containing examples.
+    Parameters
+    ---
+    - file_path : str
+        Path to the JSON file containing examples.
     
-    Returns:
-    - examples (list): A list of dictionaries, each with 'prefix', 'middle', and 'suffix'.
+    Returns
+    ---
+    - examples : list
+        A list of dictionaries, each with 'prefix', 'middle', and 'suffix'.
     """
     with open(file_path, "r") as f:
         examples = json.load(f)
@@ -25,18 +30,20 @@ def load_code_files(directory_path, file_extension=".py"):
     """
     Loads code files from a specified directory and returns their content along with the count of files.
 
-    Parameters:
+    Parameters
     ---
-    - directory_path (str): Path to the directory containing code files.
-    - file_extension (str): File extension to filter code files, default is ".py".
+    - directory_path : str 
+        Path to the directory containing code files.
+    - file_extension : str
+        File extension to filter code files, default is ".py".
 
-    Returns:
+    Returns
     ---
-    - tuple: A tuple containing:
+    - tuple : A tuple containing:
         - code_snippets (list of str): List of code content strings from each file.
         - files_num (int): Number of files processed and loaded.
 
-    Example:
+    Example
     ---
     >>> code_snippets, files_num = load_code_files("path/to/directory")
     >>> print(files_num)
@@ -59,17 +66,20 @@ def adjust_empty_sections(prefix, middle, suffix):
     If `suffix` is empty, it shifts one line up from `prefix` to `middle` and from `middle` to `suffix`,
     ensuring all three sections are populated if possible.
 
-    Parameters:
+    Parameters
     ---
-    - prefix (str): The prefix section of code, representing content before the cursor.
-    - middle (str): The middle section, representing code where a user might expect completion.
-    - suffix (str): The suffix section of code, representing content after the cursor.
+    - prefix : str 
+        The prefix section of code, representing content before the cursor.
+    - middle : str 
+        The middle section, representing code where a user might expect completion.
+    - suffix : str 
+        The suffix section of code, representing content after the cursor.
 
-    Returns:
+    Returns
     ---
-    - tuple: A tuple containing the adjusted `prefix`, `middle`, and `suffix` strings.
+    - tuple : A tuple containing the adjusted `prefix`, `middle`, and `suffix` strings.
 
-    Example:
+    Example
     ---
     >>> prefix, middle, suffix = adjust_empty_sections("line1\nline2", "", "line3\nline4")
     >>> print(middle)
@@ -96,33 +106,78 @@ def adjust_empty_sections(prefix, middle, suffix):
 
 # FUNCTIONS FOR MODEL APPLICATION 
 
-def generate_completion(model, tokenizer, prefix, suffix, max_length=50):
-    """Generate code completion for the missing middle part given prefix and suffix."""
+
+def generate_completion(model, tokenizer, device, prefix, suffix, max_new_tokens=1000):
+    """
+    Generate a code completion by filling in the missing middle part based on the given prefix and suffix.
+    
+    This function takes a prefix and suffix, formats them into a specific prompt with custom tokens, and uses a language model 
+    to generate the intermediate text that fits between them. The function returns only the generated middle part, excluding 
+    the prefix and suffix from the final output. 
+    
+    Parameters
+    ---
+    - model : transformers.PreTrainedModel
+        The language model used to generate the completion.
+    - tokenizer : transformers.PreTrainedTokenizer
+        The tokenizer associated with the model for encoding and decoding the text.
+    - device : torch.device
+        The device (CPU or GPU) where the model and inputs are processed.
+    - prefix : str
+        The starting text provided as context for generating the middle part.
+    - suffix : str
+        The ending text that follows the middle part to be generated.
+    - max_new_tokens : int, optional, default=1000
+        The maximum number of new tokens to be generated for the middle part. This restricts the output length.
+
+    Returns
+    ---
+    - middle_text : str
+        The generated middle part text that completes the input prompt between the given prefix and suffix.
+
+    Example
+    ---
+    >>> from transformers import AutoModelForCausalLM, AutoTokenizer
+    >>> import torch
+
+    >>> model_name = "your-model-name"
+    >>> model = AutoModelForCausalLM.from_pretrained(model_name)
+    >>> tokenizer = AutoTokenizer.from_pretrained(model_name)
+    >>> device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    >>> model.to(device)
+
+    >>> prefix = "def add_numbers(a, b):"
+    >>> suffix = "return result"
+
+    >>> middle = generate_completion(model, tokenizer, device, prefix, suffix, max_new_tokens=50)
+    >>> print("Generated middle:", middle)
+    """
     
     # Format the input using the <fim_prefix>, <fim_suffix>, and <fim_middle> tokens
     input_text = f"<fim_prefix>{prefix}<fim_suffix>{suffix}<fim_middle>"
     
     # Encode the input and move it to the device (if required by model setup)
-    inputs = tokenizer.encode(input_text, return_tensors="pt").to(model.device)
+    inputs = tokenizer(input_text, return_tensors="pt", padding=True, truncation=False).to(device)
     
-    # Generate the completion with a max length limit
-    outputs = model.generate(inputs, max_length=max_length, pad_token_id=tokenizer.eos_token_id)
+    # Generate the completion without specifying max_length, but limiting new tokens
+    outputs = model.generate(
+        inputs["input_ids"],
+        attention_mask=inputs["attention_mask"],
+        max_new_tokens=max_new_tokens,  # Limit only the generated tokens
+        pad_token_id=tokenizer.pad_token_id
+    )
     
     # Decode the output and return only the generated middle part
-    generated_text = tokenizer.decode(outputs[0], skip_special_tokens=True)
-    
+    generated_text = tokenizer.decode(outputs[0], skip_special_tokens=False)
+    # print(generated_text)
     # Remove prefix and suffix to get only the generated middle part
-    # We use the formatted input to ensure precise extraction
-    start_index = generated_text.find(prefix) + len(prefix)
-    end_index = generated_text.find(suffix, start_index)
-    
-    middle_text = generated_text[start_index:end_index] if end_index != -1 else generated_text[start_index:]
+    middle_text = generated_text[generated_text.find("<fim_middle>") + len("<fim_middle>"): len(generated_text) - len(tokenizer.eos_token)]
     return middle_text
 
 
 # FUNCTIONS FOR EVALUATIONS
 
-from nltk.translate.bleu_score import sentence_bleu
+from nltk.translate.bleu_score import sentence_bleu, SmoothingFunction
 from nltk.translate.chrf_score import sentence_chrf
 
 
@@ -131,13 +186,16 @@ def exact_match(predicted, actual):
     return int(predicted.strip() == actual.strip())
 
 def compute_bleu(predicted, actual):
-    """Compute BLEU score."""
-    weights = [
-        (1.),
-        (1./2., 1./2.),
-        (1./3., 1./3., 1./3.),
-        (1./4., 1./4., 1./4., 1./4.)]
-    return sentence_bleu([actual.split()], predicted.split(), weights=weights)
+    """Compute BLEU score with smoothing."""
+
+    smoothing_func = SmoothingFunction().method4
+
+    return sentence_bleu(
+        [actual.split()], 
+        predicted.split(), 
+        # weights=weights, 
+        smoothing_function=smoothing_func
+    )
 
 def compute_chrf(predicted, actual):
     """Compute ChrF score."""

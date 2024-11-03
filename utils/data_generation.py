@@ -10,15 +10,19 @@ def generate_code_completion_examples(code_snippets, num_examples=10, output_fil
     Generates prefix, middle, and suffix examples from code snippets, saves them to a JSON file
     inside a 'data/code' directory, and returns the examples list.
     
-    Parameters:
+    Parameters
     ---
-    - code_snippets (list): A list of code strings to generate examples from.
-    - num_examples (int): The number of examples to generate from each code snippet.
-    - output_file (str): Name of the JSON file to save examples in the 'data/code' directory.
+    - code_snippets : list 
+        A list of code strings to generate examples from.
+    - num_examples : int
+        The number of examples to generate from each code snippet.
+    - output_file : str
+        Name of the JSON file to save examples in the 'data/code' directory.
     
-    Returns:
+    Returns
     
-    - examples (list): A list of dictionaries, each containing 'prefix', 'middle', and 'suffix'.
+    - examples : list 
+        A list of dictionaries, each containing 'prefix', 'middle', and 'suffix'.
     """
     # Ensure the 'data/code' directory exists
     output_dir = os.path.join("data", "code")
@@ -57,7 +61,7 @@ def generate_code_completion_examples(code_snippets, num_examples=10, output_fil
     return examples, total_lines
 
 # Load code snippets from your project directory
-code_snippets, files_num = load_code_files("data/code_")
+code_snippets, files_num = load_code_files("data/code_files")
 examples, total_lines = generate_code_completion_examples(code_snippets, output_file="code.json")
 
 print(f"""\n
