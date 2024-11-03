@@ -4,7 +4,7 @@ from torchtext.data import Field, TabularDataset
 #</PREDICTION>
 from torchtext.datasets import Multi30k
 
-from config import  from_, to
+from config_Enc_Dec import  from_, to
 
 spacy_lang_in = spacy.load(from_)
 spacy_lang_out = spacy.load(to)

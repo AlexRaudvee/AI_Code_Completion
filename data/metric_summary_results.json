@@ -1,5 +1,6 @@
 {
     "average_exact_match": 0.08571428571428572,
     "average_bleu": 0.11546470215688213,
-    "average_chrf": 0.3049839851862212
+    "average_chrf": 0.3049839851862212,
+    "average_functional_accuracy": 0.8571428571428571
 }

@@ -6,7 +6,7 @@ from model import RNN
 #</PREDICTION>
 
 import torch.nn as nn 
-from config import device
+from config_RNN import device
 # Hyperparameters 
 sequence_length = 28 
 

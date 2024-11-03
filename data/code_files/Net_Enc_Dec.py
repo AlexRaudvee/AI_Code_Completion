@@ -2,8 +2,8 @@ import torch
 import random
 
 import torch.nn as nn 
-from data_loading import lang_in, lang_out
-from config import system
+from data_loading_Enc_Dec import lang_in, lang_out
+from config_Enc_Dec import system
 
 if 'mac' in system.lower():
     system = 'mps' 

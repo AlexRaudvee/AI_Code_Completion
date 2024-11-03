@@ -2,7 +2,7 @@ import torch
 import random
 import string
 import torch.nn as nn 
-from config import device, file, first_run
+from config_LSTM import device, file, first_run
 
 from torch.utils.tensorboard import SummaryWriter
 

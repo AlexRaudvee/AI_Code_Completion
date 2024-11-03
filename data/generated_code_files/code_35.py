@@ -1,9 +1,9 @@
 import torch 
 import torch.nn as nn
 import torch.optim as optim
-from Net import RNN
-from config import device
-from load_dataset import test_loader, train_loader
+from Net_RNN import RNN
+from config_RNN import device
+from load_dataset_RNN import test_loader, train_loader
 
 # Hyperparameters 
 input_size = 28

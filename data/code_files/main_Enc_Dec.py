@@ -6,8 +6,8 @@ from torch.utils.tensorboard import SummaryWriter
 from torchtext.data import BucketIterator
 
 from func import translate_sentence, bleu, save_checkpoint, load_checkpoint
-from data_loading import lang_in, lang_out, train_data, valid_data, test_data
-from Net import Encoder, Decoder, EncDec, device
+from data_loading_Enc_Dec import lang_in, lang_out, train_data, valid_data, test_data
+from Net_Enc_Dec import Encoder, Decoder, EncDec, device
 
 # Training hyperparameters
 num_epochs = 100
