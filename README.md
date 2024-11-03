@@ -39,9 +39,7 @@ To assess the model's performance, we use the following evaluation metrics:
 
 3. **CHRF Score**
     - **Definition**: CHRF (Character F-score) calculates the F-score based on character n-grams, focusing on capturing similarities at a finer granularity than BLEU.
-    - **Formula**:\[
-        \text{CHRF} = \frac{2 \cdot \text{Precision} \cdot \text{Recall}}{\text{Precision} + \text{Recall}}
-        \]
+    - **Formula**:\[\text{CHRF} = \frac{2 \cdot \text{Precision} \cdot \text{Recall}}{\text{Precision} + \text{Recall}}\]
 ​
  
 4. **Functional Accuracy**
