@@ -26,6 +26,7 @@ To assess the model's performance, we use the following evaluation metrics:
 
 1. **Exact Match**
     - **Definition**: Measures if the predicted middle part exactly matches the ground truth middle part.
+    $`\sqrt{3x-1}+(1+x)^2`$
     - **Formula**:$$\text{Exact Match} = \frac{\text{Number of Exact Matches}}{\text{Total Number of Examples}}$$
  
 2. **BLEU Score**
