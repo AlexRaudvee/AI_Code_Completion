@@ -55,7 +55,7 @@ summary_results = {
 }
 
 # Save the summary results to a JSON file
-output_file = "metric_summary_results.json"
+output_file = "data/metric_summary_results.json"
 with open(output_file, "w") as f:
     json.dump(summary_results, f, indent=4)
 
