@@ -26,16 +26,19 @@ To assess the model's performance, we use the following evaluation metrics:
 
 1. **Exact Match**
     - **Definition**: Measures if the predicted middle part exactly matches the ground truth middle part.
-    - **Formula**:$$`\text{Exact Match} = \frac{\text{Number of Exact Matches}}{\text{Total Number of Examples}}`$$
+    - **Formula**:
+        $`\text{Exact Match} = \frac{\text{Number of Exact Matches}}{\text{Total Number of Examples}}`$
  
 2. **BLEU Score**
     - **Definition**: BLEU (Bilingual Evaluation Understudy) score measures the similarity between predicted and ground truth code, focusing on matching n-grams.
-    - **Formula**:$$`\text{BLEU} = \text{exp} \left( \min \left( 1 - \frac{|C|}{|R|}, 0 \right) + \sum_{n=1}^{N} w_n \cdot \log p_n \right)`$$
+    - **Formula**:
+        $`\text{BLEU} = \text{exp} \left( \min \left( 1 - \frac{|C|}{|R|}, 0 \right) + \sum_{n=1}^{N} w_n \cdot \log p_n \right)`$
     Where $`|C|`$  is the length of the predicted output, $`|R|`$ is the length of the reference, $` w_n `$ are weights, and $` p_n`$ is the precision of n-grams.
 
 3. **CHRF Score**
     - **Definition**: CHRF (Character F-score) calculates the F-score based on character n-grams, focusing on capturing similarities at a finer granularity than BLEU.
-    - **Formula**:$$`\text{CHRF} = \frac{2 \cdot \text{Precision} \cdot \text{Recall}}{\text{Precision} + \text{Recall}}`$$
+    - **Formula**:
+        $`\text{CHRF} = \frac{2 \cdot \text{Precision} \cdot \text{Recall}}{\text{Precision} + \text{Recall}}`$
 ​
  
 4. **Functional Accuracy**
