@@ -1,6 +1,17 @@
 # AI Code Completion Evaluation
 This repository contains a code completion model for predicting missing code segments between given prefixes and suffixes. The goal is to evaluate the model's ability to generate accurate code completions by comparing predicted code with ground truth using various evaluation metrics. 
 
+## Table of Contents
+
+- [Data](#data)
+- [Repository Structure](#repository-structure)
+- [Evaluation Metrics](#evaluation-metrics)
+- [Results](#results)
+- [Example Predictions](#example-predictions)
+- [Example Evaluation Run](#example-evaluation-run)
+- [How to Run](#how-to-run)
+- [License](#license)
+
 ## Data
 The dataset was manually generated using code from a prior repositories. This code includes both foundational programming elements and more advanced sections, featuring various deep learning model architectures and pipeline structures. This selection allows us to assess which aspects of Python programming the model handles most effectively, like the one that are more creative or the one that are more paternally structured.
 
@@ -59,6 +70,8 @@ Below is a table for inputting the evaluation metrics' results:
 | BLEU Score           |          0.115       |
 | CHRF Score           |           0.305      |
 | Functional Accuracy  |          0.857       |
+
+![Results](artifacts/results.png)
 
 generally we can see that the models Functional Accuracy is quite good which could be due to the fact that we will discuss later - prediction of middle part included suffix part as well in many cases, therefore because of the code repetition we could observe that the BLEU score is low but the functional accuracy is high.
 
