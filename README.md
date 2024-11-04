@@ -1,7 +1,8 @@
 # AI Code Completion Evaluation
 This repository contains a code completion model for predicting missing code segments between given prefixes and suffixes. The goal is to evaluate the model's ability to generate accurate code completions by comparing predicted code with ground truth using various evaluation metrics. 
 
-The dataset were generated manually by using our code that were written in past in one of the repositories.
+## Data
+The dataset was manually generated using code from a prior repositories. This code includes both foundational programming elements and more advanced sections, featuring various deep learning model architectures and pipeline structures. This selection allows us to assess which aspects of Python programming the model handles most effectively, like the one that are more creative or the one that are more paternally structured.
 
 ## Repository Structure
 ```
@@ -69,7 +70,9 @@ Here are some example predictions made by the model, with the ground truth for c
 ![Example 2](artifacts/ex_2.png)
 ![Example 3](artifacts/ex_3.png)
 
-After examples we can observe that in most of the cases the model predicts the part of the suffix as well, therefore we may conclude that given model is better when we predict not only one line of the code between prefix and suffix, but we predict between 5-20 rows, in some examples we could observe the prediction length of at least 500 tokens while only 10 were needed to fullfill the task. Or more research onto the model behaviour is needed.
+From the examples, we observe that in many cases, the model tends to predict parts of the suffix along with the missing middle code. This suggests that the model may be better suited for scenarios where the code completion task involves generating longer segments—between 5 to 20 lines—rather than just a single line between the prefix and suffix. In some instances, the model generated completions of up to 500 tokens when only about 10 were necessary. This over-generation indicates that further investigation into the model's behavior and control mechanisms is needed.
+
+Additionally, I noted that the model performed particularly well on files that involved implementing deep learning architectures, suggesting that it handles code with standard structural patterns more effectively. This observation supports the idea that the model performs better when working with code that follows predictable structures or conventions. Further research could help clarify these tendencies and optimize the model's effectiveness in different coding contexts.
 
 ## Example Evaluation Run
 - **Data Preparation**: Run data_generation.py to create the JSON file containing code snippets (prefix, suffix, and middle).
@@ -83,4 +86,4 @@ After examples we can observe that in most of the cases the model predicts the p
 3. Run main.py to generate predictions and evaluate them using the defined metrics.
 
 ## License
-This project is licensed under the terms of the LICENSE file.
+This project is licensed under the terms of the MIT LICENSE file.
